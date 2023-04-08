@@ -1,0 +1,3 @@
+[submodule "dse4wse"]
+	path = dse4wse
+	url = git@github.com:SuperVan-Young/dse4wse.git
