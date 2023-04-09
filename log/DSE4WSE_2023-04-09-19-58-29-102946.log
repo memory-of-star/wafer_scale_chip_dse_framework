@@ -1,0 +1,802 @@
+(DEBUG) 2023-04-09 19:58:29,103 [logger.py:40] logger init.
+(INFO) 2023-04-09 19:58:29,103 [logger.py:42] Logfile /home/chenyiqi/wafer_scale_chip_dse_framework/log/DSE4WSE_2023-04-09-19-58-29-102946.log
+(INFO) 2023-04-09 19:58:31,366 [api1.py:116] Design point: {'core_buffer_size': 64, 'core_buffer_bw': 512, 'core_mac_num': 32, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 16, 'core_array_w': 24, 'wafer_mem_bw': 900, 'reticle_array_h': 27, 'reticle_array_w': 12}
+(INFO) 2023-04-09 19:58:31,367 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:31,369 [api1.py:116] Design point: {'core_buffer_size': 256, 'core_buffer_bw': 1024, 'core_mac_num': 32, 'core_noc_bw': 512, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 11, 'reticle_array_w': 13}
+(INFO) 2023-04-09 19:58:31,370 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:31,373 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:31,377 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:31,429 [api1.py:116] Design point: {'core_buffer_size': 48, 'core_buffer_bw': 512, 'core_mac_num': 16, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 72, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 6, 'reticle_array_w': 41}
+(INFO) 2023-04-09 19:58:31,430 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:31,439 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:31,497 [api1.py:131] throughput: 0.006945586711555101
+(INFO) 2023-04-09 19:58:31,531 [api1.py:116] Design point: {'core_buffer_size': 64, 'core_buffer_bw': 256, 'core_mac_num': 32, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 13, 'reticle_array_w': 27}
+(INFO) 2023-04-09 19:58:31,531 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:31,542 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:31,675 [api1.py:131] throughput: 0.0069455902685893215
+(INFO) 2023-04-09 19:58:31,710 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 256, 'core_mac_num': 4, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 20, 'reticle_array_w': 37}
+(INFO) 2023-04-09 19:58:31,711 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:31,714 [api1.py:131] throughput: 0.01736179912392218
+(INFO) 2023-04-09 19:58:31,728 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:31,744 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 1024, 'core_mac_num': 4, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 8, 'core_array_w': 32, 'wafer_mem_bw': 900, 'reticle_array_h': 37, 'reticle_array_w': 21}
+(INFO) 2023-04-09 19:58:31,745 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:31,757 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 256, 'core_mac_num': 64, 'core_noc_bw': 512, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 40, 'core_array_w': 24, 'wafer_mem_bw': 900, 'reticle_array_h': 9, 'reticle_array_w': 8}
+(INFO) 2023-04-09 19:58:31,758 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:31,761 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:31,765 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:31,765 [api1.py:116] Design point: {'core_buffer_size': 64, 'core_buffer_bw': 256, 'core_mac_num': 64, 'core_noc_bw': 512, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 40, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 6, 'reticle_array_w': 17}
+(INFO) 2023-04-09 19:58:31,766 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:31,773 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:31,816 [api1.py:116] Design point: {'core_buffer_size': 48, 'core_buffer_bw': 2048, 'core_mac_num': 64, 'core_noc_bw': 512, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 11, 'reticle_array_w': 30}
+(INFO) 2023-04-09 19:58:31,816 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:31,818 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 256, 'core_mac_num': 64, 'core_noc_bw': 4096, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 8, 'reticle_array_w': 17}
+(INFO) 2023-04-09 19:58:31,818 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:31,818 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 128, 'core_mac_num': 16, 'core_noc_bw': 2048, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 40, 'core_array_w': 32, 'wafer_mem_bw': 900, 'reticle_array_h': 6, 'reticle_array_w': 8}
+(INFO) 2023-04-09 19:58:31,818 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:31,818 [api1.py:116] Design point: {'core_buffer_size': 48, 'core_buffer_bw': 512, 'core_mac_num': 8, 'core_noc_bw': 256, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 16, 'core_array_w': 40, 'wafer_mem_bw': 900, 'reticle_array_h': 25, 'reticle_array_w': 10}
+(INFO) 2023-04-09 19:58:31,819 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:31,823 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:31,824 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:31,825 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:31,830 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:31,848 [api1.py:131] throughput: 0.011575313164189619
+(INFO) 2023-04-09 19:58:31,849 [api1.py:131] throughput: 0.005788072458448197
+(INFO) 2023-04-09 19:58:31,857 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 512, 'core_mac_num': 8, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 64, 'core_array_w': 24, 'wafer_mem_bw': 900, 'reticle_array_h': 8, 'reticle_array_w': 21}
+(INFO) 2023-04-09 19:58:31,858 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:31,865 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:31,876 [api1.py:131] throughput: 0.017361703723931553
+(INFO) 2023-04-09 19:58:31,878 [api1.py:116] Design point: {'core_buffer_size': 48, 'core_buffer_bw': 512, 'core_mac_num': 16, 'core_noc_bw': 2048, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 40, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 6, 'reticle_array_w': 14}
+(INFO) 2023-04-09 19:58:31,878 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:31,883 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:31,884 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 512, 'core_mac_num': 16, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 48, 'core_array_w': 56, 'wafer_mem_bw': 900, 'reticle_array_h': 11, 'reticle_array_w': 8}
+(INFO) 2023-04-09 19:58:31,884 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:31,890 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:31,895 [api1.py:131] throughput: 0.017361766473540003
+(INFO) 2023-04-09 19:58:31,912 [api1.py:116] Design point: {'core_buffer_size': 512, 'core_buffer_bw': 2048, 'core_mac_num': 64, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 7, 'reticle_array_w': 29}
+(INFO) 2023-04-09 19:58:31,913 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:31,925 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:31,931 [api1.py:116] Design point: {'core_buffer_size': 256, 'core_buffer_bw': 2048, 'core_mac_num': 64, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 40, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 8, 'reticle_array_w': 14}
+(INFO) 2023-04-09 19:58:31,931 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:31,937 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:31,948 [api1.py:131] throughput: 0.011575329693209674
+(INFO) 2023-04-09 19:58:31,978 [api1.py:131] throughput: 0.01736175452119866
+(INFO) 2023-04-09 19:58:31,982 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 128, 'core_mac_num': 8, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 56, 'core_array_w': 72, 'wafer_mem_bw': 900, 'reticle_array_h': 8, 'reticle_array_w': 8}
+(INFO) 2023-04-09 19:58:31,982 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:31,984 [api1.py:131] throughput: 0.011575319550396316
+(INFO) 2023-04-09 19:58:31,985 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:32,010 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 512, 'core_mac_num': 16, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 40, 'core_array_w': 56, 'wafer_mem_bw': 900, 'reticle_array_h': 13, 'reticle_array_w': 8}
+(INFO) 2023-04-09 19:58:32,011 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:32,015 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 256, 'core_mac_num': 32, 'core_noc_bw': 2048, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 10, 'reticle_array_w': 25}
+(INFO) 2023-04-09 19:58:32,015 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:32,018 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:32,026 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:32,029 [api1.py:131] throughput: 0.011575333235148685
+(INFO) 2023-04-09 19:58:32,042 [api1.py:131] throughput: 0.011575325708530879
+(INFO) 2023-04-09 19:58:32,060 [api1.py:131] throughput: 0.0115753087736766
+(INFO) 2023-04-09 19:58:32,063 [api1.py:116] Design point: {'core_buffer_size': 64, 'core_buffer_bw': 2048, 'core_mac_num': 16, 'core_noc_bw': 1024, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 16, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 14, 'reticle_array_w': 34}
+(INFO) 2023-04-09 19:58:32,063 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:32,077 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:32,076 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 2048, 'core_mac_num': 64, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 48, 'core_array_w': 32, 'wafer_mem_bw': 900, 'reticle_array_h': 7, 'reticle_array_w': 10}
+(INFO) 2023-04-09 19:58:32,077 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:32,082 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:32,084 [api1.py:131] throughput: 0.00868180560220974
+(INFO) 2023-04-09 19:58:32,093 [api1.py:116] Design point: {'core_buffer_size': 128, 'core_buffer_bw': 512, 'core_mac_num': 32, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 16, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 19, 'reticle_array_w': 22}
+(INFO) 2023-04-09 19:58:32,094 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:32,102 [api1.py:131] throughput: 0.011575323971620467
+(INFO) 2023-04-09 19:58:32,102 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:32,123 [api1.py:116] Design point: {'core_buffer_size': 128, 'core_buffer_bw': 2048, 'core_mac_num': 16, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 40, 'wafer_mem_bw': 900, 'reticle_array_h': 13, 'reticle_array_w': 9}
+(INFO) 2023-04-09 19:58:32,123 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:32,130 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:32,132 [api1.py:116] Design point: {'core_buffer_size': 64, 'core_buffer_bw': 1024, 'core_mac_num': 8, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 24, 'wafer_mem_bw': 900, 'reticle_array_h': 13, 'reticle_array_w': 23}
+(INFO) 2023-04-09 19:58:32,133 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:32,143 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:32,146 [api1.py:131] throughput: 0.011575312160643492
+(INFO) 2023-04-09 19:58:32,149 [api1.py:131] throughput: 0.011575335830536406
+(INFO) 2023-04-09 19:58:32,170 [api1.py:131] throughput: 0.006945590319684866
+(INFO) 2023-04-09 19:58:32,181 [api1.py:116] Design point: {'core_buffer_size': 64, 'core_buffer_bw': 512, 'core_mac_num': 8, 'core_noc_bw': 256, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 48, 'core_array_w': 48, 'wafer_mem_bw': 900, 'reticle_array_h': 8, 'reticle_array_w': 8}
+(INFO) 2023-04-09 19:58:32,182 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:32,183 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 1024, 'core_mac_num': 64, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 16, 'core_array_w': 24, 'wafer_mem_bw': 900, 'reticle_array_h': 20, 'reticle_array_w': 15}
+(INFO) 2023-04-09 19:58:32,184 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:32,187 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:32,194 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:32,209 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 128, 'core_mac_num': 8, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 40, 'core_array_w': 24, 'wafer_mem_bw': 900, 'reticle_array_h': 11, 'reticle_array_w': 21}
+(INFO) 2023-04-09 19:58:32,210 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:32,221 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:32,233 [api1.py:131] throughput: 0.008681799133495302
+(INFO) 2023-04-09 19:58:32,258 [api1.py:131] throughput: 0.0115753087736766
+(INFO) 2023-04-09 19:58:32,267 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 1024, 'core_mac_num': 8, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 16, 'core_array_w': 72, 'wafer_mem_bw': 900, 'reticle_array_h': 19, 'reticle_array_w': 8}
+(INFO) 2023-04-09 19:58:32,268 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:32,276 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:32,294 [api1.py:116] Design point: {'core_buffer_size': 48, 'core_buffer_bw': 1024, 'core_mac_num': 64, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 16, 'core_array_w': 24, 'wafer_mem_bw': 900, 'reticle_array_h': 20, 'reticle_array_w': 14}
+(INFO) 2023-04-09 19:58:32,294 [api1.py:131] throughput: 0.00868180560220974
+(INFO) 2023-04-09 19:58:32,294 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:32,306 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:32,330 [api1.py:116] Design point: {'core_buffer_size': 64, 'core_buffer_bw': 256, 'core_mac_num': 64, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 40, 'wafer_mem_bw': 900, 'reticle_array_h': 12, 'reticle_array_w': 8}
+(INFO) 2023-04-09 19:58:32,330 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:32,339 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:32,415 [api1.py:131] throughput: 0.011575331650596755
+(INFO) 2023-04-09 19:58:32,433 [api1.py:131] throughput: 0.011575321945225646
+(INFO) 2023-04-09 19:58:32,446 [api1.py:116] Design point: {'core_buffer_size': 64, 'core_buffer_bw': 512, 'core_mac_num': 8, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 8, 'core_array_w': 24, 'wafer_mem_bw': 900, 'reticle_array_h': 53, 'reticle_array_w': 18}
+(INFO) 2023-04-09 19:58:32,446 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:32,463 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:32,464 [api1.py:116] Design point: {'core_buffer_size': 64, 'core_buffer_bw': 256, 'core_mac_num': 4, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 40, 'core_array_w': 72, 'wafer_mem_bw': 900, 'reticle_array_h': 8, 'reticle_array_w': 9}
+(INFO) 2023-04-09 19:58:32,465 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:32,469 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:32,471 [api1.py:131] throughput: 0.005788072145144621
+(INFO) 2023-04-09 19:58:32,476 [api1.py:131] throughput: 0.006945589137188145
+(INFO) 2023-04-09 19:58:32,507 [api1.py:116] Design point: {'core_buffer_size': 256, 'core_buffer_bw': 1024, 'core_mac_num': 8, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 32, 'core_array_w': 24, 'wafer_mem_bw': 900, 'reticle_array_h': 10, 'reticle_array_w': 12}
+(INFO) 2023-04-09 19:58:32,508 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:32,510 [api1.py:116] Design point: {'core_buffer_size': 64, 'core_buffer_bw': 256, 'core_mac_num': 4, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 48, 'wafer_mem_bw': 900, 'reticle_array_h': 13, 'reticle_array_w': 13}
+(INFO) 2023-04-09 19:58:32,510 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:32,515 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:32,518 [api1.py:131] throughput: 0.0049612539575765
+(INFO) 2023-04-09 19:58:32,518 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:32,544 [api1.py:131] throughput: 0.011575313164189619
+(INFO) 2023-04-09 19:58:32,552 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 128, 'core_mac_num': 256, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 8, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 49, 'reticle_array_w': 11}
+(INFO) 2023-04-09 19:58:32,553 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:32,567 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:32,581 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 2048, 'core_mac_num': 256, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 32, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 10, 'reticle_array_w': 8}
+(INFO) 2023-04-09 19:58:32,582 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:32,586 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:32,589 [api1.py:131] throughput: 0.00578807293153008
+(INFO) 2023-04-09 19:58:32,617 [api1.py:131] throughput: 0.005788072001640405
+(INFO) 2023-04-09 19:58:32,625 [api1.py:116] Design point: {'core_buffer_size': 512, 'core_buffer_bw': 2048, 'core_mac_num': 256, 'core_noc_bw': 512, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 8, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 20, 'reticle_array_w': 9}
+(INFO) 2023-04-09 19:58:32,626 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:32,631 [api1.py:131] throughput: 0.008681799437476026
+(INFO) 2023-04-09 19:58:32,634 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:32,646 [api1.py:131] throughput: 0.003858804423740846
+(INFO) 2023-04-09 19:58:32,656 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 256, 'core_mac_num': 4, 'core_noc_bw': 2048, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 10, 'reticle_array_w': 18}
+(INFO) 2023-04-09 19:58:32,656 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:32,663 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:32,664 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 1024, 'core_mac_num': 16, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 8, 'core_array_w': 72, 'wafer_mem_bw': 900, 'reticle_array_h': 37, 'reticle_array_w': 8}
+(INFO) 2023-04-09 19:58:32,665 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:32,669 [api1.py:131] throughput: 0.01157531667660243
+(INFO) 2023-04-09 19:58:32,675 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:32,685 [api1.py:116] Design point: {'core_buffer_size': 256, 'core_buffer_bw': 2048, 'core_mac_num': 64, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 8, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 35, 'reticle_array_w': 26}
+(INFO) 2023-04-09 19:58:32,686 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:32,703 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:32,705 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 2048, 'core_mac_num': 4, 'core_noc_bw': 256, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 32, 'core_array_w': 48, 'wafer_mem_bw': 900, 'reticle_array_h': 9, 'reticle_array_w': 10}
+(INFO) 2023-04-09 19:58:32,706 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:32,712 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:32,737 [api1.py:131] throughput: 0.005788070518376598
+(INFO) 2023-04-09 19:58:32,752 [api1.py:131] throughput: 0.003858804716308195
+(INFO) 2023-04-09 19:58:32,768 [api1.py:116] Design point: {'core_buffer_size': 48, 'core_buffer_bw': 1024, 'core_mac_num': 128, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 32, 'core_array_w': 24, 'wafer_mem_bw': 900, 'reticle_array_h': 10, 'reticle_array_w': 9}
+(INFO) 2023-04-09 19:58:32,768 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:32,773 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:32,797 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 256, 'core_mac_num': 4, 'core_noc_bw': 256, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 17, 'reticle_array_w': 54}
+(INFO) 2023-04-09 19:58:32,798 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:32,805 [api1.py:131] throughput: 0.008681795485728252
+(INFO) 2023-04-09 19:58:32,818 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:32,821 [api1.py:131] throughput: 0.0086818033892274
+(INFO) 2023-04-09 19:58:32,841 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 1024, 'core_mac_num': 8, 'core_noc_bw': 256, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 12, 'reticle_array_w': 31}
+(INFO) 2023-04-09 19:58:32,842 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:32,846 [api1.py:131] throughput: 0.0086818033892274
+(INFO) 2023-04-09 19:58:32,849 [api1.py:131] throughput: 0.008681795485728252
+(INFO) 2023-04-09 19:58:32,852 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:32,855 [api1.py:116] Design point: {'core_buffer_size': 48, 'core_buffer_bw': 2048, 'core_mac_num': 16, 'core_noc_bw': 2048, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 8, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 24, 'reticle_array_w': 16}
+(INFO) 2023-04-09 19:58:32,856 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:32,870 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:32,884 [api1.py:116] Design point: {'core_buffer_size': 64, 'core_buffer_bw': 2048, 'core_mac_num': 16, 'core_noc_bw': 512, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 40, 'core_array_w': 32, 'wafer_mem_bw': 900, 'reticle_array_h': 6, 'reticle_array_w': 11}
+(INFO) 2023-04-09 19:58:32,885 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:32,884 [api1.py:116] Design point: {'core_buffer_size': 256, 'core_buffer_bw': 1024, 'core_mac_num': 4, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 12, 'reticle_array_w': 18}
+(INFO) 2023-04-09 19:58:32,885 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:32,891 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:32,897 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:32,936 [api1.py:131] throughput: 0.003472940300052548
+(INFO) 2023-04-09 19:58:32,979 [api1.py:131] throughput: 0.017361736049430775
+(INFO) 2023-04-09 19:58:32,979 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 256, 'core_mac_num': 8, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 32, 'core_array_w': 32, 'wafer_mem_bw': 900, 'reticle_array_h': 14, 'reticle_array_w': 16}
+(INFO) 2023-04-09 19:58:32,980 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:32,990 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:33,008 [api1.py:131] throughput: 0.011575339744663871
+(INFO) 2023-04-09 19:58:33,016 [api1.py:116] Design point: {'core_buffer_size': 256, 'core_buffer_bw': 1024, 'core_mac_num': 64, 'core_noc_bw': 256, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 8, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 33, 'reticle_array_w': 24}
+(INFO) 2023-04-09 19:58:33,016 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:33,034 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:33,042 [api1.py:116] Design point: {'core_buffer_size': 64, 'core_buffer_bw': 2048, 'core_mac_num': 64, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 32, 'core_array_w': 24, 'wafer_mem_bw': 900, 'reticle_array_h': 10, 'reticle_array_w': 13}
+(INFO) 2023-04-09 19:58:33,043 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:33,050 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:33,160 [api1.py:131] throughput: 0.006945588863462108
+(INFO) 2023-04-09 19:58:33,167 [api1.py:131] throughput: 0.008681800349418331
+(INFO) 2023-04-09 19:58:33,194 [api1.py:116] Design point: {'core_buffer_size': 128, 'core_buffer_bw': 2048, 'core_mac_num': 8, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 16, 'core_array_w': 32, 'wafer_mem_bw': 900, 'reticle_array_h': 19, 'reticle_array_w': 12}
+(INFO) 2023-04-09 19:58:33,194 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:33,199 [api1.py:116] Design point: {'core_buffer_size': 48, 'core_buffer_bw': 256, 'core_mac_num': 64, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 24, 'wafer_mem_bw': 900, 'reticle_array_h': 16, 'reticle_array_w': 12}
+(INFO) 2023-04-09 19:58:33,200 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:33,204 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:33,207 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:33,221 [api1.py:131] throughput: 0.005788071437064676
+(INFO) 2023-04-09 19:58:33,258 [api1.py:116] Design point: {'core_buffer_size': 128, 'core_buffer_bw': 2048, 'core_mac_num': 64, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 40, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 8, 'reticle_array_w': 30}
+(INFO) 2023-04-09 19:58:33,258 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:33,261 [api1.py:131] throughput: 0.006945591389563201
+(INFO) 2023-04-09 19:58:33,268 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:33,268 [api1.py:131] throughput: 0.0069455906312028875
+(INFO) 2023-04-09 19:58:33,307 [api1.py:116] Design point: {'core_buffer_size': 48, 'core_buffer_bw': 2048, 'core_mac_num': 128, 'core_noc_bw': 256, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 40, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 7, 'reticle_array_w': 23}
+(INFO) 2023-04-09 19:58:33,308 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:33,308 [api1.py:116] Design point: {'core_buffer_size': 48, 'core_buffer_bw': 1024, 'core_mac_num': 32, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 8, 'core_array_w': 32, 'wafer_mem_bw': 900, 'reticle_array_h': 35, 'reticle_array_w': 13}
+(INFO) 2023-04-09 19:58:33,309 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:33,309 [api1.py:131] throughput: 0.004961254296328738
+(INFO) 2023-04-09 19:58:33,317 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:33,322 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:33,348 [api1.py:116] Design point: {'core_buffer_size': 128, 'core_buffer_bw': 512, 'core_mac_num': 16, 'core_noc_bw': 256, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 32, 'core_array_w': 40, 'wafer_mem_bw': 900, 'reticle_array_h': 9, 'reticle_array_w': 9}
+(INFO) 2023-04-09 19:58:33,348 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:33,354 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:33,382 [api1.py:131] throughput: 0.00694558833653955
+(INFO) 2023-04-09 19:58:33,417 [api1.py:116] Design point: {'core_buffer_size': 48, 'core_buffer_bw': 256, 'core_mac_num': 64, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 16, 'reticle_array_w': 35}
+(INFO) 2023-04-09 19:58:33,417 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:33,428 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:33,440 [api1.py:131] throughput: 0.008681793729397062
+(INFO) 2023-04-09 19:58:33,449 [api1.py:131] throughput: 0.011575332580659792
+(INFO) 2023-04-09 19:58:33,450 [api1.py:131] throughput: 0.006945589085324262
+(INFO) 2023-04-09 19:58:33,478 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 512, 'core_mac_num': 4, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 72, 'core_array_w': 40, 'wafer_mem_bw': 900, 'reticle_array_h': 6, 'reticle_array_w': 13}
+(INFO) 2023-04-09 19:58:33,479 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:33,482 [api1.py:116] Design point: {'core_buffer_size': 128, 'core_buffer_bw': 512, 'core_mac_num': 8, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 40, 'core_array_w': 32, 'wafer_mem_bw': 900, 'reticle_array_h': 8, 'reticle_array_w': 15}
+(INFO) 2023-04-09 19:58:33,482 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:33,486 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:33,489 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:33,488 [api1.py:116] Design point: {'core_buffer_size': 256, 'core_buffer_bw': 1024, 'core_mac_num': 4, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 48, 'core_array_w': 24, 'wafer_mem_bw': 900, 'reticle_array_h': 7, 'reticle_array_w': 13}
+(INFO) 2023-04-09 19:58:33,489 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:33,496 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:33,537 [api1.py:131] throughput: 0.011575337751124067
+(INFO) 2023-04-09 19:58:33,571 [api1.py:116] Design point: {'core_buffer_size': 128, 'core_buffer_bw': 512, 'core_mac_num': 4, 'core_noc_bw': 2048, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 16, 'core_array_w': 32, 'wafer_mem_bw': 900, 'reticle_array_h': 12, 'reticle_array_w': 8}
+(INFO) 2023-04-09 19:58:33,572 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:33,572 [api1.py:131] throughput: 0.017361749311208867
+(INFO) 2023-04-09 19:58:33,578 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:33,595 [api1.py:131] throughput: 0.011575320497801208
+(INFO) 2023-04-09 19:58:33,612 [api1.py:116] Design point: {'core_buffer_size': 64, 'core_buffer_bw': 256, 'core_mac_num': 16, 'core_noc_bw': 256, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 16, 'core_array_w': 40, 'wafer_mem_bw': 900, 'reticle_array_h': 17, 'reticle_array_w': 11}
+(INFO) 2023-04-09 19:58:33,612 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:33,617 [api1.py:131] throughput: 0.011575327213853657
+(INFO) 2023-04-09 19:58:33,620 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:33,633 [api1.py:116] Design point: {'core_buffer_size': 64, 'core_buffer_bw': 2048, 'core_mac_num': 16, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 48, 'core_array_w': 40, 'wafer_mem_bw': 900, 'reticle_array_h': 6, 'reticle_array_w': 11}
+(INFO) 2023-04-09 19:58:33,634 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:33,638 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:33,653 [api1.py:116] Design point: {'core_buffer_size': 48, 'core_buffer_bw': 512, 'core_mac_num': 4, 'core_noc_bw': 2048, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 16, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 16, 'reticle_array_w': 16}
+(INFO) 2023-04-09 19:58:33,653 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:33,661 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:33,690 [api1.py:131] throughput: 0.011575321945225646
+(INFO) 2023-04-09 19:58:33,704 [api1.py:131] throughput: 0.017361736049430775
+(INFO) 2023-04-09 19:58:33,720 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 256, 'core_mac_num': 16, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 40, 'wafer_mem_bw': 900, 'reticle_array_h': 18, 'reticle_array_w': 11}
+(INFO) 2023-04-09 19:58:33,720 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:33,727 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:33,740 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 512, 'core_mac_num': 64, 'core_noc_bw': 512, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 15, 'reticle_array_w': 12}
+(INFO) 2023-04-09 19:58:33,740 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:33,747 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:33,810 [api1.py:131] throughput: 0.006945588209740017
+(INFO) 2023-04-09 19:58:33,825 [api1.py:131] throughput: 0.005788072870218663
+(INFO) 2023-04-09 19:58:33,846 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 128, 'core_mac_num': 4, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 32, 'core_array_w': 72, 'wafer_mem_bw': 900, 'reticle_array_h': 15, 'reticle_array_w': 9}
+(INFO) 2023-04-09 19:58:33,847 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:33,853 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:33,861 [api1.py:116] Design point: {'core_buffer_size': 256, 'core_buffer_bw': 2048, 'core_mac_num': 32, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 32, 'core_array_w': 32, 'wafer_mem_bw': 900, 'reticle_array_h': 9, 'reticle_array_w': 8}
+(INFO) 2023-04-09 19:58:33,862 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:33,867 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:33,884 [api1.py:131] throughput: 0.0043411303502960494
+(INFO) 2023-04-09 19:58:33,919 [api1.py:116] Design point: {'core_buffer_size': 128, 'core_buffer_bw': 1024, 'core_mac_num': 4, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 48, 'core_array_w': 32, 'wafer_mem_bw': 900, 'reticle_array_h': 6, 'reticle_array_w': 14}
+(INFO) 2023-04-09 19:58:33,919 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:33,922 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:33,928 [api1.py:131] throughput: 0.006945588020386053
+(INFO) 2023-04-09 19:58:33,932 [api1.py:131] throughput: 0.004961253691414062
+(INFO) 2023-04-09 19:58:33,958 [api1.py:131] throughput: 0.011575313164189619
+(INFO) 2023-04-09 19:58:33,963 [api1.py:131] throughput: 0.006945588480245695
+(INFO) 2023-04-09 19:58:33,965 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 2048, 'core_mac_num': 32, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 32, 'core_array_w': 40, 'wafer_mem_bw': 900, 'reticle_array_h': 10, 'reticle_array_w': 11}
+(INFO) 2023-04-09 19:58:33,966 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:33,971 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:33,972 [api1.py:116] Design point: {'core_buffer_size': 256, 'core_buffer_bw': 2048, 'core_mac_num': 4, 'core_noc_bw': 512, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 8, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 29, 'reticle_array_w': 16}
+(INFO) 2023-04-09 19:58:33,973 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:33,981 [api1.py:131] throughput: 0.008681800754726084
+(INFO) 2023-04-09 19:58:33,984 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:33,993 [api1.py:116] Design point: {'core_buffer_size': 128, 'core_buffer_bw': 512, 'core_mac_num': 4, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 16, 'core_array_w': 32, 'wafer_mem_bw': 900, 'reticle_array_h': 20, 'reticle_array_w': 15}
+(INFO) 2023-04-09 19:58:33,994 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:33,993 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 256, 'core_mac_num': 4, 'core_noc_bw': 1024, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 40, 'wafer_mem_bw': 900, 'reticle_array_h': 13, 'reticle_array_w': 9}
+(INFO) 2023-04-09 19:58:33,994 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:33,996 [api1.py:131] throughput: 0.01736175452119866
+(INFO) 2023-04-09 19:58:34,002 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:34,005 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:34,020 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 128, 'core_mac_num': 256, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 48, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 10, 'reticle_array_w': 11}
+(INFO) 2023-04-09 19:58:34,021 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:34,029 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:34,030 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 128, 'core_mac_num': 64, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 32, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 13, 'reticle_array_w': 28}
+(INFO) 2023-04-09 19:58:34,030 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:34,040 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:34,078 [api1.py:131] throughput: 0.008681798359726278
+(INFO) 2023-04-09 19:58:34,082 [api1.py:131] throughput: 0.004961254676560895
+(INFO) 2023-04-09 19:58:34,095 [api1.py:131] throughput: 0.0028941369955520625
+(INFO) 2023-04-09 19:58:34,113 [api1.py:116] Design point: {'core_buffer_size': 48, 'core_buffer_bw': 512, 'core_mac_num': 4, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 40, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 13, 'reticle_array_w': 30}
+(INFO) 2023-04-09 19:58:34,114 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:34,115 [api1.py:116] Design point: {'core_buffer_size': 64, 'core_buffer_bw': 2048, 'core_mac_num': 256, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 48, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 6, 'reticle_array_w': 8}
+(INFO) 2023-04-09 19:58:34,116 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:34,121 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:34,121 [api1.py:131] throughput: 0.008681799133495302
+(INFO) 2023-04-09 19:58:34,125 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:34,140 [api1.py:131] throughput: 0.008681798359726278
+(INFO) 2023-04-09 19:58:34,142 [api1.py:116] Design point: {'core_buffer_size': 48, 'core_buffer_bw': 256, 'core_mac_num': 32, 'core_noc_bw': 2048, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 32, 'core_array_w': 24, 'wafer_mem_bw': 900, 'reticle_array_h': 7, 'reticle_array_w': 10}
+(INFO) 2023-04-09 19:58:34,142 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:34,149 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:34,155 [api1.py:116] Design point: {'core_buffer_size': 64, 'core_buffer_bw': 256, 'core_mac_num': 16, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 40, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 7, 'reticle_array_w': 30}
+(INFO) 2023-04-09 19:58:34,156 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:34,157 [api1.py:131] throughput: 0.004341130335674631
+(INFO) 2023-04-09 19:58:34,161 [api1.py:131] throughput: 0.0031572303891872246
+(INFO) 2023-04-09 19:58:34,163 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:34,177 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 512, 'core_mac_num': 4, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 64, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 8, 'reticle_array_w': 59}
+(INFO) 2023-04-09 19:58:34,178 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:34,181 [api1.py:131] throughput: 0.017361703723931553
+(INFO) 2023-04-09 19:58:34,194 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:34,202 [api1.py:116] Design point: {'core_buffer_size': 64, 'core_buffer_bw': 1024, 'core_mac_num': 8, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 40, 'core_array_w': 72, 'wafer_mem_bw': 900, 'reticle_array_h': 8, 'reticle_array_w': 8}
+(INFO) 2023-04-09 19:58:34,202 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:34,208 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:34,209 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 256, 'core_mac_num': 16, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 8, 'core_array_w': 32, 'wafer_mem_bw': 900, 'reticle_array_h': 53, 'reticle_array_w': 15}
+(INFO) 2023-04-09 19:58:34,210 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:34,220 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 128, 'core_mac_num': 8, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 72, 'core_array_w': 24, 'wafer_mem_bw': 900, 'reticle_array_h': 6, 'reticle_array_w': 23}
+(INFO) 2023-04-09 19:58:34,221 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:34,226 [api1.py:131] throughput: 0.011575312160643492
+(INFO) 2023-04-09 19:58:34,228 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:34,230 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:34,261 [api1.py:116] Design point: {'core_buffer_size': 256, 'core_buffer_bw': 2048, 'core_mac_num': 8, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 13, 'reticle_array_w': 36}
+(INFO) 2023-04-09 19:58:34,261 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:34,273 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:34,276 [api1.py:131] throughput: 0.0115753087736766
+(INFO) 2023-04-09 19:58:34,308 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 512, 'core_mac_num': 64, 'core_noc_bw': 512, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 8, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 42, 'reticle_array_w': 12}
+(INFO) 2023-04-09 19:58:34,309 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:34,321 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:34,344 [api1.py:131] throughput: 0.0049612539575765
+(INFO) 2023-04-09 19:58:34,378 [api1.py:116] Design point: {'core_buffer_size': 48, 'core_buffer_bw': 2048, 'core_mac_num': 8, 'core_noc_bw': 1024, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 10, 'reticle_array_w': 20}
+(INFO) 2023-04-09 19:58:34,379 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:34,379 [api1.py:131] throughput: 0.01736178102423863
+(INFO) 2023-04-09 19:58:34,389 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:34,406 [api1.py:131] throughput: 0.011575336245798548
+(INFO) 2023-04-09 19:58:34,414 [api1.py:116] Design point: {'core_buffer_size': 48, 'core_buffer_bw': 512, 'core_mac_num': 128, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 56, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 8, 'reticle_array_w': 15}
+(INFO) 2023-04-09 19:58:34,414 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:34,422 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:34,443 [api1.py:116] Design point: {'core_buffer_size': 64, 'core_buffer_bw': 256, 'core_mac_num': 128, 'core_noc_bw': 256, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 32, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 9, 'reticle_array_w': 25}
+(INFO) 2023-04-09 19:58:34,443 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:34,454 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:34,461 [api1.py:131] throughput: 0.005788072522787328
+(INFO) 2023-04-09 19:58:34,502 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 256, 'core_mac_num': 128, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 72, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 6, 'reticle_array_w': 9}
+(INFO) 2023-04-09 19:58:34,502 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:34,506 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:34,529 [api1.py:131] throughput: 0.004961254504920039
+(INFO) 2023-04-09 19:58:34,550 [api1.py:131] throughput: 0.011575327213853657
+(INFO) 2023-04-09 19:58:34,562 [api1.py:131] throughput: 0.017361716893564853
+(INFO) 2023-04-09 19:58:34,562 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 2048, 'core_mac_num': 4, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 40, 'core_array_w': 48, 'wafer_mem_bw': 900, 'reticle_array_h': 7, 'reticle_array_w': 11}
+(INFO) 2023-04-09 19:58:34,563 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:34,567 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:34,581 [api1.py:131] throughput: 0.005788072638597768
+(INFO) 2023-04-09 19:58:34,585 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 512, 'core_mac_num': 32, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 40, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 13, 'reticle_array_w': 38}
+(INFO) 2023-04-09 19:58:34,585 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:34,595 [api1.py:116] Design point: {'core_buffer_size': 128, 'core_buffer_bw': 1024, 'core_mac_num': 32, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 13, 'reticle_array_w': 41}
+(INFO) 2023-04-09 19:58:34,595 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:34,597 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:34,602 [api1.py:131] throughput: 0.008681804179578105
+(INFO) 2023-04-09 19:58:34,612 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:34,614 [api1.py:116] Design point: {'core_buffer_size': 48, 'core_buffer_bw': 512, 'core_mac_num': 8, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 56, 'core_array_w': 24, 'wafer_mem_bw': 900, 'reticle_array_h': 9, 'reticle_array_w': 18}
+(INFO) 2023-04-09 19:58:34,614 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:34,620 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:34,634 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 2048, 'core_mac_num': 16, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 13, 'reticle_array_w': 30}
+(INFO) 2023-04-09 19:58:34,635 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:34,645 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:34,648 [api1.py:131] throughput: 0.011575315444976917
+(INFO) 2023-04-09 19:58:34,656 [api1.py:131] throughput: 0.008681804969928954
+(INFO) 2023-04-09 19:58:34,682 [api1.py:116] Design point: {'core_buffer_size': 128, 'core_buffer_bw': 2048, 'core_mac_num': 4, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 40, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 8, 'reticle_array_w': 25}
+(INFO) 2023-04-09 19:58:34,682 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:34,689 [api1.py:116] Design point: {'core_buffer_size': 256, 'core_buffer_bw': 1024, 'core_mac_num': 4, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 16, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 19, 'reticle_array_w': 19}
+(INFO) 2023-04-09 19:58:34,690 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:34,691 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:34,702 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:34,774 [api1.py:131] throughput: 0.008681802511060117
+(INFO) 2023-04-09 19:58:34,810 [api1.py:116] Design point: {'core_buffer_size': 48, 'core_buffer_bw': 512, 'core_mac_num': 8, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 64, 'core_array_w': 40, 'wafer_mem_bw': 900, 'reticle_array_h': 8, 'reticle_array_w': 12}
+(INFO) 2023-04-09 19:58:34,811 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:34,818 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:34,820 [api1.py:131] throughput: 0.011575342930467403
+(INFO) 2023-04-09 19:58:34,833 [api1.py:131] throughput: 0.005788072908822148
+(INFO) 2023-04-09 19:58:34,860 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 256, 'core_mac_num': 64, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 32, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 14, 'reticle_array_w': 27}
+(INFO) 2023-04-09 19:58:34,860 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:34,874 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:34,875 [api1.py:116] Design point: {'core_buffer_size': 64, 'core_buffer_bw': 256, 'core_mac_num': 128, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 16, 'core_array_w': 24, 'wafer_mem_bw': 900, 'reticle_array_h': 20, 'reticle_array_w': 9}
+(INFO) 2023-04-09 19:58:34,876 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:34,882 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:34,909 [api1.py:131] throughput: 0.01157533564366845
+(INFO) 2023-04-09 19:58:34,921 [api1.py:131] throughput: 0.011575321945225646
+(INFO) 2023-04-09 19:58:34,928 [api1.py:131] throughput: 0.006945591272251963
+(INFO) 2023-04-09 19:58:34,947 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 512, 'core_mac_num': 4, 'core_noc_bw': 4096, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 32, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 6, 'reticle_array_w': 13}
+(INFO) 2023-04-09 19:58:34,948 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:34,952 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:34,956 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 2048, 'core_mac_num': 64, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 40, 'core_array_w': 32, 'wafer_mem_bw': 900, 'reticle_array_h': 8, 'reticle_array_w': 10}
+(INFO) 2023-04-09 19:58:34,957 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:34,963 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:34,965 [api1.py:116] Design point: {'core_buffer_size': 128, 'core_buffer_bw': 1024, 'core_mac_num': 16, 'core_noc_bw': 512, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 32, 'core_array_w': 32, 'wafer_mem_bw': 900, 'reticle_array_h': 8, 'reticle_array_w': 10}
+(INFO) 2023-04-09 19:58:34,966 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:34,971 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:35,032 [api1.py:131] throughput: 0.01157531667660243
+(INFO) 2023-04-09 19:58:35,035 [api1.py:131] throughput: 0.017361749311208867
+(INFO) 2023-04-09 19:58:35,056 [api1.py:131] throughput: 0.01157531667660243
+(INFO) 2023-04-09 19:58:35,061 [api1.py:131] throughput: 0.0086818033892274
+(INFO) 2023-04-09 19:58:35,064 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 1024, 'core_mac_num': 8, 'core_noc_bw': 512, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 8, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 31, 'reticle_array_w': 27}
+(INFO) 2023-04-09 19:58:35,064 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:35,074 [api1.py:116] Design point: {'core_buffer_size': 128, 'core_buffer_bw': 2048, 'core_mac_num': 4, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 48, 'wafer_mem_bw': 900, 'reticle_array_h': 13, 'reticle_array_w': 8}
+(INFO) 2023-04-09 19:58:35,075 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:35,081 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:35,081 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:35,093 [api1.py:116] Design point: {'core_buffer_size': 48, 'core_buffer_bw': 1024, 'core_mac_num': 16, 'core_noc_bw': 1024, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 8, 'core_array_w': 24, 'wafer_mem_bw': 900, 'reticle_array_h': 28, 'reticle_array_w': 14}
+(INFO) 2023-04-09 19:58:35,093 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:35,095 [api1.py:131] throughput: 0.005788072638597768
+(INFO) 2023-04-09 19:58:35,097 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 512, 'core_mac_num': 4, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 24, 'wafer_mem_bw': 900, 'reticle_array_h': 21, 'reticle_array_w': 24}
+(INFO) 2023-04-09 19:58:35,098 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:35,103 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:35,105 [api1.py:131] throughput: 0.003858804317578792
+(INFO) 2023-04-09 19:58:35,108 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:35,131 [api1.py:116] Design point: {'core_buffer_size': 512, 'core_buffer_bw': 2048, 'core_mac_num': 32, 'core_noc_bw': 512, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 16, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 10, 'reticle_array_w': 15}
+(INFO) 2023-04-09 19:58:35,132 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:35,139 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:35,141 [api1.py:116] Design point: {'core_buffer_size': 128, 'core_buffer_bw': 1024, 'core_mac_num': 4, 'core_noc_bw': 256, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 8, 'core_array_w': 40, 'wafer_mem_bw': 900, 'reticle_array_h': 33, 'reticle_array_w': 10}
+(INFO) 2023-04-09 19:58:35,142 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:35,151 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:35,180 [api1.py:131] throughput: 0.011575323971620467
+(INFO) 2023-04-09 19:58:35,202 [api1.py:131] throughput: 0.005788072979933829
+(INFO) 2023-04-09 19:58:35,212 [api1.py:131] throughput: 0.0057880730735931215
+(INFO) 2023-04-09 19:58:35,217 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 128, 'core_mac_num': 16, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 32, 'core_array_w': 48, 'wafer_mem_bw': 900, 'reticle_array_h': 15, 'reticle_array_w': 10}
+(INFO) 2023-04-09 19:58:35,218 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:35,225 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:35,245 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 128, 'core_mac_num': 16, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 16, 'core_array_w': 32, 'wafer_mem_bw': 900, 'reticle_array_h': 28, 'reticle_array_w': 15}
+(INFO) 2023-04-09 19:58:35,245 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:35,249 [api1.py:116] Design point: {'core_buffer_size': 64, 'core_buffer_bw': 1024, 'core_mac_num': 128, 'core_noc_bw': 2048, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 8, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 24, 'reticle_array_w': 10}
+(INFO) 2023-04-09 19:58:35,250 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:35,256 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:35,258 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:35,282 [api1.py:131] throughput: 0.008681801808526419
+(INFO) 2023-04-09 19:58:35,285 [api1.py:131] throughput: 0.005788072587126461
+(INFO) 2023-04-09 19:58:35,319 [api1.py:116] Design point: {'core_buffer_size': 128, 'core_buffer_bw': 1024, 'core_mac_num': 64, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 24, 'wafer_mem_bw': 900, 'reticle_array_h': 13, 'reticle_array_w': 11}
+(INFO) 2023-04-09 19:58:35,319 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:35,325 [api1.py:116] Design point: {'core_buffer_size': 64, 'core_buffer_bw': 512, 'core_mac_num': 8, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 48, 'wafer_mem_bw': 900, 'reticle_array_h': 18, 'reticle_array_w': 8}
+(INFO) 2023-04-09 19:58:35,326 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:35,327 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:35,331 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:35,367 [api1.py:131] throughput: 0.008681801808526419
+(INFO) 2023-04-09 19:58:35,388 [api1.py:131] throughput: 0.0049612549217878405
+(INFO) 2023-04-09 19:58:35,405 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 1024, 'core_mac_num': 8, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 8, 'core_array_w': 56, 'wafer_mem_bw': 900, 'reticle_array_h': 37, 'reticle_array_w': 12}
+(INFO) 2023-04-09 19:58:35,411 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:35,420 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:35,428 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 512, 'core_mac_num': 32, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 64, 'core_array_w': 24, 'wafer_mem_bw': 900, 'reticle_array_h': 8, 'reticle_array_w': 14}
+(INFO) 2023-04-09 19:58:35,428 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:35,435 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:35,474 [api1.py:131] throughput: 0.006945586711555101
+(INFO) 2023-04-09 19:58:35,477 [api1.py:131] throughput: 0.011575330726274995
+(INFO) 2023-04-09 19:58:35,511 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 1024, 'core_mac_num': 16, 'core_noc_bw': 512, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 16, 'core_array_w': 32, 'wafer_mem_bw': 900, 'reticle_array_h': 16, 'reticle_array_w': 13}
+(INFO) 2023-04-09 19:58:35,512 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:35,513 [api1.py:116] Design point: {'core_buffer_size': 48, 'core_buffer_bw': 512, 'core_mac_num': 256, 'core_noc_bw': 512, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 40, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 9, 'reticle_array_w': 8}
+(INFO) 2023-04-09 19:58:35,513 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:35,519 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:35,520 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:35,521 [api1.py:131] throughput: 0.008681806981731769
+(INFO) 2023-04-09 19:58:35,527 [api1.py:131] throughput: 0.008681805365104435
+(INFO) 2023-04-09 19:58:35,542 [api1.py:131] throughput: 0.005788072646869943
+(INFO) 2023-04-09 19:58:35,543 [api1.py:131] throughput: 0.011575325708530879
+(INFO) 2023-04-09 19:58:35,561 [api1.py:116] Design point: {'core_buffer_size': 64, 'core_buffer_bw': 256, 'core_mac_num': 4, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 48, 'core_array_w': 80, 'wafer_mem_bw': 900, 'reticle_array_h': 7, 'reticle_array_w': 8}
+(INFO) 2023-04-09 19:58:35,561 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:35,564 [api1.py:116] Design point: {'core_buffer_size': 128, 'core_buffer_bw': 512, 'core_mac_num': 128, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 16, 'core_array_w': 24, 'wafer_mem_bw': 900, 'reticle_array_h': 18, 'reticle_array_w': 8}
+(INFO) 2023-04-09 19:58:35,565 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:35,565 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:35,571 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:35,578 [api1.py:116] Design point: {'core_buffer_size': 256, 'core_buffer_bw': 2048, 'core_mac_num': 128, 'core_noc_bw': 512, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 32, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 8, 'reticle_array_w': 18}
+(INFO) 2023-04-09 19:58:35,579 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:35,581 [api1.py:116] Design point: {'core_buffer_size': 64, 'core_buffer_bw': 512, 'core_mac_num': 32, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 48, 'core_array_w': 32, 'wafer_mem_bw': 900, 'reticle_array_h': 9, 'reticle_array_w': 9}
+(INFO) 2023-04-09 19:58:35,582 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:35,585 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:35,587 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:35,591 [api1.py:131] throughput: 0.011575313164189619
+(INFO) 2023-04-09 19:58:35,622 [api1.py:116] Design point: {'core_buffer_size': 128, 'core_buffer_bw': 2048, 'core_mac_num': 4, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 13, 'reticle_array_w': 23}
+(INFO) 2023-04-09 19:58:35,623 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:35,629 [api1.py:131] throughput: 0.011575303128736187
+(INFO) 2023-04-09 19:58:35,632 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:35,665 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 512, 'core_mac_num': 8, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 80, 'core_array_w': 56, 'wafer_mem_bw': 900, 'reticle_array_h': 6, 'reticle_array_w': 9}
+(INFO) 2023-04-09 19:58:35,665 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:35,669 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:35,682 [api1.py:131] throughput: 0.008681793729397062
+(INFO) 2023-04-09 19:58:35,694 [api1.py:131] throughput: 0.003472940141352109
+(INFO) 2023-04-09 19:58:35,700 [api1.py:131] throughput: 0.0057880712199201954
+(INFO) 2023-04-09 19:58:35,720 [api1.py:116] Design point: {'core_buffer_size': 64, 'core_buffer_bw': 512, 'core_mac_num': 4, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 18, 'reticle_array_w': 47}
+(INFO) 2023-04-09 19:58:35,721 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:35,724 [api1.py:131] throughput: 0.017361716893564853
+(INFO) 2023-04-09 19:58:35,730 [api1.py:131] throughput: 0.011575330726274995
+(INFO) 2023-04-09 19:58:35,734 [api1.py:131] throughput: 0.011575330726274995
+(INFO) 2023-04-09 19:58:35,736 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 256, 'core_mac_num': 4, 'core_noc_bw': 2048, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 8, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 30, 'reticle_array_w': 18}
+(INFO) 2023-04-09 19:58:35,737 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:35,737 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:35,737 [api1.py:116] Design point: {'core_buffer_size': 64, 'core_buffer_bw': 512, 'core_mac_num': 32, 'core_noc_bw': 1024, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 8, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 35, 'reticle_array_w': 26}
+(INFO) 2023-04-09 19:58:35,738 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:35,750 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:35,756 [api1.py:116] Design point: {'core_buffer_size': 128, 'core_buffer_bw': 512, 'core_mac_num': 128, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 40, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 8, 'reticle_array_w': 12}
+(INFO) 2023-04-09 19:58:35,757 [api1.py:131] throughput: 0.004961254400028411
+(INFO) 2023-04-09 19:58:35,757 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:35,757 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:35,765 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:35,766 [api1.py:116] Design point: {'core_buffer_size': 48, 'core_buffer_bw': 256, 'core_mac_num': 4, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 40, 'core_array_w': 64, 'wafer_mem_bw': 900, 'reticle_array_h': 9, 'reticle_array_w': 9}
+(INFO) 2023-04-09 19:58:35,767 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:35,770 [api1.py:116] Design point: {'core_buffer_size': 128, 'core_buffer_bw': 512, 'core_mac_num': 16, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 40, 'core_array_w': 40, 'wafer_mem_bw': 900, 'reticle_array_h': 8, 'reticle_array_w': 10}
+(INFO) 2023-04-09 19:58:35,771 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:35,773 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:35,777 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:35,799 [api1.py:116] Design point: {'core_buffer_size': 48, 'core_buffer_bw': 256, 'core_mac_num': 64, 'core_noc_bw': 2048, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 24, 'wafer_mem_bw': 900, 'reticle_array_h': 9, 'reticle_array_w': 8}
+(INFO) 2023-04-09 19:58:35,799 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:35,805 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:35,857 [api1.py:131] throughput: 0.01157531667660243
+(INFO) 2023-04-09 19:58:35,859 [api1.py:131] throughput: 0.008681793729397062
+(INFO) 2023-04-09 19:58:35,864 [api1.py:131] throughput: 0.011575321945225646
+(INFO) 2023-04-09 19:58:35,887 [api1.py:131] throughput: 0.011575313164189619
+(INFO) 2023-04-09 19:58:35,894 [api1.py:116] Design point: {'core_buffer_size': 128, 'core_buffer_bw': 1024, 'core_mac_num': 8, 'core_noc_bw': 2048, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 8, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 24, 'reticle_array_w': 29}
+(INFO) 2023-04-09 19:58:35,894 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 512, 'core_mac_num': 128, 'core_noc_bw': 4096, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 32, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 6, 'reticle_array_w': 12}
+(INFO) 2023-04-09 19:58:35,895 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:35,895 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:35,899 [api1.py:116] Design point: {'core_buffer_size': 48, 'core_buffer_bw': 256, 'core_mac_num': 8, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 8, 'core_array_w': 64, 'wafer_mem_bw': 900, 'reticle_array_h': 43, 'reticle_array_w': 10}
+(INFO) 2023-04-09 19:58:35,900 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:35,901 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:35,909 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:35,911 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:35,923 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 256, 'core_mac_num': 4, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 16, 'core_array_w': 64, 'wafer_mem_bw': 900, 'reticle_array_h': 27, 'reticle_array_w': 9}
+(INFO) 2023-04-09 19:58:35,924 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:35,933 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:35,954 [api1.py:131] throughput: 0.005788072145144621
+(INFO) 2023-04-09 19:58:35,961 [api1.py:131] throughput: 0.006945591028117781
+(INFO) 2023-04-09 19:58:35,974 [api1.py:131] throughput: 0.017361743232891393
+(INFO) 2023-04-09 19:58:35,987 [api1.py:116] Design point: {'core_buffer_size': 128, 'core_buffer_bw': 512, 'core_mac_num': 64, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 40, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 7, 'reticle_array_w': 17}
+(INFO) 2023-04-09 19:58:35,988 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:35,994 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:36,002 [api1.py:116] Design point: {'core_buffer_size': 256, 'core_buffer_bw': 1024, 'core_mac_num': 4, 'core_noc_bw': 256, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 8, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 33, 'reticle_array_w': 32}
+(INFO) 2023-04-09 19:58:36,003 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:36,011 [api1.py:116] Design point: {'core_buffer_size': 128, 'core_buffer_bw': 512, 'core_mac_num': 8, 'core_noc_bw': 2048, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 8, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 24, 'reticle_array_w': 29}
+(INFO) 2023-04-09 19:58:36,012 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:36,024 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:36,027 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:36,108 [api1.py:131] throughput: 0.011575327036756839
+(INFO) 2023-04-09 19:58:36,145 [api1.py:116] Design point: {'core_buffer_size': 48, 'core_buffer_bw': 1024, 'core_mac_num': 16, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 32, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 10, 'reticle_array_w': 57}
+(INFO) 2023-04-09 19:58:36,145 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:36,159 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:36,196 [api1.py:131] throughput: 0.008681805438285083
+(INFO) 2023-04-09 19:58:36,232 [api1.py:116] Design point: {'core_buffer_size': 48, 'core_buffer_bw': 2048, 'core_mac_num': 32, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 32, 'core_array_w': 24, 'wafer_mem_bw': 900, 'reticle_array_h': 10, 'reticle_array_w': 17}
+(INFO) 2023-04-09 19:58:36,233 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:36,242 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:36,265 [api1.py:131] throughput: 0.0026715181758888737
+(INFO) 2023-04-09 19:58:36,315 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 128, 'core_mac_num': 4, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 32, 'core_array_w': 32, 'wafer_mem_bw': 900, 'reticle_array_h': 14, 'reticle_array_w': 19}
+(INFO) 2023-04-09 19:58:36,315 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:36,325 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:36,387 [api1.py:131] throughput: 0.0043411300644473315
+(INFO) 2023-04-09 19:58:36,413 [api1.py:131] throughput: 0.008681802924315286
+(INFO) 2023-04-09 19:58:36,427 [api1.py:116] Design point: {'core_buffer_size': 48, 'core_buffer_bw': 2048, 'core_mac_num': 32, 'core_noc_bw': 256, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 8, 'core_array_w': 40, 'wafer_mem_bw': 900, 'reticle_array_h': 33, 'reticle_array_w': 9}
+(INFO) 2023-04-09 19:58:36,428 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:36,431 [api1.py:131] throughput: 0.008681807984291658
+(INFO) 2023-04-09 19:58:36,439 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:36,450 [api1.py:116] Design point: {'core_buffer_size': 128, 'core_buffer_bw': 512, 'core_mac_num': 64, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 8, 'core_array_w': 24, 'wafer_mem_bw': 900, 'reticle_array_h': 36, 'reticle_array_w': 12}
+(INFO) 2023-04-09 19:58:36,451 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:36,459 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 1024, 'core_mac_num': 16, 'core_noc_bw': 512, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 32, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 8, 'reticle_array_w': 25}
+(INFO) 2023-04-09 19:58:36,460 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:36,463 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:36,467 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:36,604 [api1.py:131] throughput: 0.005788071882782347
+(INFO) 2023-04-09 19:58:36,641 [api1.py:116] Design point: {'core_buffer_size': 48, 'core_buffer_bw': 512, 'core_mac_num': 4, 'core_noc_bw': 512, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 32, 'wafer_mem_bw': 900, 'reticle_array_h': 15, 'reticle_array_w': 11}
+(INFO) 2023-04-09 19:58:36,641 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:36,649 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:36,669 [api1.py:131] throughput: 0.01157533564366845
+(INFO) 2023-04-09 19:58:36,676 [api1.py:131] throughput: 0.008681806502731015
+(INFO) 2023-04-09 19:58:36,697 [api1.py:131] throughput: 0.003157230356421349
+(INFO) 2023-04-09 19:58:36,711 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 128, 'core_mac_num': 32, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 48, 'core_array_w': 40, 'wafer_mem_bw': 900, 'reticle_array_h': 9, 'reticle_array_w': 9}
+(INFO) 2023-04-09 19:58:36,711 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:36,712 [api1.py:116] Design point: {'core_buffer_size': 128, 'core_buffer_bw': 2048, 'core_mac_num': 4, 'core_noc_bw': 4096, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 16, 'core_array_w': 24, 'wafer_mem_bw': 900, 'reticle_array_h': 10, 'reticle_array_w': 8}
+(INFO) 2023-04-09 19:58:36,713 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:36,716 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:36,718 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:36,734 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 2048, 'core_mac_num': 128, 'core_noc_bw': 512, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 40, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 6, 'reticle_array_w': 12}
+(INFO) 2023-04-09 19:58:36,735 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:36,742 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:36,806 [api1.py:131] throughput: 0.008681793729397062
+(INFO) 2023-04-09 19:58:36,806 [api1.py:131] throughput: 0.01157531667660243
+(INFO) 2023-04-09 19:58:36,818 [api1.py:131] throughput: 0.006945587560526473
+(INFO) 2023-04-09 19:58:36,819 [api1.py:131] throughput: 0.017361743232891393
+(INFO) 2023-04-09 19:58:36,844 [api1.py:116] Design point: {'core_buffer_size': 48, 'core_buffer_bw': 1024, 'core_mac_num': 8, 'core_noc_bw': 256, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 12, 'reticle_array_w': 29}
+(INFO) 2023-04-09 19:58:36,844 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:36,845 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 2048, 'core_mac_num': 8, 'core_noc_bw': 512, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 8, 'core_array_w': 24, 'wafer_mem_bw': 900, 'reticle_array_h': 31, 'reticle_array_w': 17}
+(INFO) 2023-04-09 19:58:36,846 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:36,856 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 512, 'core_mac_num': 256, 'core_noc_bw': 512, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 8, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 42, 'reticle_array_w': 8}
+(INFO) 2023-04-09 19:58:36,856 [api1.py:131] throughput: 0.003157230356421349
+(INFO) 2023-04-09 19:58:36,857 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:36,857 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:36,861 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:36,862 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 2048, 'core_mac_num': 16, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 24, 'wafer_mem_bw': 900, 'reticle_array_h': 13, 'reticle_array_w': 19}
+(INFO) 2023-04-09 19:58:36,863 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:36,868 [api1.py:131] throughput: 0.008681808796893004
+(INFO) 2023-04-09 19:58:36,869 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:36,873 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:36,897 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 128, 'core_mac_num': 128, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 8, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 51, 'reticle_array_w': 19}
+(INFO) 2023-04-09 19:58:36,898 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:36,902 [api1.py:116] Design point: {'core_buffer_size': 256, 'core_buffer_bw': 2048, 'core_mac_num': 32, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 8, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 33, 'reticle_array_w': 30}
+(INFO) 2023-04-09 19:58:36,902 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:36,916 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:36,916 [api1.py:131] throughput: 0.004341130302698665
+(INFO) 2023-04-09 19:58:36,922 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:36,959 [api1.py:116] Design point: {'core_buffer_size': 64, 'core_buffer_bw': 1024, 'core_mac_num': 16, 'core_noc_bw': 2048, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 16, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 12, 'reticle_array_w': 31}
+(INFO) 2023-04-09 19:58:36,960 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:36,973 [api1.py:131] throughput: 0.00694559097115314
+(INFO) 2023-04-09 19:58:36,973 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:37,006 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 128, 'core_mac_num': 4, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 48, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 10, 'reticle_array_w': 38}
+(INFO) 2023-04-09 19:58:37,007 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:37,019 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:37,112 [api1.py:131] throughput: 0.0028941369955520625
+(INFO) 2023-04-09 19:58:37,133 [api1.py:131] throughput: 0.005788071699923808
+(INFO) 2023-04-09 19:58:37,159 [api1.py:116] Design point: {'core_buffer_size': 256, 'core_buffer_bw': 1024, 'core_mac_num': 8, 'core_noc_bw': 512, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 11, 'reticle_array_w': 29}
+(INFO) 2023-04-09 19:58:37,160 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:37,170 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:37,178 [api1.py:116] Design point: {'core_buffer_size': 64, 'core_buffer_bw': 1024, 'core_mac_num': 8, 'core_noc_bw': 1024, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 10, 'reticle_array_w': 21}
+(INFO) 2023-04-09 19:58:37,179 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:37,189 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:37,212 [api1.py:131] throughput: 0.011575340761776281
+(INFO) 2023-04-09 19:58:37,240 [api1.py:131] throughput: 0.006945590462400015
+(INFO) 2023-04-09 19:58:37,240 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 256, 'core_mac_num': 8, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 64, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 7, 'reticle_array_w': 30}
+(INFO) 2023-04-09 19:58:37,241 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:37,248 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:37,387 [api1.py:131] throughput: 0.0069455906312028875
+(INFO) 2023-04-09 19:58:37,402 [api1.py:131] throughput: 0.00868180451829988
+(INFO) 2023-04-09 19:58:37,419 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 2048, 'core_mac_num': 8, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 32, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 10, 'reticle_array_w': 61}
+(INFO) 2023-04-09 19:58:37,419 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:37,434 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:37,442 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 128, 'core_mac_num': 64, 'core_noc_bw': 2048, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 16, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 15, 'reticle_array_w': 21}
+(INFO) 2023-04-09 19:58:37,443 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:37,453 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:37,457 [api1.py:131] throughput: 0.011575336245798548
+(INFO) 2023-04-09 19:58:37,463 [api1.py:131] throughput: 0.008681807548969573
+(INFO) 2023-04-09 19:58:37,489 [api1.py:131] throughput: 0.004341130048198692
+(INFO) 2023-04-09 19:58:37,515 [api1.py:131] throughput: 0.006945590224541438
+(INFO) 2023-04-09 19:58:37,568 [api1.py:131] throughput: 0.002315325646562217
+(INFO) 2023-04-09 19:58:37,791 [api1.py:131] throughput: 0.00496125403131848
+(INFO) 2023-04-09 19:58:37,906 [api1.py:116] Design point: {'core_buffer_size': 64, 'core_buffer_bw': 512, 'core_mac_num': 8, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 8, 'core_array_w': 24, 'wafer_mem_bw': 900, 'reticle_array_h': 51, 'reticle_array_w': 17}
+(INFO) 2023-04-09 19:58:37,907 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:37,927 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:38,116 [api1.py:131] throughput: 0.008681808960555117
+(INFO) 2023-04-09 19:58:38,181 [api1.py:116] Design point: {'core_buffer_size': 48, 'core_buffer_bw': 1024, 'core_mac_num': 128, 'core_noc_bw': 2048, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 8, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 24, 'reticle_array_w': 19}
+(INFO) 2023-04-09 19:58:38,181 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:38,181 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 256, 'core_mac_num': 16, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 72, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 7, 'reticle_array_w': 28}
+(INFO) 2023-04-09 19:58:38,182 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:38,182 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 1024, 'core_mac_num': 32, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 48, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 7, 'reticle_array_w': 29}
+(INFO) 2023-04-09 19:58:38,183 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:38,191 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:38,192 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:38,194 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:38,206 [api1.py:116] Design point: {'core_buffer_size': 48, 'core_buffer_bw': 1024, 'core_mac_num': 16, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 8, 'core_array_w': 32, 'wafer_mem_bw': 900, 'reticle_array_h': 35, 'reticle_array_w': 15}
+(INFO) 2023-04-09 19:58:38,207 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:38,216 [api1.py:116] Design point: {'core_buffer_size': 128, 'core_buffer_bw': 2048, 'core_mac_num': 4, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 32, 'core_array_w': 24, 'wafer_mem_bw': 900, 'reticle_array_h': 10, 'reticle_array_w': 17}
+(INFO) 2023-04-09 19:58:38,217 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:38,219 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:38,225 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:38,380 [api1.py:131] throughput: 0.011575335385612713
+(INFO) 2023-04-09 19:58:38,394 [api1.py:131] throughput: 0.008681802924315286
+(INFO) 2023-04-09 19:58:38,405 [api1.py:131] throughput: 0.011575335830536406
+(INFO) 2023-04-09 19:58:38,411 [api1.py:116] Design point: {'core_buffer_size': 128, 'core_buffer_bw': 512, 'core_mac_num': 64, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 16, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 19, 'reticle_array_w': 33}
+(INFO) 2023-04-09 19:58:38,412 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:38,429 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:38,436 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 2048, 'core_mac_num': 256, 'core_noc_bw': 256, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 40, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 7, 'reticle_array_w': 15}
+(INFO) 2023-04-09 19:58:38,437 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:38,438 [api1.py:116] Design point: {'core_buffer_size': 128, 'core_buffer_bw': 2048, 'core_mac_num': 4, 'core_noc_bw': 256, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 32, 'core_array_w': 40, 'wafer_mem_bw': 900, 'reticle_array_h': 9, 'reticle_array_w': 9}
+(INFO) 2023-04-09 19:58:38,439 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:38,443 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:38,444 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:38,528 [api1.py:131] throughput: 0.008681793729397062
+(INFO) 2023-04-09 19:58:38,548 [api1.py:131] throughput: 0.011575324203208491
+(INFO) 2023-04-09 19:58:38,557 [api1.py:116] Design point: {'core_buffer_size': 48, 'core_buffer_bw': 256, 'core_mac_num': 8, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 40, 'core_array_w': 56, 'wafer_mem_bw': 900, 'reticle_array_h': 9, 'reticle_array_w': 10}
+(INFO) 2023-04-09 19:58:38,557 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:38,562 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:38,578 [api1.py:116] Design point: {'core_buffer_size': 64, 'core_buffer_bw': 2048, 'core_mac_num': 4, 'core_noc_bw': 256, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 40, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 7, 'reticle_array_w': 26}
+(INFO) 2023-04-09 19:58:38,579 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:38,586 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:38,647 [api1.py:131] throughput: 0.008681795485728252
+(INFO) 2023-04-09 19:58:38,683 [api1.py:116] Design point: {'core_buffer_size': 48, 'core_buffer_bw': 1024, 'core_mac_num': 8, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 32, 'core_array_w': 32, 'wafer_mem_bw': 900, 'reticle_array_h': 9, 'reticle_array_w': 17}
+(INFO) 2023-04-09 19:58:38,684 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:38,692 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:38,702 [api1.py:131] throughput: 0.0038588044797708216
+(INFO) 2023-04-09 19:58:38,744 [api1.py:116] Design point: {'core_buffer_size': 48, 'core_buffer_bw': 1024, 'core_mac_num': 64, 'core_noc_bw': 2048, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 32, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 6, 'reticle_array_w': 13}
+(INFO) 2023-04-09 19:58:38,745 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:38,752 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:38,776 [api1.py:131] throughput: 0.011575334393090756
+(INFO) 2023-04-09 19:58:38,809 [api1.py:116] Design point: {'core_buffer_size': 64, 'core_buffer_bw': 512, 'core_mac_num': 32, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 72, 'core_array_w': 24, 'wafer_mem_bw': 900, 'reticle_array_h': 6, 'reticle_array_w': 12}
+(INFO) 2023-04-09 19:58:38,809 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:38,815 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:38,834 [api1.py:131] throughput: 0.017361749311208867
+(INFO) 2023-04-09 19:58:38,842 [api1.py:131] throughput: 0.004961254621254395
+(INFO) 2023-04-09 19:58:38,847 [api1.py:131] throughput: 0.008681801994491211
+(INFO) 2023-04-09 19:58:38,849 [api1.py:131] throughput: 0.0024807011351111155
+(INFO) 2023-04-09 19:58:38,881 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 256, 'core_mac_num': 8, 'core_noc_bw': 512, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 16, 'core_array_w': 40, 'wafer_mem_bw': 900, 'reticle_array_h': 22, 'reticle_array_w': 10}
+(INFO) 2023-04-09 19:58:38,882 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:38,882 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 1024, 'core_mac_num': 4, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 32, 'core_array_w': 40, 'wafer_mem_bw': 900, 'reticle_array_h': 10, 'reticle_array_w': 17}
+(INFO) 2023-04-09 19:58:38,882 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:38,889 [api1.py:131] throughput: 0.017361743232891393
+(INFO) 2023-04-09 19:58:38,890 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:38,891 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:38,894 [api1.py:131] throughput: 0.0038588048060630635
+(INFO) 2023-04-09 19:58:38,897 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 1024, 'core_mac_num': 16, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 32, 'core_array_w': 32, 'wafer_mem_bw': 900, 'reticle_array_h': 10, 'reticle_array_w': 18}
+(INFO) 2023-04-09 19:58:38,897 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:38,903 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:38,925 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 512, 'core_mac_num': 32, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 16, 'core_array_w': 40, 'wafer_mem_bw': 900, 'reticle_array_h': 28, 'reticle_array_w': 8}
+(INFO) 2023-04-09 19:58:38,926 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:38,937 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:38,943 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 2048, 'core_mac_num': 8, 'core_noc_bw': 1024, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 10, 'reticle_array_w': 39}
+(INFO) 2023-04-09 19:58:38,944 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:38,956 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:39,063 [api1.py:131] throughput: 0.008681802924315286
+(INFO) 2023-04-09 19:58:39,071 [api1.py:131] throughput: 0.004341130312882419
+(INFO) 2023-04-09 19:58:39,083 [api1.py:131] throughput: 0.0086818033892274
+(INFO) 2023-04-09 19:58:39,094 [api1.py:131] throughput: 0.00868180482622879
+(INFO) 2023-04-09 19:58:39,180 [api1.py:131] throughput: 0.01157533699846126
+(INFO) 2023-04-09 19:58:39,198 [api1.py:131] throughput: 0.003858804647860758
+(INFO) 2023-04-09 19:58:39,251 [api1.py:116] Design point: {'core_buffer_size': 48, 'core_buffer_bw': 2048, 'core_mac_num': 32, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 40, 'wafer_mem_bw': 900, 'reticle_array_h': 13, 'reticle_array_w': 9}
+(INFO) 2023-04-09 19:58:39,252 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:39,256 [api1.py:116] Design point: {'core_buffer_size': 64, 'core_buffer_bw': 256, 'core_mac_num': 32, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 48, 'wafer_mem_bw': 900, 'reticle_array_h': 13, 'reticle_array_w': 10}
+(INFO) 2023-04-09 19:58:39,256 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:39,258 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:39,259 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 512, 'core_mac_num': 4, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 80, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 6, 'reticle_array_w': 59}
+(INFO) 2023-04-09 19:58:39,260 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:39,261 [api1.py:116] Design point: {'core_buffer_size': 48, 'core_buffer_bw': 1024, 'core_mac_num': 8, 'core_noc_bw': 2048, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 8, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 24, 'reticle_array_w': 18}
+(INFO) 2023-04-09 19:58:39,261 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:39,265 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:39,271 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:39,273 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:39,372 [api1.py:131] throughput: 0.008681799133495302
+(INFO) 2023-04-09 19:58:39,392 [api1.py:131] throughput: 0.008681800349418331
+(INFO) 2023-04-09 19:58:39,411 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 128, 'core_mac_num': 16, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 16, 'core_array_w': 56, 'wafer_mem_bw': 900, 'reticle_array_h': 25, 'reticle_array_w': 8}
+(INFO) 2023-04-09 19:58:39,412 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:39,415 [api1.py:131] throughput: 0.00868180764496367
+(INFO) 2023-04-09 19:58:39,422 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:39,427 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 1024, 'core_mac_num': 8, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 40, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 8, 'reticle_array_w': 69}
+(INFO) 2023-04-09 19:58:39,427 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:39,440 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:39,628 [api1.py:131] throughput: 0.01157533564366845
+(INFO) 2023-04-09 19:58:39,707 [api1.py:131] throughput: 0.017361806179741247
+(INFO) 2023-04-09 19:58:39,734 [api1.py:131] throughput: 0.00434112989977363
+(INFO) 2023-04-09 19:58:39,827 [api1.py:116] Design point: {'core_buffer_size': 256, 'core_buffer_bw': 1024, 'core_mac_num': 8, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 48, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 6, 'reticle_array_w': 18}
+(INFO) 2023-04-09 19:58:39,828 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:39,836 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:39,939 [api1.py:131] throughput: 0.017361769572297854
+(INFO) 2023-04-09 19:58:40,087 [api1.py:131] throughput: 0.011575343706981047
+(INFO) 2023-04-09 19:58:40,197 [api1.py:116] Design point: {'core_buffer_size': 48, 'core_buffer_bw': 256, 'core_mac_num': 8, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 40, 'core_array_w': 48, 'wafer_mem_bw': 900, 'reticle_array_h': 10, 'reticle_array_w': 13}
+(INFO) 2023-04-09 19:58:40,198 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:40,198 [api1.py:116] Design point: {'core_buffer_size': 64, 'core_buffer_bw': 2048, 'core_mac_num': 64, 'core_noc_bw': 512, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 32, 'core_array_w': 32, 'wafer_mem_bw': 900, 'reticle_array_h': 8, 'reticle_array_w': 8}
+(INFO) 2023-04-09 19:58:40,199 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:40,206 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:40,206 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:40,231 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 2048, 'core_mac_num': 8, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 16, 'core_array_w': 40, 'wafer_mem_bw': 900, 'reticle_array_h': 19, 'reticle_array_w': 13}
+(INFO) 2023-04-09 19:58:40,231 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:40,236 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 512, 'core_mac_num': 32, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 8, 'core_array_w': 40, 'wafer_mem_bw': 900, 'reticle_array_h': 51, 'reticle_array_w': 8}
+(INFO) 2023-04-09 19:58:40,236 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:40,242 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:40,249 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:40,275 [api1.py:131] throughput: 0.0115753087736766
+(INFO) 2023-04-09 19:58:40,325 [api1.py:131] throughput: 0.008681800349418331
+(INFO) 2023-04-09 19:58:40,363 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 1024, 'core_mac_num': 64, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 48, 'core_array_w': 16, 'wafer_mem_bw': 900, 'reticle_array_h': 7, 'reticle_array_w': 22}
+(INFO) 2023-04-09 19:58:40,364 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:40,371 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:40,430 [api1.py:131] throughput: 0.005788071699923808
+(INFO) 2023-04-09 19:58:40,524 [api1.py:131] throughput: 0.011575331866671992
+(INFO) 2023-04-09 19:58:40,601 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 128, 'core_mac_num': 64, 'core_noc_bw': 1024, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 8, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 34, 'reticle_array_w': 23}
+(INFO) 2023-04-09 19:58:40,602 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:40,619 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:40,644 [api1.py:131] throughput: 0.011575342090005696
+(INFO) 2023-04-09 19:58:40,996 [api1.py:116] Design point: {'core_buffer_size': 64, 'core_buffer_bw': 1024, 'core_mac_num': 8, 'core_noc_bw': 512, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 16, 'core_array_w': 32, 'wafer_mem_bw': 900, 'reticle_array_h': 16, 'reticle_array_w': 13}
+(INFO) 2023-04-09 19:58:40,996 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:41,006 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:41,029 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 256, 'core_mac_num': 8, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 56, 'core_array_w': 64, 'wafer_mem_bw': 900, 'reticle_array_h': 9, 'reticle_array_w': 9}
+(INFO) 2023-04-09 19:58:41,030 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:41,037 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:41,113 [api1.py:131] throughput: 0.008681793729397062
+(INFO) 2023-04-09 19:58:41,230 [api1.py:131] throughput: 0.0057880712199201954
+(INFO) 2023-04-09 19:58:41,266 [api1.py:116] Design point: {'core_buffer_size': 48, 'core_buffer_bw': 512, 'core_mac_num': 8, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 72, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 7, 'reticle_array_w': 49}
+(INFO) 2023-04-09 19:58:41,267 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:41,279 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:41,546 [api1.py:131] throughput: 0.0031572303861494675
+(INFO) 2023-04-09 19:58:41,673 [api1.py:131] throughput: 0.011575340915381028
+(INFO) 2023-04-09 19:58:41,843 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 256, 'core_mac_num': 4, 'core_noc_bw': 256, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 17, 'reticle_array_w': 54}
+(INFO) 2023-04-09 19:58:41,843 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:41,845 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 2048, 'core_mac_num': 16, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 40, 'wafer_mem_bw': 900, 'reticle_array_h': 13, 'reticle_array_w': 13}
+(INFO) 2023-04-09 19:58:41,846 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:41,854 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:41,862 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:42,030 [api1.py:131] throughput: 0.005788070518376598
+(INFO) 2023-04-09 19:58:43,061 [api1.py:131] throughput: 0.004341130335674631
+(INFO) 2023-04-09 19:58:43,104 [api1.py:116] Design point: {'core_buffer_size': 128, 'core_buffer_bw': 512, 'core_mac_num': 4, 'core_noc_bw': 512, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 24, 'core_array_w': 32, 'wafer_mem_bw': 900, 'reticle_array_h': 11, 'reticle_array_w': 11}
+(INFO) 2023-04-09 19:58:43,105 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:43,114 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:43,225 [api1.py:131] throughput: 0.006945585553867201
+(INFO) 2023-04-09 19:58:43,261 [api1.py:116] Design point: {'core_buffer_size': 64, 'core_buffer_bw': 512, 'core_mac_num': 16, 'core_noc_bw': 64, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 8, 'core_array_w': 48, 'wafer_mem_bw': 900, 'reticle_array_h': 51, 'reticle_array_w': 8}
+(INFO) 2023-04-09 19:58:43,261 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 512, 'data_parallel_size': 8, 'model_parallel_size': 1, 'tensor_parallel_size': 1}
+(INFO) 2023-04-09 19:58:43,275 [wse_attn.py:412] Calculating training throughput of attention module
+(INFO) 2023-04-09 19:58:43,720 [api1.py:131] throughput: 0.011575342090005696
