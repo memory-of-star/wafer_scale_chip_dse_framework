@@ -1,0 +1,20 @@
+[2023-04-10 16:41:23,868][moc][INFO][color_logger.py:203] Logfile: /home/chenyiqi/wafer_scale_chip_dse_framework/logs/moc_2023-04-10-16-41-23-868091.log
+[2023-04-10 16:41:23,869][moc][WARNING][generic_smbo.py:387] Exception when calling objective function: local variable '_history' referenced before assignment
+config: Configuration(values={
+  'fidelity': 1,
+  'var00': 64,
+  'var01': 512,
+  'var02': 16,
+  'var03': 128,
+  'var04': 4,
+  'var05': 4,
+  'var06': 1,
+  'var07': 72,
+  'var08': 8,
+  'var09': 900,
+  'var10': 6,
+  'var11': 40,
+})
+
+[2023-04-10 16:41:23,869][moc][INFO][generic_smbo.py:418] Iter 18, objectives: [inf].
+[2023-04-10 16:41:28,979][moc][WARNING][util_funcs.py:231] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.

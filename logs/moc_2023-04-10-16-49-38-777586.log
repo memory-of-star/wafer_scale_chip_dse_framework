@@ -1,0 +1,15 @@
+[2023-04-10 16:49:38,777][moc][INFO][color_logger.py:203] Logfile: /home/chenyiqi/wafer_scale_chip_dse_framework/logs/moc_2023-04-10-16-49-38-777586.log
+[2023-04-10 16:49:38,860][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 16:49:38,860][moc][INFO][generic_smbo.py:333] Iter 1, objectives: [-2.633859747920827].
+[2023-04-10 16:49:39,009][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 16:49:39,009][moc][INFO][generic_smbo.py:333] Iter 2, objectives: [-0.2644857983059909].
+[2023-04-10 16:49:39,160][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 16:49:39,160][moc][INFO][generic_smbo.py:333] Iter 3, objectives: [-0.0667244413165589].
+[2023-04-10 16:49:39,312][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 16:49:39,312][moc][INFO][generic_smbo.py:333] Iter 4, objectives: [-0.443204836210327].
+[2023-04-10 16:49:39,463][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 16:49:39,463][moc][INFO][generic_smbo.py:333] Iter 5, objectives: [-0.5334217451284479].
+[2023-04-10 16:49:39,464][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 16:49:39,464][moc][INFO][generic_smbo.py:418] Iter 9, objectives: [10000000000.0].
+[2023-04-10 16:49:39,464][moc][INFO][mf_advisor.py:411] Sample random config. rand_prob=0.100000.
+[2023-04-10 16:49:39,466][moc][WARNING][util_funcs.py:231] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.

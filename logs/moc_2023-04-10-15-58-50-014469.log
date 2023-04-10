@@ -1,0 +1,15 @@
+[2023-04-10 15:58:50,015][moc][INFO][color_logger.py:203] Logfile: /home/chenyiqi/wafer_scale_chip_dse_framework/logs/moc_2023-04-10-15-58-50-014469.log
+[2023-04-10 15:58:50,343][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 15:58:50,345][moc][INFO][generic_smbo.py:332] Iter 1, objectives: [-0.0407446153689534].
+[2023-04-10 15:58:50,658][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 15:58:50,659][moc][INFO][generic_smbo.py:332] Iter 2, objectives: [-0.4071650627620514].
+[2023-04-10 15:58:50,983][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 15:58:50,985][moc][INFO][generic_smbo.py:332] Iter 3, objectives: [-0.46813052474912165].
+[2023-04-10 15:58:51,317][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 15:58:51,318][moc][INFO][generic_smbo.py:332] Iter 4, objectives: [-0.22929580239384206].
+[2023-04-10 15:58:51,650][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 15:58:51,652][moc][INFO][generic_smbo.py:332] Iter 5, objectives: [-0.06148410085764233].
+[2023-04-10 15:58:51,974][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 15:58:51,975][moc][INFO][generic_smbo.py:332] Iter 6, objectives: [-0.061116613236078705].
+[2023-04-10 15:58:52,293][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 15:58:52,295][moc][INFO][generic_smbo.py:332] Iter 7, objectives: [-0.12214636999093409].

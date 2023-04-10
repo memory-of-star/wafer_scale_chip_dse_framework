@@ -1,0 +1,15 @@
+[2023-04-09 23:54:50,662][moc][INFO][color_logger.py:203] Logfile: /home/chenyiqi/wafer_scale_chip_dse_framework/logs/moc_2023-04-09-23-54-50-661160.log
+[2023-04-09 23:54:51,304][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:54:51,305][moc][INFO][generic_smbo.py:332] Iter 1, objectives: [-0.3686643262764443].
+[2023-04-09 23:54:51,807][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:54:51,808][moc][INFO][generic_smbo.py:332] Iter 2, objectives: [-19.77561128210043].
+[2023-04-09 23:54:52,383][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:54:52,385][moc][INFO][generic_smbo.py:332] Iter 3, objectives: [-1.0448137127232275].
+[2023-04-09 23:54:52,874][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:54:52,875][moc][INFO][generic_smbo.py:332] Iter 4, objectives: [-2.3274236743448493].
+[2023-04-09 23:54:53,183][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:54:53,184][moc][INFO][generic_smbo.py:332] Iter 5, objectives: [-0.8600757463173541].
+[2023-04-09 23:54:53,556][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:54:53,556][moc][INFO][generic_smbo.py:332] Iter 6, objectives: [-59.20151028823081].
+[2023-04-09 23:54:53,824][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:54:53,825][moc][INFO][generic_smbo.py:332] Iter 7, objectives: [-0.37387969338434507].

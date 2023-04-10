@@ -1,0 +1,310 @@
+[2023-04-09 23:25:47,682][moc][INFO][color_logger.py:203] Logfile: /home/chenyiqi/wafer_scale_chip_dse_framework/logs/moc_2023-04-09-23-25-47-682321.log
+[2023-04-09 23:25:47,722][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:25:47,793][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:25:47,794][moc][INFO][generic_smbo.py:416] Iter 1, objectives: [10000000000.0].
+[2023-04-09 23:25:47,818][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:25:47,905][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:25:47,906][moc][INFO][generic_smbo.py:416] Iter 2, objectives: [10000000000.0].
+[2023-04-09 23:25:47,983][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:25:48,056][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:25:48,057][moc][INFO][generic_smbo.py:416] Iter 3, objectives: [10000000000.0].
+[2023-04-09 23:25:48,074][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:25:48,146][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:25:48,148][moc][INFO][generic_smbo.py:416] Iter 4, objectives: [10000000000.0].
+[2023-04-09 23:25:48,168][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:25:48,240][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:25:48,241][moc][INFO][generic_smbo.py:416] Iter 5, objectives: [10000000000.0].
+[2023-04-09 23:25:48,264][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:25:58,576][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:25:58,576][moc][INFO][generic_smbo.py:416] Iter 6, objectives: [-9.43208953130951].
+[2023-04-09 23:26:06,184][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:26:07,730][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:26:07,732][moc][INFO][generic_smbo.py:416] Iter 7, objectives: [-154.84388835749814].
+[2023-04-09 23:26:14,307][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:26:15,895][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:26:15,896][moc][INFO][generic_smbo.py:416] Iter 8, objectives: [-72.76420803423721].
+[2023-04-09 23:26:22,930][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:26:30,299][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:26:30,300][moc][INFO][generic_smbo.py:416] Iter 9, objectives: [-18.700760797524044].
+[2023-04-09 23:26:37,484][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:26:38,552][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:26:38,554][moc][INFO][generic_smbo.py:416] Iter 10, objectives: [-10.196104533400154].
+[2023-04-09 23:26:46,505][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:26:47,643][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:26:47,645][moc][INFO][generic_smbo.py:416] Iter 11, objectives: [-7.429023970993069].
+[2023-04-09 23:26:55,073][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:27:25,081][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:27:25,082][moc][INFO][generic_smbo.py:416] Iter 12, objectives: [-11.547802410227717].
+[2023-04-09 23:27:32,302][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:27:33,554][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:27:33,555][moc][INFO][generic_smbo.py:416] Iter 13, objectives: [-20.33416216456862].
+[2023-04-09 23:27:40,796][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:27:40,928][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:27:40,929][moc][INFO][generic_smbo.py:416] Iter 14, objectives: [10000000000.0].
+[2023-04-09 23:27:47,174][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:27:48,296][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:27:48,298][moc][INFO][generic_smbo.py:416] Iter 15, objectives: [10000000000.0].
+[2023-04-09 23:27:55,540][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:28:02,941][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:28:02,942][moc][INFO][generic_smbo.py:416] Iter 16, objectives: [-16.728142770092226].
+[2023-04-09 23:28:10,035][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:28:11,288][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:28:11,289][moc][INFO][generic_smbo.py:416] Iter 17, objectives: [10000000000.0].
+[2023-04-09 23:28:18,217][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:28:19,660][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:28:19,662][moc][INFO][generic_smbo.py:416] Iter 18, objectives: [-16.227544490845457].
+[2023-04-09 23:28:27,311][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:28:45,755][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:28:45,756][moc][INFO][generic_smbo.py:416] Iter 19, objectives: [-3.8789173700987565].
+[2023-04-09 23:28:53,909][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:28:53,980][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:28:53,982][moc][INFO][generic_smbo.py:416] Iter 20, objectives: [10000000000.0].
+[2023-04-09 23:28:53,984][moc][INFO][mf_advisor.py:411] Sample random config. rand_prob=0.100000.
+[2023-04-09 23:28:54,026][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:29:01,061][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:29:01,062][moc][INFO][generic_smbo.py:416] Iter 21, objectives: [-1.6393877649219228].
+[2023-04-09 23:29:07,875][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:29:09,429][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:29:09,431][moc][INFO][generic_smbo.py:416] Iter 22, objectives: [-3.9479538153328875].
+[2023-04-09 23:29:16,747][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:29:44,106][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:29:44,107][moc][INFO][generic_smbo.py:416] Iter 23, objectives: [-12.247465606868182].
+[2023-04-09 23:29:44,108][moc][INFO][mf_advisor.py:411] Sample random config. rand_prob=0.100000.
+[2023-04-09 23:29:44,152][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:29:45,681][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:29:45,682][moc][INFO][generic_smbo.py:416] Iter 24, objectives: [-3.4290229860912613].
+[2023-04-09 23:29:53,850][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:29:55,357][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:29:55,359][moc][INFO][generic_smbo.py:416] Iter 25, objectives: [-6.053696509881332].
+[2023-04-09 23:30:03,597][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:30:06,315][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:30:06,316][moc][INFO][generic_smbo.py:416] Iter 26, objectives: [-2.555239762759952].
+[2023-04-09 23:30:15,696][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:30:19,928][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:30:19,929][moc][INFO][generic_smbo.py:416] Iter 27, objectives: [-8.372740137153254].
+[2023-04-09 23:30:28,843][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:30:30,222][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:30:30,224][moc][INFO][generic_smbo.py:416] Iter 28, objectives: [-81.46913286429795].
+[2023-04-09 23:30:30,225][moc][INFO][mf_advisor.py:411] Sample random config. rand_prob=0.100000.
+[2023-04-09 23:30:30,274][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:30:57,549][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:30:57,551][moc][INFO][generic_smbo.py:416] Iter 29, objectives: [-1.573431878534355].
+[2023-04-09 23:31:08,142][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:31:09,576][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:31:09,578][moc][INFO][generic_smbo.py:416] Iter 30, objectives: [-28.520224261428265].
+[2023-04-09 23:31:18,912][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:31:19,486][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:31:19,488][moc][INFO][generic_smbo.py:416] Iter 31, objectives: [10000000000.0].
+[2023-04-09 23:31:30,188][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:31:41,812][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:31:41,815][moc][INFO][generic_smbo.py:416] Iter 32, objectives: [-8.983228282743136].
+[2023-04-09 23:31:55,190][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:31:57,669][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:31:57,670][moc][INFO][generic_smbo.py:416] Iter 33, objectives: [-15.31923145247486].
+[2023-04-09 23:32:06,152][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:32:09,282][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:32:09,283][moc][INFO][generic_smbo.py:416] Iter 34, objectives: [-16.07872263666233].
+[2023-04-09 23:32:09,284][moc][INFO][mf_advisor.py:411] Sample random config. rand_prob=0.100000.
+[2023-04-09 23:32:09,324][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:32:09,596][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:32:09,597][moc][INFO][generic_smbo.py:416] Iter 35, objectives: [10000000000.0].
+[2023-04-09 23:32:23,772][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:32:35,474][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:32:35,476][moc][INFO][generic_smbo.py:416] Iter 36, objectives: [-8.045272688276329].
+[2023-04-09 23:32:46,629][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:32:50,355][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:32:50,356][moc][INFO][generic_smbo.py:416] Iter 37, objectives: [-35.20000339873271].
+[2023-04-09 23:33:04,342][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:33:06,061][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:33:06,062][moc][INFO][generic_smbo.py:416] Iter 38, objectives: [-7.668062424305349].
+[2023-04-09 23:33:22,847][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:33:34,591][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:33:34,593][moc][INFO][generic_smbo.py:416] Iter 39, objectives: [-5.692436383413563].
+[2023-04-09 23:33:44,570][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:33:46,771][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:33:46,772][moc][INFO][generic_smbo.py:416] Iter 40, objectives: [-26.970872008727945].
+[2023-04-09 23:34:04,659][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:34:05,883][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:34:05,884][moc][INFO][generic_smbo.py:416] Iter 41, objectives: [-4.968030114154109].
+[2023-04-09 23:34:05,885][moc][INFO][mf_advisor.py:411] Sample random config. rand_prob=0.100000.
+[2023-04-09 23:34:05,912][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:34:06,227][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:34:06,228][moc][INFO][generic_smbo.py:416] Iter 42, objectives: [10000000000.0].
+[2023-04-09 23:34:24,842][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:34:26,764][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:34:26,767][moc][INFO][generic_smbo.py:416] Iter 43, objectives: [-8.743752217034018].
+[2023-04-09 23:34:42,537][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:34:45,132][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:34:45,136][moc][INFO][generic_smbo.py:416] Iter 44, objectives: [-78.6002600451018].
+[2023-04-09 23:35:04,795][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:35:06,932][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:35:06,934][moc][INFO][generic_smbo.py:416] Iter 45, objectives: [-8.441701549668412].
+[2023-04-09 23:35:20,321][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:35:26,030][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:35:26,032][moc][INFO][generic_smbo.py:416] Iter 46, objectives: [-10.836105877749496].
+[2023-04-09 23:35:26,033][moc][INFO][mf_advisor.py:411] Sample random config. rand_prob=0.100000.
+[2023-04-09 23:35:26,075][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:35:26,212][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:35:26,214][moc][INFO][generic_smbo.py:416] Iter 47, objectives: [10000000000.0].
+[2023-04-09 23:35:41,324][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:35:43,991][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:35:43,992][moc][INFO][generic_smbo.py:416] Iter 48, objectives: [-5.667992073560663].
+[2023-04-09 23:36:02,856][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:36:04,998][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:36:05,000][moc][INFO][generic_smbo.py:416] Iter 49, objectives: [-15.754277885681402].
+[2023-04-09 23:36:26,117][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:36:31,633][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:36:31,635][moc][INFO][generic_smbo.py:416] Iter 50, objectives: [-4.495662479672116].
+[2023-04-09 23:36:51,529][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:36:51,671][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:36:51,674][moc][INFO][generic_smbo.py:416] Iter 51, objectives: [10000000000.0].
+[2023-04-09 23:36:51,676][moc][INFO][mf_advisor.py:411] Sample random config. rand_prob=0.100000.
+[2023-04-09 23:36:51,709][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:36:53,889][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:36:53,891][moc][INFO][generic_smbo.py:416] Iter 52, objectives: [-47.81249135380991].
+[2023-04-09 23:37:20,033][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:37:22,900][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:37:22,903][moc][INFO][generic_smbo.py:416] Iter 53, objectives: [-39.50687653436794].
+[2023-04-09 23:37:45,453][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:40:21,334][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:40:21,336][moc][INFO][generic_smbo.py:416] Iter 54, objectives: [-2.960601219645461].
+[2023-04-09 23:40:49,913][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:40:53,841][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:40:53,843][moc][INFO][generic_smbo.py:416] Iter 55, objectives: [-37.67843281035967].
+[2023-04-09 23:41:22,877][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:41:23,222][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:41:23,224][moc][INFO][generic_smbo.py:416] Iter 56, objectives: [10000000000.0].
+[2023-04-09 23:41:55,087][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:41:56,203][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:41:56,206][moc][INFO][generic_smbo.py:416] Iter 57, objectives: [10000000000.0].
+[2023-04-09 23:42:29,686][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:42:33,574][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:42:33,577][moc][INFO][generic_smbo.py:416] Iter 58, objectives: [-96.19191931911512].
+[2023-04-09 23:43:02,011][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:43:06,275][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:43:06,278][moc][INFO][generic_smbo.py:416] Iter 59, objectives: [-11.310437012812772].
+[2023-04-09 23:43:25,930][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:43:34,652][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:43:34,654][moc][INFO][generic_smbo.py:416] Iter 60, objectives: [-23.970997142635216].
+[2023-04-09 23:43:55,856][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:44:00,159][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:44:00,161][moc][INFO][generic_smbo.py:416] Iter 61, objectives: [-2.3418882268406636].
+[2023-04-09 23:44:26,278][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:44:28,432][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:44:28,434][moc][INFO][generic_smbo.py:416] Iter 62, objectives: [-6.310684359484177].
+[2023-04-09 23:44:59,343][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:45:29,461][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:45:29,462][moc][INFO][generic_smbo.py:416] Iter 63, objectives: [-10.180690241186564].
+[2023-04-09 23:46:00,306][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:46:04,780][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:46:04,782][moc][INFO][generic_smbo.py:416] Iter 64, objectives: [-10.619407475730911].
+[2023-04-09 23:46:34,799][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:46:38,281][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:46:38,285][moc][INFO][generic_smbo.py:416] Iter 65, objectives: [-22.628350417257398].
+[2023-04-09 23:47:13,223][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:47:21,610][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:47:21,611][moc][INFO][generic_smbo.py:416] Iter 66, objectives: [-22.773389820642468].
+[2023-04-09 23:47:56,925][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:48:00,980][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:48:00,983][moc][INFO][generic_smbo.py:416] Iter 67, objectives: [-12.051767542286278].
+[2023-04-09 23:48:34,087][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:48:37,886][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:48:37,888][moc][INFO][generic_smbo.py:416] Iter 68, objectives: [-1.9479479986535035].
+[2023-04-09 23:49:06,922][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:49:35,628][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:49:35,630][moc][INFO][generic_smbo.py:416] Iter 69, objectives: [-4.48305543320255].
+[2023-04-09 23:50:12,332][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:50:15,997][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:50:15,999][moc][INFO][generic_smbo.py:416] Iter 70, objectives: [-6.978117285970464].
+[2023-04-09 23:50:38,101][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:50:38,396][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:50:38,398][moc][INFO][generic_smbo.py:416] Iter 71, objectives: [10000000000.0].
+[2023-04-09 23:51:06,507][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:51:51,038][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:51:51,040][moc][INFO][generic_smbo.py:416] Iter 72, objectives: [-6.415761057389585].
+[2023-04-09 23:52:21,602][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:52:27,092][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:52:27,094][moc][INFO][generic_smbo.py:416] Iter 73, objectives: [-18.377175875718134].
+[2023-04-09 23:53:05,965][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:53:10,397][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:53:10,399][moc][INFO][generic_smbo.py:416] Iter 74, objectives: [-104.73905636306468].
+[2023-04-09 23:53:49,353][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:54:08,775][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:54:08,778][moc][INFO][generic_smbo.py:416] Iter 75, objectives: [-12.788598665884539].
+[2023-04-09 23:54:35,999][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:54:40,629][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:54:40,632][moc][INFO][generic_smbo.py:416] Iter 76, objectives: [-9.869767712612251].
+[2023-04-09 23:55:15,279][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:55:18,630][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:55:18,632][moc][INFO][generic_smbo.py:416] Iter 77, objectives: [-29.235763900372817].
+[2023-04-09 23:55:49,532][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:56:01,618][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:56:01,620][moc][INFO][generic_smbo.py:416] Iter 78, objectives: [-19.048234396295925].
+[2023-04-09 23:56:41,430][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:56:46,547][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:56:46,549][moc][INFO][generic_smbo.py:416] Iter 79, objectives: [-6.248269622063066].
+[2023-04-09 23:57:26,804][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:57:31,949][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:57:31,952][moc][INFO][generic_smbo.py:416] Iter 80, objectives: [-373.4660759732322].
+[2023-04-09 23:58:04,563][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:58:31,907][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:58:31,908][moc][INFO][generic_smbo.py:416] Iter 81, objectives: [-1.3407120194629525].
+[2023-04-09 23:58:31,909][moc][INFO][mf_advisor.py:411] Sample random config. rand_prob=0.100000.
+[2023-04-09 23:58:31,944][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:59:06,937][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:59:06,940][moc][INFO][generic_smbo.py:416] Iter 82, objectives: [-1.1147298817223543].
+[2023-04-09 23:59:38,343][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-09 23:59:44,929][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:59:44,931][moc][INFO][generic_smbo.py:416] Iter 83, objectives: [-133.98853652631095].
+[2023-04-10 00:00:17,182][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-10 00:00:19,998][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 00:00:20,000][moc][INFO][generic_smbo.py:416] Iter 84, objectives: [-271.8859139967341].
+[2023-04-10 00:01:04,436][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-10 00:02:13,442][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 00:02:13,445][moc][INFO][generic_smbo.py:416] Iter 85, objectives: [-1.4410410476947846].
+[2023-04-10 00:02:51,395][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-10 00:02:51,915][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 00:02:51,917][moc][INFO][generic_smbo.py:416] Iter 86, objectives: [10000000000.0].
+[2023-04-10 00:03:27,308][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-10 00:03:35,311][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 00:03:35,315][moc][INFO][generic_smbo.py:416] Iter 87, objectives: [-1.8073120200130555].
+[2023-04-10 00:04:08,932][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-10 00:05:59,264][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 00:05:59,266][moc][INFO][generic_smbo.py:416] Iter 88, objectives: [-1.6739309212335969].
+[2023-04-10 00:06:36,564][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-10 00:06:40,958][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 00:06:40,960][moc][INFO][generic_smbo.py:416] Iter 89, objectives: [-528.5755559494121].
+[2023-04-10 00:07:07,705][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-10 00:07:10,450][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 00:07:10,452][moc][INFO][generic_smbo.py:416] Iter 90, objectives: [10000000000.0].
+[2023-04-10 00:07:10,454][moc][INFO][mf_advisor.py:411] Sample random config. rand_prob=0.100000.
+[2023-04-10 00:07:10,508][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-10 00:07:14,343][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 00:07:14,345][moc][INFO][generic_smbo.py:416] Iter 91, objectives: [-77.66361766193248].
+[2023-04-10 00:07:38,873][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-10 00:07:42,586][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 00:07:42,588][moc][INFO][generic_smbo.py:416] Iter 92, objectives: [-10.393868189242118].
+[2023-04-10 00:08:02,618][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-10 00:08:04,135][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 00:08:04,137][moc][INFO][generic_smbo.py:416] Iter 93, objectives: [10000000000.0].
+[2023-04-10 00:08:22,529][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-10 00:08:23,870][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 00:08:23,875][moc][INFO][generic_smbo.py:416] Iter 94, objectives: [10000000000.0].
+[2023-04-10 00:08:41,789][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-10 00:08:44,189][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 00:08:44,191][moc][INFO][generic_smbo.py:416] Iter 95, objectives: [-46.81758134453885].
+[2023-04-10 00:08:58,672][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-10 00:09:01,649][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 00:09:01,652][moc][INFO][generic_smbo.py:416] Iter 96, objectives: [-88.4206771173399].
+[2023-04-10 00:09:20,742][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-10 00:09:28,333][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 00:09:28,336][moc][INFO][generic_smbo.py:416] Iter 97, objectives: [-0.8293142502140199].
+[2023-04-10 00:09:49,388][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-10 00:09:51,400][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 00:09:51,402][moc][INFO][generic_smbo.py:416] Iter 98, objectives: [-40.42957301512747].
+[2023-04-10 00:10:18,928][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-10 00:10:20,228][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 00:10:20,230][moc][INFO][generic_smbo.py:416] Iter 99, objectives: [-2.1780864844610783].
+[2023-04-10 00:10:39,564][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-10 00:10:39,650][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 00:10:39,654][moc][INFO][generic_smbo.py:416] Iter 100, objectives: [10000000000.0].

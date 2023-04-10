@@ -1,0 +1,19 @@
+[2023-04-10 16:36:00,954][moc][INFO][color_logger.py:203] Logfile: /home/chenyiqi/wafer_scale_chip_dse_framework/logs/moc_2023-04-10-16-36-00-954254.log
+[2023-04-10 16:36:00,990][moc][WARNING][util_funcs.py:231] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-10 16:36:01,077][moc][WARNING][generic_smbo.py:386] Exception when calling objective function: result is None!
+config: Configuration(values={
+  'fidelity': 1,
+  'var00': 512,
+  'var01': 2048,
+  'var02': 8,
+  'var03': 32,
+  'var04': 4,
+  'var05': 4,
+  'var06': 1,
+  'var07': 16,
+  'var08': 16,
+  'var09': 900,
+  'var10': 11,
+  'var11': 19,
+})
+

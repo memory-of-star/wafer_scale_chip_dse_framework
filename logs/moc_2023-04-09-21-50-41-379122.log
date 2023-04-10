@@ -1,0 +1,14 @@
+[2023-04-09 21:50:41,379][moc][INFO][color_logger.py:203] Logfile: /home/chenyiqi/wafer_scale_chip_dse_framework/logs/moc_2023-04-09-21-50-41-379122.log
+[2023-04-09 21:50:41,522][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 21:50:41,523][moc][ERROR][history.py:232] Invalid observation: Observation(config=Configuration(values={
+  'data_parallel_size': 6,
+  'micro_batch_size': 48,
+  'model_parallel_size': 2,
+  'num_reticle_per_pipeline_stage': 176,
+  'tensor_parallel_size': 24,
+})
+, objectives=[-inf], trial_state=0, elapsed_time=0.13675951957702637, create_time=2023-04-09 21:50:41.523265)
+Traceback (most recent call last):
+  File "/home/chenyiqi/anaconda3/envs/py3.10/lib/python3.10/site-packages/openbox/utils/history.py", line 219, in is_valid_observation
+    raise ValueError(f'invalid values (inf, nan) are not allowed in objectives in a SUCCESS trial, '
+ValueError: invalid values (inf, nan) are not allowed in objectives in a SUCCESS trial, got [-inf]

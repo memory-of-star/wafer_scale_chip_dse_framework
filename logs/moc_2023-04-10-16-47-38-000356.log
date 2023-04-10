@@ -1,0 +1,29 @@
+[2023-04-10 16:47:38,000][moc][INFO][color_logger.py:203] Logfile: /home/chenyiqi/wafer_scale_chip_dse_framework/logs/moc_2023-04-10-16-47-38-000356.log
+[2023-04-10 16:47:38,053][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 16:47:38,053][moc][INFO][generic_smbo.py:333] Iter 1, objectives: [-0.4226636415798035].
+[2023-04-10 16:47:38,110][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 16:47:38,111][moc][INFO][generic_smbo.py:333] Iter 2, objectives: [-0.22900742269117957].
+[2023-04-10 16:47:38,173][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 16:47:38,173][moc][INFO][generic_smbo.py:333] Iter 3, objectives: [-0.1627600758877578].
+[2023-04-10 16:47:38,226][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 16:47:38,227][moc][INFO][generic_smbo.py:333] Iter 4, objectives: [-0.339053279031507].
+[2023-04-10 16:47:38,227][moc][WARNING][generic_smbo.py:387] Exception when calling objective function: local variable '_history' referenced before assignment
+config: Configuration(values={
+  'fidelity': 1,
+  'var00': 256,
+  'var01': 2048,
+  'var02': 32,
+  'var03': 32,
+  'var04': 4,
+  'var05': 4,
+  'var06': 1,
+  'var07': 40,
+  'var08': 16,
+  'var09': 900,
+  'var10': 8,
+  'var11': 16,
+})
+
+[2023-04-10 16:47:38,228][moc][INFO][generic_smbo.py:418] Iter 9, objectives: [inf].
+[2023-04-10 16:47:38,228][moc][INFO][mf_advisor.py:411] Sample random config. rand_prob=0.100000.
+[2023-04-10 16:47:38,230][moc][WARNING][util_funcs.py:231] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.

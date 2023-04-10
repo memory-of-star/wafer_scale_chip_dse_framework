@@ -1,0 +1,15 @@
+[2023-04-09 23:31:25,570][moc][INFO][color_logger.py:203] Logfile: /home/chenyiqi/wafer_scale_chip_dse_framework/logs/moc_2023-04-09-23-31-25-569843.log
+[2023-04-09 23:31:25,772][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:31:25,774][moc][INFO][generic_smbo.py:332] Iter 1, objectives: [-0.6186021297428116].
+[2023-04-09 23:31:25,948][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:31:25,949][moc][INFO][generic_smbo.py:332] Iter 2, objectives: [-0.5246361761439855].
+[2023-04-09 23:31:26,191][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:31:26,192][moc][INFO][generic_smbo.py:332] Iter 3, objectives: [-0.7745699143099836].
+[2023-04-09 23:31:26,371][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:31:26,372][moc][INFO][generic_smbo.py:332] Iter 4, objectives: [-0.6624284842511228].
+[2023-04-09 23:31:26,599][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:31:26,600][moc][INFO][generic_smbo.py:332] Iter 5, objectives: [-0.6504806054617691].
+[2023-04-09 23:31:26,756][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:31:26,757][moc][INFO][generic_smbo.py:332] Iter 6, objectives: [-0.47947664435356757].
+[2023-04-09 23:31:26,927][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:31:26,928][moc][INFO][generic_smbo.py:332] Iter 7, objectives: [-0.6879173379859351].

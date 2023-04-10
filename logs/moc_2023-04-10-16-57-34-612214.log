@@ -1,0 +1,2 @@
+[2023-04-10 16:57:34,612][moc][INFO][color_logger.py:203] Logfile: /home/chenyiqi/wafer_scale_chip_dse_framework/logs/moc_2023-04-10-16-57-34-612214.log
+[2023-04-10 16:57:34,630][moc][WARNING][util_funcs.py:231] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.

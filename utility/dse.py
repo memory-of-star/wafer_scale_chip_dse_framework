@@ -15,6 +15,8 @@ from evaluator import func_single_fidelity1, func_single_fidelity2, func_multi_f
 import evaluator
 import plot
 import copy
+import random
+from tqdm import tqdm
 
 # build search space
 def build_search_space():
@@ -272,6 +274,39 @@ def multi_fidelity_double_circulation_search(model_num = 1, run_times = 20, max_
 
         plot.plot_curve(curve_1, curve_2, label1='fidelity1', label2='fidelity2', x_label = 'iteration', path=os.path.join(root_path, 'result/picture', run_name+'_curve.png'))
 
+def generate_legal_points(num = 100):
+    design_points, design_space = build_search_space()
+
+    var_names = ['var{:02}'.format(i) for i in range(len(design_space))]
+    points_dic = [{k:v for k,v in zip(var_names, design_points[i])} for i in range(len(design_points))]
+    points_dic2 = []
+    for i in range(len(points_dic)):
+        dic = copy.deepcopy(points_dic[i])
+        dic['fidelity'] = 1
+        points_dic[i]['fidelity'] = 2
+        points_dic2.append(dic)
+        points_dic2.append(points_dic[i])
+
+    variable_lst = []
+    for i in range(len(design_space)):
+        variable_lst.append(sp.Int('var{:02}'.format(i), design_space[i][0], max(design_space[i][-1], design_space[i][0] + 1), default_value=design_points[0][i]))
+    
+    variable_lst.append(sp.Int('fidelity', 1, 2, default_value=1))
+    
+    space = sp.MultiFidelityComplexConditionedSpace()
+    space.set_fidelity_dimension()
+    space.add_variables(variable_lst)
+    internal_points = list(map(lambda x:Configuration(space, x), points_dic2))
+    space.internal_points = internal_points
+
+    ret = []
+    for i in tqdm(range(num)):
+        evaluator.choose_model = random.randint(0, 15)
+        config = space.sample_configuration()
+        design_point, model_para = evaluator.generate(config)
+        ret.append((design_point, model_para))
+    
+    return ret
 
 if __name__ == "__main__":
     multi_fidelity_double_circulation_search(run_times=1, max_runs=20, run_name='try')

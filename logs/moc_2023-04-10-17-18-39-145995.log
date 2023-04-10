@@ -1,0 +1,3 @@
+[2023-04-10 17:18:39,146][moc][INFO][color_logger.py:203] Logfile: /home/chenyiqi/wafer_scale_chip_dse_framework/logs/moc_2023-04-10-17-18-39-145995.log
+[2023-04-10 17:18:39,147][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 17:18:39,147][moc][INFO][generic_smbo.py:418] Iter 20, objectives: [10000000000.0].

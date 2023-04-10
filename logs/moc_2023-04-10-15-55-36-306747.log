@@ -1,0 +1,395 @@
+[2023-04-10 15:55:36,307][moc][INFO][color_logger.py:203] Logfile: /home/chenyiqi/wafer_scale_chip_dse_framework/logs/moc_2023-04-10-15-55-36-306747.log
+[2023-04-10 15:55:36,355][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-10 15:55:37,614][moc][WARNING][generic_smbo.py:386] Exception when calling objective function: result is None!
+config: Configuration(values={
+  'fidelity': 2,
+  'var00': 64,
+  'var01': 2048,
+  'var02': 8,
+  'var03': 512,
+  'var04': 4,
+  'var05': 4,
+  'var06': 1,
+  'var07': 16,
+  'var08': 16,
+  'var09': 900,
+  'var10': 16,
+  'var11': 22,
+})
+
+[2023-04-10 15:55:37,615][moc][INFO][generic_smbo.py:416] Iter 1, objectives: [inf].
+[2023-04-10 15:55:37,637][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-10 15:55:38,934][moc][WARNING][generic_smbo.py:386] Exception when calling objective function: result is None!
+config: Configuration(values={
+  'fidelity': 2,
+  'var00': 128,
+  'var01': 2048,
+  'var02': 4,
+  'var03': 128,
+  'var04': 4,
+  'var05': 4,
+  'var06': 1,
+  'var07': 8,
+  'var08': 32,
+  'var09': 900,
+  'var10': 35,
+  'var11': 12,
+})
+
+[2023-04-10 15:55:38,935][moc][INFO][generic_smbo.py:416] Iter 2, objectives: [inf].
+[2023-04-10 15:55:38,955][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-10 15:55:39,037][moc][WARNING][generic_smbo.py:386] Exception when calling objective function: result is None!
+config: Configuration(values={
+  'fidelity': 1,
+  'var00': 64,
+  'var01': 512,
+  'var02': 4,
+  'var03': 64,
+  'var04': 4,
+  'var05': 4,
+  'var06': 1,
+  'var07': 40,
+  'var08': 48,
+  'var09': 900,
+  'var10': 12,
+  'var11': 9,
+})
+
+[2023-04-10 15:55:39,037][moc][INFO][generic_smbo.py:416] Iter 3, objectives: [inf].
+[2023-04-10 15:55:39,055][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-10 15:55:39,144][moc][WARNING][generic_smbo.py:386] Exception when calling objective function: result is None!
+config: Configuration(values={
+  'fidelity': 2,
+  'var00': 48,
+  'var01': 256,
+  'var02': 32,
+  'var03': 64,
+  'var04': 4,
+  'var05': 4,
+  'var06': 1,
+  'var07': 40,
+  'var08': 48,
+  'var09': 900,
+  'var10': 9,
+  'var11': 8,
+})
+
+[2023-04-10 15:55:39,145][moc][INFO][generic_smbo.py:416] Iter 4, objectives: [inf].
+[2023-04-10 15:55:39,166][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-10 15:55:40,371][moc][WARNING][generic_smbo.py:386] Exception when calling objective function: result is None!
+config: Configuration(values={
+  'fidelity': 2,
+  'var00': 48,
+  'var01': 2048,
+  'var02': 256,
+  'var03': 1024,
+  'var04': 4,
+  'var05': 4,
+  'var06': 1,
+  'var07': 16,
+  'var08': 8,
+  'var09': 900,
+  'var10': 14,
+  'var11': 14,
+})
+
+[2023-04-10 15:55:40,372][moc][INFO][generic_smbo.py:416] Iter 5, objectives: [inf].
+[2023-04-10 15:55:40,392][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-10 15:55:40,476][moc][WARNING][generic_smbo.py:386] Exception when calling objective function: result is None!
+config: Configuration(values={
+  'fidelity': 2,
+  'var00': 48,
+  'var01': 2048,
+  'var02': 4,
+  'var03': 32,
+  'var04': 4,
+  'var05': 4,
+  'var06': 1,
+  'var07': 48,
+  'var08': 32,
+  'var09': 900,
+  'var10': 7,
+  'var11': 18,
+})
+
+[2023-04-10 15:55:40,477][moc][INFO][generic_smbo.py:416] Iter 6, objectives: [inf].
+[2023-04-10 15:55:40,480][moc][WARNING][mf_advisor.py:421] No enough successful initial trials! Sample random configuration.
+[2023-04-10 15:55:40,502][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-10 15:55:41,734][moc][WARNING][generic_smbo.py:386] Exception when calling objective function: result is None!
+config: Configuration(values={
+  'fidelity': 2,
+  'var00': 64,
+  'var01': 2048,
+  'var02': 4,
+  'var03': 512,
+  'var04': 4,
+  'var05': 4,
+  'var06': 1,
+  'var07': 16,
+  'var08': 16,
+  'var09': 900,
+  'var10': 16,
+  'var11': 23,
+})
+
+[2023-04-10 15:55:41,734][moc][INFO][generic_smbo.py:416] Iter 7, objectives: [inf].
+[2023-04-10 15:55:41,735][moc][WARNING][mf_advisor.py:421] No enough successful initial trials! Sample random configuration.
+[2023-04-10 15:55:41,758][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-10 15:55:46,054][moc][WARNING][generic_smbo.py:386] Exception when calling objective function: result is None!
+config: Configuration(values={
+  'fidelity': 1,
+  'var00': 64,
+  'var01': 1024,
+  'var02': 4,
+  'var03': 512,
+  'var04': 4,
+  'var05': 4,
+  'var06': 1,
+  'var07': 8,
+  'var08': 32,
+  'var09': 900,
+  'var10': 31,
+  'var11': 13,
+})
+
+[2023-04-10 15:55:46,055][moc][INFO][generic_smbo.py:416] Iter 8, objectives: [inf].
+[2023-04-10 15:55:46,057][moc][WARNING][mf_advisor.py:421] No enough successful initial trials! Sample random configuration.
+[2023-04-10 15:55:46,082][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-10 15:55:47,323][moc][WARNING][generic_smbo.py:386] Exception when calling objective function: result is None!
+config: Configuration(values={
+  'fidelity': 2,
+  'var00': 32,
+  'var01': 2048,
+  'var02': 16,
+  'var03': 64,
+  'var04': 4,
+  'var05': 4,
+  'var06': 1,
+  'var07': 32,
+  'var08': 16,
+  'var09': 900,
+  'var10': 10,
+  'var11': 30,
+})
+
+[2023-04-10 15:55:47,324][moc][INFO][generic_smbo.py:416] Iter 9, objectives: [inf].
+[2023-04-10 15:55:47,325][moc][WARNING][mf_advisor.py:421] No enough successful initial trials! Sample random configuration.
+[2023-04-10 15:55:47,348][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-10 15:55:47,890][moc][WARNING][generic_smbo.py:386] Exception when calling objective function: result is None!
+config: Configuration(values={
+  'fidelity': 2,
+  'var00': 64,
+  'var01': 1024,
+  'var02': 64,
+  'var03': 32,
+  'var04': 4,
+  'var05': 4,
+  'var06': 1,
+  'var07': 16,
+  'var08': 32,
+  'var09': 900,
+  'var10': 20,
+  'var11': 10,
+})
+
+[2023-04-10 15:55:47,892][moc][INFO][generic_smbo.py:416] Iter 10, objectives: [inf].
+[2023-04-10 15:55:47,893][moc][WARNING][mf_advisor.py:421] No enough successful initial trials! Sample random configuration.
+[2023-04-10 15:55:47,914][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-10 15:55:53,302][moc][WARNING][generic_smbo.py:386] Exception when calling objective function: result is None!
+config: Configuration(values={
+  'fidelity': 1,
+  'var00': 32,
+  'var01': 128,
+  'var02': 8,
+  'var03': 64,
+  'var04': 4,
+  'var05': 4,
+  'var06': 1,
+  'var07': 48,
+  'var08': 8,
+  'var09': 900,
+  'var10': 9,
+  'var11': 59,
+})
+
+[2023-04-10 15:55:53,303][moc][INFO][generic_smbo.py:416] Iter 11, objectives: [inf].
+[2023-04-10 15:55:53,305][moc][WARNING][mf_advisor.py:421] No enough successful initial trials! Sample random configuration.
+[2023-04-10 15:55:53,328][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-10 15:55:54,572][moc][WARNING][generic_smbo.py:386] Exception when calling objective function: result is None!
+config: Configuration(values={
+  'fidelity': 1,
+  'var00': 64,
+  'var01': 1024,
+  'var02': 4,
+  'var03': 64,
+  'var04': 4,
+  'var05': 4,
+  'var06': 1,
+  'var07': 40,
+  'var08': 16,
+  'var09': 900,
+  'var10': 8,
+  'var11': 34,
+})
+
+[2023-04-10 15:55:54,573][moc][INFO][generic_smbo.py:416] Iter 12, objectives: [inf].
+[2023-04-10 15:55:54,575][moc][WARNING][mf_advisor.py:421] No enough successful initial trials! Sample random configuration.
+[2023-04-10 15:55:54,597][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-10 15:55:59,650][moc][WARNING][generic_smbo.py:386] Exception when calling objective function: result is None!
+config: Configuration(values={
+  'fidelity': 1,
+  'var00': 32,
+  'var01': 256,
+  'var02': 8,
+  'var03': 2048,
+  'var04': 4,
+  'var05': 4,
+  'var06': 1,
+  'var07': 16,
+  'var08': 8,
+  'var09': 900,
+  'var10': 16,
+  'var11': 32,
+})
+
+[2023-04-10 15:55:59,651][moc][INFO][generic_smbo.py:416] Iter 13, objectives: [inf].
+[2023-04-10 15:55:59,652][moc][WARNING][mf_advisor.py:421] No enough successful initial trials! Sample random configuration.
+[2023-04-10 15:55:59,673][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-10 15:56:00,906][moc][WARNING][generic_smbo.py:386] Exception when calling objective function: result is None!
+config: Configuration(values={
+  'fidelity': 2,
+  'var00': 48,
+  'var01': 1024,
+  'var02': 4,
+  'var03': 32,
+  'var04': 4,
+  'var05': 4,
+  'var06': 1,
+  'var07': 8,
+  'var08': 56,
+  'var09': 900,
+  'var10': 37,
+  'var11': 12,
+})
+
+[2023-04-10 15:56:00,908][moc][INFO][generic_smbo.py:416] Iter 14, objectives: [inf].
+[2023-04-10 15:56:00,909][moc][WARNING][mf_advisor.py:421] No enough successful initial trials! Sample random configuration.
+[2023-04-10 15:56:00,933][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-10 15:56:01,023][moc][WARNING][generic_smbo.py:386] Exception when calling objective function: result is None!
+config: Configuration(values={
+  'fidelity': 2,
+  'var00': 32,
+  'var01': 256,
+  'var02': 64,
+  'var03': 1024,
+  'var04': 4,
+  'var05': 4,
+  'var06': 1,
+  'var07': 48,
+  'var08': 16,
+  'var09': 900,
+  'var10': 6,
+  'var11': 11,
+})
+
+[2023-04-10 15:56:01,024][moc][INFO][generic_smbo.py:416] Iter 15, objectives: [inf].
+[2023-04-10 15:56:01,026][moc][WARNING][mf_advisor.py:421] No enough successful initial trials! Sample random configuration.
+[2023-04-10 15:56:01,049][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-10 15:56:01,253][moc][WARNING][generic_smbo.py:386] Exception when calling objective function: result is None!
+config: Configuration(values={
+  'fidelity': 2,
+  'var00': 128,
+  'var01': 1024,
+  'var02': 64,
+  'var03': 1024,
+  'var04': 4,
+  'var05': 4,
+  'var06': 1,
+  'var07': 16,
+  'var08': 16,
+  'var09': 900,
+  'var10': 14,
+  'var11': 13,
+})
+
+[2023-04-10 15:56:01,253][moc][INFO][generic_smbo.py:416] Iter 16, objectives: [inf].
+[2023-04-10 15:56:01,254][moc][INFO][mf_advisor.py:411] Sample random config. rand_prob=0.100000.
+[2023-04-10 15:56:01,277][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-10 15:56:02,512][moc][WARNING][generic_smbo.py:386] Exception when calling objective function: result is None!
+config: Configuration(values={
+  'fidelity': 2,
+  'var00': 32,
+  'var01': 128,
+  'var02': 4,
+  'var03': 32,
+  'var04': 4,
+  'var05': 4,
+  'var06': 1,
+  'var07': 24,
+  'var08': 56,
+  'var09': 900,
+  'var10': 19,
+  'var11': 12,
+})
+
+[2023-04-10 15:56:02,514][moc][INFO][generic_smbo.py:416] Iter 17, objectives: [inf].
+[2023-04-10 15:56:02,515][moc][WARNING][mf_advisor.py:421] No enough successful initial trials! Sample random configuration.
+[2023-04-10 15:56:02,538][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-10 15:56:06,219][moc][WARNING][generic_smbo.py:386] Exception when calling objective function: result is None!
+config: Configuration(values={
+  'fidelity': 1,
+  'var00': 512,
+  'var01': 2048,
+  'var02': 32,
+  'var03': 512,
+  'var04': 4,
+  'var05': 4,
+  'var06': 1,
+  'var07': 8,
+  'var08': 16,
+  'var09': 900,
+  'var10': 20,
+  'var11': 15,
+})
+
+[2023-04-10 15:56:06,220][moc][INFO][generic_smbo.py:416] Iter 18, objectives: [inf].
+[2023-04-10 15:56:06,222][moc][WARNING][mf_advisor.py:421] No enough successful initial trials! Sample random configuration.
+[2023-04-10 15:56:06,244][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-10 15:56:06,742][moc][WARNING][generic_smbo.py:386] Exception when calling objective function: result is None!
+config: Configuration(values={
+  'fidelity': 1,
+  'var00': 256,
+  'var01': 1024,
+  'var02': 256,
+  'var03': 512,
+  'var04': 4,
+  'var05': 4,
+  'var06': 1,
+  'var07': 32,
+  'var08': 8,
+  'var09': 900,
+  'var10': 8,
+  'var11': 13,
+})
+
+[2023-04-10 15:56:06,743][moc][INFO][generic_smbo.py:416] Iter 19, objectives: [inf].
+[2023-04-10 15:56:06,745][moc][WARNING][mf_advisor.py:421] No enough successful initial trials! Sample random configuration.
+[2023-04-10 15:56:06,771][moc][WARNING][util_funcs.py:226] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.
+[2023-04-10 15:56:11,217][moc][WARNING][generic_smbo.py:386] Exception when calling objective function: result is None!
+config: Configuration(values={
+  'fidelity': 1,
+  'var00': 32,
+  'var01': 128,
+  'var02': 128,
+  'var03': 256,
+  'var04': 4,
+  'var05': 4,
+  'var06': 1,
+  'var07': 8,
+  'var08': 16,
+  'var09': 900,
+  'var10': 43,
+  'var11': 9,
+})
+
+[2023-04-10 15:56:11,218][moc][INFO][generic_smbo.py:416] Iter 20, objectives: [inf].

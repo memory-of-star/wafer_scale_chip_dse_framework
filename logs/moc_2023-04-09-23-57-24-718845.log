@@ -1,0 +1,21 @@
+[2023-04-09 23:57:24,719][moc][INFO][color_logger.py:203] Logfile: /home/chenyiqi/wafer_scale_chip_dse_framework/logs/moc_2023-04-09-23-57-24-718845.log
+[2023-04-09 23:57:25,111][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:57:25,112][moc][INFO][generic_smbo.py:332] Iter 1, objectives: [-1.6025720110654766].
+[2023-04-09 23:57:25,436][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:57:25,437][moc][INFO][generic_smbo.py:332] Iter 2, objectives: [-15.605492516993612].
+[2023-04-09 23:57:25,816][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:57:25,816][moc][INFO][generic_smbo.py:332] Iter 3, objectives: [-0.3923846237498379].
+[2023-04-09 23:57:26,125][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:57:26,126][moc][INFO][generic_smbo.py:332] Iter 4, objectives: [-0.7165026321174627].
+[2023-04-09 23:57:26,380][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:57:26,382][moc][INFO][generic_smbo.py:332] Iter 5, objectives: [-2.2969375128859504].
+[2023-04-09 23:57:26,940][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:57:26,942][moc][INFO][generic_smbo.py:332] Iter 6, objectives: [-2.970572765724374].
+[2023-04-09 23:57:27,342][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:57:27,343][moc][INFO][generic_smbo.py:332] Iter 7, objectives: [-0.37356913365172434].
+[2023-04-09 23:57:27,915][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:57:27,916][moc][INFO][generic_smbo.py:332] Iter 8, objectives: [-1.3044293566985499].
+[2023-04-09 23:57:28,241][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:57:28,242][moc][INFO][generic_smbo.py:332] Iter 9, objectives: [-1.1075205824140932].
+[2023-04-09 23:57:28,729][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-09 23:57:28,730][moc][INFO][generic_smbo.py:332] Iter 10, objectives: [-2.426915219234147].

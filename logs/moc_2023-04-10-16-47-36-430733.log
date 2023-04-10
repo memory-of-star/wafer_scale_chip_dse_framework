@@ -1,0 +1,30 @@
+[2023-04-10 16:47:36,430][moc][INFO][color_logger.py:203] Logfile: /home/chenyiqi/wafer_scale_chip_dse_framework/logs/moc_2023-04-10-16-47-36-430733.log
+[2023-04-10 16:47:36,434][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 16:47:36,434][moc][INFO][generic_smbo.py:333] Iter 1, objectives: [-1.7411545264148836].
+[2023-04-10 16:47:36,437][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 16:47:36,437][moc][INFO][generic_smbo.py:333] Iter 2, objectives: [-2.035895555339667].
+[2023-04-10 16:47:36,438][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 16:47:36,439][moc][INFO][generic_smbo.py:333] Iter 3, objectives: [-1.619125512132289].
+[2023-04-10 16:47:36,440][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 16:47:36,440][moc][INFO][generic_smbo.py:333] Iter 4, objectives: [-1.698477677013876].
+[2023-04-10 16:47:36,442][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
+[2023-04-10 16:47:36,442][moc][INFO][generic_smbo.py:333] Iter 5, objectives: [-241.3726976233012].
+[2023-04-10 16:47:36,443][moc][WARNING][generic_smbo.py:387] Exception when calling objective function: local variable '_history' referenced before assignment
+config: Configuration(values={
+  'fidelity': 2,
+  'var00': 128,
+  'var01': 2048,
+  'var02': 16,
+  'var03': 64,
+  'var04': 4,
+  'var05': 4,
+  'var06': 1,
+  'var07': 48,
+  'var08': 24,
+  'var09': 900,
+  'var10': 6,
+  'var11': 15,
+})
+
+[2023-04-10 16:47:36,443][moc][INFO][generic_smbo.py:418] Iter 5, objectives: [inf].
+[2023-04-10 16:47:36,443][moc][WARNING][util_funcs.py:231] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.

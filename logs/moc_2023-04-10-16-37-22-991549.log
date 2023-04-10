@@ -1,0 +1,18 @@
+[2023-04-10 16:37:22,991][moc][INFO][color_logger.py:203] Logfile: /home/chenyiqi/wafer_scale_chip_dse_framework/logs/moc_2023-04-10-16-37-22-991549.log
+[2023-04-10 16:37:22,994][moc][WARNING][generic_smbo.py:386] Exception when calling objective function: local variable '_history' referenced before assignment
+config: Configuration(values={
+  'fidelity': 2,
+  'var00': 256,
+  'var01': 2048,
+  'var02': 16,
+  'var03': 1024,
+  'var04': 4,
+  'var05': 4,
+  'var06': 1,
+  'var07': 16,
+  'var08': 24,
+  'var09': 900,
+  'var10': 14,
+  'var11': 9,
+})
+

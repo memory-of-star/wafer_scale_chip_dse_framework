@@ -1,0 +1,17 @@
+(DEBUG) 2023-04-09 21:50:37,710 [logger.py:40] logger init.
+(INFO) 2023-04-09 21:50:37,710 [logger.py:42] Logfile /home/chenyiqi/wafer_scale_chip_dse_framework/log/DSE4WSE_2023-04-09-21-50-37-710076.log
+(INFO) 2023-04-09 21:50:41,402 [api1.py:116] Design point: {'core_buffer_size': 32, 'core_buffer_bw': 128, 'core_mac_num': 4, 'core_noc_bw': 32, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 8, 'core_array_w': 8, 'wafer_mem_bw': 900, 'reticle_array_h': 51, 'reticle_array_w': 67}
+(INFO) 2023-04-09 21:50:41,403 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 48, 'data_parallel_size': 6, 'model_parallel_size': 2, 'tensor_parallel_size': 24, 'num_reticle_per_pipeline_stage': 176}
+(WARNING) 2023-04-09 21:50:41,445 [api1.py:108] Traceback (most recent call last):
+  File "/home/chenyiqi/wafer_scale_chip_dse_framework/dse4wse/test/dse/api1.py", line 104, in wrapper
+    return func(*args, **kwargs)
+  File "/home/chenyiqi/wafer_scale_chip_dse_framework/dse4wse/test/dse/api1.py", line 120, in evaluate_design_point
+    evaluator = create_evaluator(wafer_scale_engine, **model_parameters)
+  File "/home/chenyiqi/wafer_scale_chip_dse_framework/dse4wse/test/dse/api1.py", line 83, in create_evaluator
+    wse_transformer_runner = WseTransformerRunner(
+  File "/home/chenyiqi/wafer_scale_chip_dse_framework/dse4wse/dse4wse/model/wse_attn.py", line 495, in __init__
+    super().__init__(attention_heads, hidden_size, sequence_length, number_of_layers, micro_batch_size, mini_batch_size, data_parallel_size, model_parallel_size, tensor_parallel_size, wafer_scale_engine, training_config, inter_wafer_bandwidth, zero_dp_os, zero_dp_g, zero_dp_p, zero_r_pa, num_reticle_per_pipeline_stage)
+  File "/home/chenyiqi/wafer_scale_chip_dse_framework/dse4wse/dse4wse/model/wse_attn.py", line 91, in __init__
+    assert self.num_pipeline_stage_per_wafer >= 1, f"Requiring {tensor_parallel_size * num_reticle_per_pipeline_stage} reticles but only {wafer_scale_engine.reticle_array_height * wafer_scale_engine.reticle_array_width} reticles on the wafer!"
+AssertionError: Requiring 4224 reticles but only 3417 reticles on the wafer!
+
