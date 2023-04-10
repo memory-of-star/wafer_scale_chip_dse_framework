@@ -97,16 +97,34 @@ def func_multi_fidelity_with_inner_search(config: sp.Configuration):
         _space.add_hyperparameter(v5)
         
         def inner_sample_configuration(size):
-            cfg = super(sp.SelfDefinedConditionedSpace, _space).sample_configuration(size)
             if size == 1:
-                num_reticle_per_pipeline_stage_upper_bound = wafer_num * design_point['reticle_array_h'] * design_point['reticle_array_w'] // (cfg['model_parallel_size'] * cfg['tensor_parallel_size'])
-                cfg["num_reticle_per_pipeline_stage"] = random.randint(1, num_reticle_per_pipeline_stage_upper_bound)
+                cfg = super(sp.SelfDefinedConditionedSpace, _space).sample_configuration(size)
+                if cfg['data_parallel_size'] > wafer_num:
+                    cfg['data_parallel_size'] = random.randint(1, wafer_num)
+                if cfg['micro_batch_size'] * cfg['data_parallel_size'] > test_model_parameters[choose_model]['mini_batch_size']:
+                    cfg['micro_batch_size'] = random.randint(1, test_model_parameters[choose_model]['mini_batch_size'] // cfg['data_parallel_size'])
+                if math.ceil(design_point['reticle_array_h'] * design_point['reticle_array_w'] / (cfg['num_reticle_per_pipeline_stage'] * cfg['tensor_parallel_size'])) * wafer_num < cfg['model_parallel_size']:
+                    cfg['num_reticle_per_pipeline_stage'] = random.randint(1, design_point['reticle_array_h'] * design_point['reticle_array_w'] // (cfg['tensor_parallel_size'] * cfg['model_parallel_size']))
+                if cfg['tensor_parallel_size'] * cfg['num_reticle_per_pipeline_stage'] > design_point['reticle_array_h'] * design_point['reticle_array_w']:
+                    cfg['num_reticle_per_pipeline_stage'] = random.randint(1, design_point['reticle_array_h'] * design_point['reticle_array_w'] // cfg['tensor_parallel_size'])
+                print("wafer_num: ", wafer_num)
+                print("design_point: ", design_point)
+                print("config: ", cfg)
                 return cfg
             else:
-                for i in range(len(cfg)):
-                    num_reticle_per_pipeline_stage_upper_bound = wafer_num * design_point['reticle_array_h'] * design_point['reticle_array_w'] // (cfg[i]['model_parallel_size'] * cfg[i]['tensor_parallel_size'])
-                    cfg[i]["num_reticle_per_pipeline_stage"] = random.randint(1, num_reticle_per_pipeline_stage_upper_bound)
-                return cfg
+                cfgs = super(sp.SelfDefinedConditionedSpace, _space).sample_configuration(size)
+                for i, cfg in enumerate(cfgs):
+                    if cfg['data_parallel_size'] > wafer_num:
+                        cfg['data_parallel_size'] = random.randint(1, wafer_num)
+                    if cfg['micro_batch_size'] * cfg['data_parallel_size'] > test_model_parameters[choose_model]['mini_batch_size']:
+                        cfg['micro_batch_size'] = random.randint(1, test_model_parameters[choose_model]['mini_batch_size'] // cfg['data_parallel_size'])
+                    if math.ceil(design_point['reticle_array_h'] * design_point['reticle_array_w'] / (cfg['num_reticle_per_pipeline_stage'] * cfg['tensor_parallel_size'])) * wafer_num < cfg['model_parallel_size']:
+                        cfg['num_reticle_per_pipeline_stage'] = random.randint(1, design_point['reticle_array_h'] * design_point['reticle_array_w'] // (cfg['tensor_parallel_size'] * cfg['model_parallel_size']))
+                    if cfg['tensor_parallel_size'] * cfg['num_reticle_per_pipeline_stage'] > design_point['reticle_array_h'] * design_point['reticle_array_w']:
+                        cfg['num_reticle_per_pipeline_stage'] = random.randint(1, design_point['reticle_array_h'] * design_point['reticle_array_w'] // cfg['tensor_parallel_size'])
+                    
+                    cfgs[i] = cfg
+                return cfgs
         
         _space.set_sample_func(inner_sample_configuration)
 
@@ -117,9 +135,9 @@ def func_multi_fidelity_with_inner_search(config: sp.Configuration):
                 temp_dic = copy.deepcopy(test_model_parameters[choose_model])
                 temp_dic.update(_dic)
                 if lst[0] == 1:
-                    _prediction = api1.evaluate_design_point(design_point=design_point, model_parameters=temp_dic)
+                    _prediction = api1.evaluate_design_point(design_point=design_point, model_parameters=temp_dic, metric='throughput')
                 elif lst[0] == 2:
-                    _prediction = api2.evaluate_design_point(design_point=design_point, model_parameters=temp_dic)
+                    _prediction = api2.evaluate_design_point(design_point=design_point, model_parameters=temp_dic, metric='throughput')
                 else:
                     raise ValueError
             except:
@@ -134,7 +152,7 @@ def func_multi_fidelity_with_inner_search(config: sp.Configuration):
                     'objective_function':inner_func,
                     'num_objs':1,
                     'num_constraints':0,
-                    'max_runs':20,
+                    'max_runs':10,
                     'surrogate_type':'gp',
                     'acq_optimizer_type':'true_random',
                     'initial_runs':6,
@@ -154,7 +172,7 @@ def func_multi_fidelity_with_inner_search(config: sp.Configuration):
 
     except:
         print("outer func error!")
-        prediction = -1e10
+        prediction = 1e10
     result = dict()
     result['objs'] = [prediction]
     return result

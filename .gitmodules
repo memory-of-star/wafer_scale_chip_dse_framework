@@ -1,3 +1,6 @@
 [submodule "dse4wse"]
 	path = dse4wse
 	url = git@github.com:SuperVan-Young/dse4wse.git
+[submodule "open-box"]
+	path = open-box
+	url = git@github.com:memory-of-star/open-box.git
