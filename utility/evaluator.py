@@ -23,21 +23,21 @@ import copy
 choose_model = 0
 
 def design_vec2design_dic(vec):
-        ret = {
-            "core_buffer_size": vec[0],
-            "core_buffer_bw": vec[1],
-            "core_mac_num": vec[2],
-            "core_noc_bw": vec[3],
-            "core_noc_vc": vec[4],
-            "core_noc_buffer_size": vec[5],
-            "reticle_bw": vec[6],
-            "core_array_h": vec[7],
-            "core_array_w": vec[8],
-            "wafer_mem_bw": vec[9],
-            "reticle_array_h": vec[10],
-            "reticle_array_w": vec[11],
-        }
-        return ret
+    ret = {
+        "core_buffer_size": vec[0],
+        "core_buffer_bw": vec[1],
+        "core_mac_num": vec[2],
+        "core_noc_bw": vec[3],
+        "core_noc_vc": vec[4],
+        "core_noc_buffer_size": vec[5],
+        "reticle_bw": vec[6],
+        "core_array_h": vec[7],
+        "core_array_w": vec[8],
+        "wafer_mem_bw": vec[9],
+        "reticle_array_h": vec[10],
+        "reticle_array_w": vec[11],
+    }
+    return ret
 
 def factors(n):
     factors = [] 
@@ -100,28 +100,25 @@ def func_multi_fidelity_with_inner_search(config: sp.Configuration):
             if size == 1:
                 cfg = super(sp.SelfDefinedConditionedSpace, _space).sample_configuration(size)
                 if cfg['data_parallel_size'] > wafer_num:
-                    cfg['data_parallel_size'] = random.randint(1, wafer_num)
+                    cfg['data_parallel_size'] = random.randint(1, max(wafer_num, 1))
                 if cfg['micro_batch_size'] * cfg['data_parallel_size'] > test_model_parameters[choose_model]['mini_batch_size']:
-                    cfg['micro_batch_size'] = random.randint(1, test_model_parameters[choose_model]['mini_batch_size'] // cfg['data_parallel_size'])
+                    cfg['micro_batch_size'] = random.randint(1, max(test_model_parameters[choose_model]['mini_batch_size'] // cfg['data_parallel_size'], 1))
                 if math.ceil(design_point['reticle_array_h'] * design_point['reticle_array_w'] / (cfg['num_reticle_per_pipeline_stage'] * cfg['tensor_parallel_size'])) * wafer_num < cfg['model_parallel_size']:
-                    cfg['num_reticle_per_pipeline_stage'] = random.randint(1, design_point['reticle_array_h'] * design_point['reticle_array_w'] // (cfg['tensor_parallel_size'] * cfg['model_parallel_size']))
+                    cfg['num_reticle_per_pipeline_stage'] = random.randint(1, max(design_point['reticle_array_h'] * design_point['reticle_array_w'] // (cfg['tensor_parallel_size'] * cfg['model_parallel_size']), 1))
                 if cfg['tensor_parallel_size'] * cfg['num_reticle_per_pipeline_stage'] > design_point['reticle_array_h'] * design_point['reticle_array_w']:
-                    cfg['num_reticle_per_pipeline_stage'] = random.randint(1, design_point['reticle_array_h'] * design_point['reticle_array_w'] // cfg['tensor_parallel_size'])
-                print("wafer_num: ", wafer_num)
-                print("design_point: ", design_point)
-                print("config: ", cfg)
+                    cfg['num_reticle_per_pipeline_stage'] = random.randint(1, max(design_point['reticle_array_h'] * design_point['reticle_array_w'] // cfg['tensor_parallel_size'], 1))
                 return cfg
             else:
                 cfgs = super(sp.SelfDefinedConditionedSpace, _space).sample_configuration(size)
                 for i, cfg in enumerate(cfgs):
                     if cfg['data_parallel_size'] > wafer_num:
-                        cfg['data_parallel_size'] = random.randint(1, wafer_num)
+                        cfg['data_parallel_size'] = random.randint(1, max(wafer_num, 1))
                     if cfg['micro_batch_size'] * cfg['data_parallel_size'] > test_model_parameters[choose_model]['mini_batch_size']:
-                        cfg['micro_batch_size'] = random.randint(1, test_model_parameters[choose_model]['mini_batch_size'] // cfg['data_parallel_size'])
+                        cfg['micro_batch_size'] = random.randint(1, max(test_model_parameters[choose_model]['mini_batch_size'] // cfg['data_parallel_size'], 1))
                     if math.ceil(design_point['reticle_array_h'] * design_point['reticle_array_w'] / (cfg['num_reticle_per_pipeline_stage'] * cfg['tensor_parallel_size'])) * wafer_num < cfg['model_parallel_size']:
-                        cfg['num_reticle_per_pipeline_stage'] = random.randint(1, design_point['reticle_array_h'] * design_point['reticle_array_w'] // (cfg['tensor_parallel_size'] * cfg['model_parallel_size']))
+                        cfg['num_reticle_per_pipeline_stage'] = random.randint(1, max(design_point['reticle_array_h'] * design_point['reticle_array_w'] // (cfg['tensor_parallel_size'] * cfg['model_parallel_size']), 1))
                     if cfg['tensor_parallel_size'] * cfg['num_reticle_per_pipeline_stage'] > design_point['reticle_array_h'] * design_point['reticle_array_w']:
-                        cfg['num_reticle_per_pipeline_stage'] = random.randint(1, design_point['reticle_array_h'] * design_point['reticle_array_w'] // cfg['tensor_parallel_size'])
+                        cfg['num_reticle_per_pipeline_stage'] = random.randint(1, max(design_point['reticle_array_h'] * design_point['reticle_array_w'] // cfg['tensor_parallel_size'], 1))
                     
                     cfgs[i] = cfg
                 return cfgs
@@ -152,7 +149,7 @@ def func_multi_fidelity_with_inner_search(config: sp.Configuration):
                     'objective_function':inner_func,
                     'num_objs':1,
                     'num_constraints':0,
-                    'max_runs':10,
+                    'max_runs':20,
                     'surrogate_type':'gp',
                     'acq_optimizer_type':'true_random',
                     'initial_runs':6,
@@ -170,9 +167,16 @@ def func_multi_fidelity_with_inner_search(config: sp.Configuration):
 
         prediction = _history.get_incumbents()[0].objectives[0]
 
-    except:
-        print("outer func error!")
+    except Exception as e:
+        print("outer func error!: ", e)
         prediction = 1e10
+        result = dict()
+        result['objs'] = [prediction]
+        return result
+    
     result = dict()
     result['objs'] = [prediction]
+    result['config'] = [dict(_history.get_incumbents()[0].config)]
+
+    print('result_config: ', _history.get_incumbents()[0].config)
     return result

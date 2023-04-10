@@ -3,7 +3,7 @@ import seaborn as sns
 import numpy as np
 from typing import List
 
-def plot_curve(data_random:np.ndarray, data_gp:np.ndarray, y_log = True, x_label = 'Model Parameter Combination', y_label = 'Throughput', title = 'Wafer Scale Chip DSE Curve', path='result.png'):
+def plot_curve(data_1:np.ndarray, data_2:np.ndarray, label1 = 'Baseline', label2 = 'Single Fidelity', y_log = True, x_label = 'Model Parameter Combination', y_label = 'Throughput', title = 'Wafer Scale Chip DSE Curve', path='result.png'):
     sns.set_style('darkgrid') # darkgrid, white grid, dark, white and ticks
     plt.rc('axes', titlesize=20)     # fontsize of the axes title
     plt.rc('axes', labelsize=14)    # fontsize of the x and y labels
@@ -14,8 +14,8 @@ def plot_curve(data_random:np.ndarray, data_gp:np.ndarray, y_log = True, x_label
     sns.color_palette('deep')
     plt.figure(figsize=(10,6), tight_layout=True)
 
-    plt.plot(np.arange(1,len(data_random) + 1), data_random, linewidth=0.5, label='Baseline', color=sns.color_palette('Set2')[-1])
-    plt.plot(np.arange(1,len(data_gp) + 1), data_gp, linewidth=0.5, label='Single Fidelity', color=sns.color_palette('Set2')[-2])
+    plt.plot(np.arange(1,len(data_1) + 1), data_1, linewidth=0.5, label=label1, color=sns.color_palette('Set2')[-1])
+    plt.plot(np.arange(1,len(data_2) + 1), data_2, linewidth=0.5, label=label2, color=sns.color_palette('Set2')[-2])
     
     if y_log:
         plt.yscale("log")
