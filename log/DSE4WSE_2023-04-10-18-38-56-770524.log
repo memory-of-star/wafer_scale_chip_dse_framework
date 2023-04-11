@@ -1,6 +1,0 @@
-(DEBUG) 2023-04-10 18:38:56,770 [logger.py:40] logger init.
-(INFO) 2023-04-10 18:38:56,770 [logger.py:42] Logfile /home/chenyiqi/wafer_scale_chip_dse_framework/log/DSE4WSE_2023-04-10-18-38-56-770524.log
-(INFO) 2023-04-10 18:38:57,245 [api1.py:116] Design point: {'core_buffer_size': 64, 'core_buffer_bw': 256, 'core_mac_num': 4, 'core_noc_bw': 128, 'core_noc_vc': 4, 'core_noc_buffer_size': 4, 'reticle_bw': 1, 'core_array_h': 8, 'core_array_w': 24, 'wafer_mem_bw': 900, 'reticle_array_h': 35, 'reticle_array_w': 24}
-(INFO) 2023-04-10 18:38:57,245 [api1.py:117] Model parameters: {'attention_heads': 24, 'hidden_size': 2304, 'sequence_length': 2048, 'number_of_layers': 24, 'mini_batch_size': 512, 'micro_batch_size': 95, 'data_parallel_size': 5, 'model_parallel_size': 2, 'tensor_parallel_size': 1, 'num_reticle_per_pipeline_stage': 835}
-(INFO) 2023-04-10 18:38:57,252 [wse_attn.py:412] Calculating training throughput of attention module
-(INFO) 2023-04-10 18:38:57,696 [api1.py:131] throughput: 21.76118231353484

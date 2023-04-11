@@ -58,3 +58,34 @@ def plot_hist(data_random:List[np.ndarray], data_gp:List[np.ndarray], y_log = Tr
     plt.legend(title='Different Strategy', title_fontsize = 13)
 
     plt.savefig(path)
+
+def get_curve(histories, strategy='multi_fidelity'):
+    if strategy == 'multi_fidelity':
+        _sum = [None, None]
+        for i in range(len(histories)):
+            for j in range(2):
+                tmp = np.array([k[-1] for k in histories[i][j]])
+                if not isinstance(_sum[j], np.ndarray):
+                    _sum[j] = tmp
+                else:
+                    if len(_sum[j]) > len(tmp):
+                        tmp = np.pad(tmp, (0, len(_sum[j]) - len(tmp)), mode='edge')
+                    else:
+                        _sum[j] = np.pad(_sum[j], (0, len(tmp) - len(_sum[j])), mode='edge')
+                    _sum[j] += tmp
+        for j in range(2):
+            _sum[j] /= len(histories)
+    elif strategy == 'random' or strategy == 'single_fidelity':
+        _sum = None
+        for i in range(len(histories)):
+            tmp = np.array([k[-1] for k in histories[i]])
+            if not isinstance(_sum, np.ndarray):
+                _sum = tmp
+            else:
+                if len(_sum) > len(tmp):
+                    tmp = np.pad(tmp, (0, len(_sum) - len(tmp)), mode='edge')
+                else:
+                    _sum = np.pad(_sum, (0, len(tmp) - len(_sum)), mode='edge')
+                _sum += tmp
+        _sum /= len(histories)
+    return _sum

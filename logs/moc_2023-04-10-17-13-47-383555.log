@@ -1,4 +1,0 @@
-[2023-04-10 17:13:47,383][moc][INFO][color_logger.py:203] Logfile: /home/chenyiqi/wafer_scale_chip_dse_framework/logs/moc_2023-04-10-17-13-47-383555.log
-[2023-04-10 17:13:47,386][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
-[2023-04-10 17:13:47,386][moc][INFO][generic_smbo.py:418] Iter 1, objectives: [10000000000.0].
-[2023-04-10 17:13:47,387][moc][WARNING][util_funcs.py:231] Keyword argument "num_objs" is deprecated and will be removed in a future version. Please use "num_objectives" instead.

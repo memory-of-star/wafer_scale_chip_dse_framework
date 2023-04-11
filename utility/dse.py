@@ -11,7 +11,7 @@ import os
 import sys
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from evaluator import func_single_fidelity1, func_single_fidelity2, func_multi_fidelity_with_inner_search
+from evaluator import func_single_fidelity1, func_single_fidelity2, func_multi_fidelity_with_inner_search, func_single_fidelity_with_inner_search
 import evaluator
 import plot
 import copy
@@ -206,9 +206,10 @@ def multi_fidelity_double_circulation_search(model_num = 1, run_times = 20, max_
     for i in range(len(points_dic)):
         dic = copy.deepcopy(points_dic[i])
         dic['fidelity'] = 1
-        points_dic[i]['fidelity'] = 2
+        dic_ = copy.deepcopy(points_dic[i])
+        dic_['fidelity'] = 2
         points_dic2.append(dic)
-        points_dic2.append(points_dic[i])
+        points_dic2.append(dic_)
 
     manager = multiprocessing.Manager()
     queue = manager.Queue()
@@ -231,9 +232,10 @@ def multi_fidelity_double_circulation_search(model_num = 1, run_times = 20, max_
                                 'acq_type':'mfei',
                                 'advisor_type':'mf_advisor'
                                 }
+                p = Process(target=process_multi_fidelity, args=(points_dic2, -1e11, queue, design_space, design_points, strategy), kwargs=optimizer_kwargs)
             elif strategy == 'random':
                 optimizer_kwargs = {
-                                'objective_function':func_multi_fidelity_with_inner_search,
+                                'objective_function':func_single_fidelity_with_inner_search,
                                 'num_objs':1,
                                 'num_constraints':0,
                                 'max_runs':max_runs,
@@ -244,10 +246,28 @@ def multi_fidelity_double_circulation_search(model_num = 1, run_times = 20, max_
                                 'time_limit_per_trial':1000,
                                 'task_id':'moc',
                                 'acq_type':'ei',
-                                'advisor_type':'mf_random'
+                                'advisor_type':'random'
                                 }
+                p = Process(target=process_single_fidelity, args=(points_dic, -1e11, queue, design_space, design_points), kwargs=optimizer_kwargs)
+            elif strategy == 'single_fidelity':
+                optimizer_kwargs = {
+                                'objective_function':func_single_fidelity_with_inner_search,
+                                'num_objs':1,
+                                'num_constraints':0,
+                                'max_runs':max_runs,
+                                'surrogate_type':'gp',
+                                'acq_optimizer_type':'true_random',
+                                'initial_runs':initial_runs,
+                                'init_strategy':'random',
+                                'time_limit_per_trial':1000,
+                                'task_id':'moc',
+                                'acq_type':'ei',
+                                'advisor_type':'default'
+                                }
+                p = Process(target=process_single_fidelity, args=(points_dic, -1e11, queue, design_space, design_points), kwargs=optimizer_kwargs)
+
             evaluator.choose_model = i
-            p = Process(target=process_multi_fidelity, args=(points_dic2, -1e11, queue, design_space, design_points, strategy), kwargs=optimizer_kwargs)
+            
             p.start()
             pool.append(p)
 

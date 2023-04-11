@@ -1,9 +1,0 @@
-[2023-04-09 23:20:31,777][moc][INFO][color_logger.py:203] Logfile: /home/chenyiqi/wafer_scale_chip_dse_framework/logs/moc_2023-04-09-23-20-31-776124.log
-[2023-04-09 23:20:32,224][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
-[2023-04-09 23:20:32,225][moc][INFO][generic_smbo.py:332] Iter 1, objectives: [-5.002618594218693].
-[2023-04-09 23:20:32,682][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
-[2023-04-09 23:20:32,684][moc][INFO][generic_smbo.py:332] Iter 2, objectives: [-3.7094096194072064].
-[2023-04-09 23:20:33,125][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
-[2023-04-09 23:20:33,126][moc][INFO][generic_smbo.py:332] Iter 3, objectives: [-1.3562304273153567].
-[2023-04-09 23:20:33,599][moc][WARNING][util_funcs.py:111] Provide "objs" in result is deprecated and will be removed in future versions! Please use "objectives" instead.
-[2023-04-09 23:20:33,600][moc][INFO][generic_smbo.py:332] Iter 4, objectives: [-3.0036651578831113].

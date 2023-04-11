@@ -1,4 +1,4 @@
 result/pickle/*
 result/picture/*
-./log
-./logs
+log/*
+logs/*
