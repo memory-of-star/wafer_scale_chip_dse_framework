@@ -22,6 +22,7 @@ import copy
 from tqdm import tqdm
 
 choose_model = 0
+inner_max_runs = 100
 
 def design_vec2design_dic(vec):
     ret = {
@@ -150,7 +151,7 @@ def func_multi_fidelity_with_inner_search(config: sp.Configuration):
                     'objective_function':inner_func,
                     'num_objs':1,
                     'num_constraints':0,
-                    'max_runs':10,
+                    'max_runs':inner_max_runs,
                     'surrogate_type':'gp',
                     'acq_optimizer_type':'true_random',
                     'initial_runs':6,
@@ -257,7 +258,7 @@ def func_single_fidelity_with_inner_search(config: sp.Configuration):
                     'objective_function':inner_func,
                     'num_objs':1,
                     'num_constraints':0,
-                    'max_runs':10,
+                    'max_runs':inner_max_runs,
                     'surrogate_type':'gp',
                     'acq_optimizer_type':'true_random',
                     'initial_runs':6,
@@ -438,7 +439,7 @@ def func_mo_multi_fidelity_with_inner_search(config: sp.Configuration):
                     'objective_function':inner_func,
                     'num_objs':1,
                     'num_constraints':0,
-                    'max_runs':10,
+                    'max_runs':inner_max_runs,
                     'surrogate_type':'gp',
                     'acq_optimizer_type':'true_random',
                     'initial_runs':6,
@@ -546,7 +547,7 @@ def func_mo_single_fidelity_with_inner_search(config: sp.Configuration):
                     'objective_function':inner_func,
                     'num_objs':1,
                     'num_constraints':0,
-                    'max_runs':10,
+                    'max_runs':inner_max_runs,
                     'surrogate_type':'gp',
                     'acq_optimizer_type':'true_random',
                     'initial_runs':6,
@@ -579,6 +580,7 @@ def func_mo_single_fidelity_with_inner_search(config: sp.Configuration):
     return result
 
 def test_KT(data_lst): # data_list : List[(x_i, y_i), ]
+    pairs = []
     length = len(data_lst)
     c_2n = length * (length - 1) // 2
     num_discordant = 0
@@ -598,8 +600,9 @@ def test_KT(data_lst): # data_list : List[(x_i, y_i), ]
 
                 if (x1 - x2) * (y1 - y2) < 0:
                     num_discordant += 1
+                    pairs.append((i, j))
     
-    return 1 - 2 * num_discordant / c_2n
+    return 1 - 2 * num_discordant / c_2n, pairs
 
 def get_evaluation_list(points_list):
     evaluation_lst = []

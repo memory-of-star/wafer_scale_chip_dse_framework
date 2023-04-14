@@ -197,7 +197,7 @@ def single_fidelity_search(model_num = 1, run_times = 10, max_runs = 20, initial
     plot.plot_hist(np.array([curve_random]), np.array([curve_gp]), path=os.path.join(root_path, 'result/picture', run_name+'_hist.png'))
 
 
-def multi_fidelity_double_circulation_search(model_num = 1, run_times = 20, max_runs = 100, multi_objective=False, strategy='multi_fidelity', initial_runs = 6, run_name = 'result', **kwargs):
+def multi_fidelity_double_circulation_search(choose_model = 0, run_times = 20, max_runs = 100, multi_objective=False, strategy='multi_fidelity', initial_runs = 6, run_name = 'result', **kwargs):
     design_points, design_space = build_search_space()
 
     var_names = ['var{:02}'.format(i) for i in range(len(design_space))]
@@ -216,68 +216,67 @@ def multi_fidelity_double_circulation_search(model_num = 1, run_times = 20, max_
     pool = []
 
     for k in range(run_times):
-        for i in range(model_num):
-            if strategy == 'multi_fidelity':
-                optimizer_kwargs = {
-                                'objective_function':func_multi_fidelity_with_inner_search,
-                                'num_objs':1,
-                                'num_constraints':0,
-                                'max_runs':max_runs,
-                                'surrogate_type':'gp',
-                                'acq_optimizer_type':'true_random',
-                                'initial_runs':initial_runs,
-                                'init_strategy':'random',
-                                'time_limit_per_trial':1000,
-                                'task_id':'moc',
-                                'acq_type':'mfei',
-                                'advisor_type':'mf_advisor'
-                                }
-                p = Process(target=process_multi_fidelity, args=(points_dic2, -1e11, queue, design_space, design_points, strategy), kwargs=optimizer_kwargs)
-            elif strategy == 'random':
-                optimizer_kwargs = {
-                                'objective_function':func_single_fidelity_with_inner_search,
-                                'num_objs':1,
-                                'num_constraints':0,
-                                'max_runs':max_runs,
-                                'surrogate_type':'gp',
-                                'acq_optimizer_type':'true_random',
-                                'initial_runs':initial_runs,
-                                'init_strategy':'random',
-                                'time_limit_per_trial':1000,
-                                'task_id':'moc',
-                                'acq_type':'ei',
-                                'advisor_type':'random'
-                                }
-                if multi_objective:
-                    optimizer_kwargs['num_objs'] = 2
-                    optimizer_kwargs['acq_type'] = 'ehvi'
-                    optimizer_kwargs['objective_function'] = func_mo_single_fidelity_with_inner_search
-                p = Process(target=process_single_fidelity, args=(points_dic, -1e11, queue, design_space, design_points), kwargs=optimizer_kwargs)
-            elif strategy == 'single_fidelity':
-                optimizer_kwargs = {
-                                'objective_function':func_single_fidelity_with_inner_search,
-                                'num_objs':1,
-                                'num_constraints':0,
-                                'max_runs':max_runs,
-                                'surrogate_type':'gp',
-                                'acq_optimizer_type':'true_random',
-                                'initial_runs':initial_runs,
-                                'init_strategy':'random',
-                                'time_limit_per_trial':1000,
-                                'task_id':'moc',
-                                'acq_type':'ei',
-                                'advisor_type':'default'
-                                }
-                if multi_objective:
-                    optimizer_kwargs['num_objs'] = 2
-                    optimizer_kwargs['acq_type'] = 'ehvi'
-                    optimizer_kwargs['objective_function'] = func_mo_single_fidelity_with_inner_search
-                p = Process(target=process_single_fidelity, args=(points_dic, -1e11, queue, design_space, design_points), kwargs=optimizer_kwargs)
+        if strategy == 'multi_fidelity':
+            optimizer_kwargs = {
+                            'objective_function':func_multi_fidelity_with_inner_search,
+                            'num_objs':1,
+                            'num_constraints':0,
+                            'max_runs':max_runs,
+                            'surrogate_type':'gp',
+                            'acq_optimizer_type':'true_random',
+                            'initial_runs':initial_runs,
+                            'init_strategy':'random',
+                            'time_limit_per_trial':1000,
+                            'task_id':'moc',
+                            'acq_type':'mfei',
+                            'advisor_type':'mf_advisor'
+                            }
+            p = Process(target=process_multi_fidelity, args=(points_dic2, -1e11, queue, design_space, design_points, strategy), kwargs=optimizer_kwargs)
+        elif strategy == 'random':
+            optimizer_kwargs = {
+                            'objective_function':func_single_fidelity_with_inner_search,
+                            'num_objs':1,
+                            'num_constraints':0,
+                            'max_runs':max_runs,
+                            'surrogate_type':'gp',
+                            'acq_optimizer_type':'true_random',
+                            'initial_runs':initial_runs,
+                            'init_strategy':'random',
+                            'time_limit_per_trial':1000,
+                            'task_id':'moc',
+                            'acq_type':'ei',
+                            'advisor_type':'random'
+                            }
+            if multi_objective:
+                optimizer_kwargs['num_objs'] = 2
+                optimizer_kwargs['acq_type'] = 'ehvi'
+                optimizer_kwargs['objective_function'] = func_mo_single_fidelity_with_inner_search
+            p = Process(target=process_single_fidelity, args=(points_dic, -1e11, queue, design_space, design_points), kwargs=optimizer_kwargs)
+        elif strategy == 'single_fidelity':
+            optimizer_kwargs = {
+                            'objective_function':func_single_fidelity_with_inner_search,
+                            'num_objs':1,
+                            'num_constraints':0,
+                            'max_runs':max_runs,
+                            'surrogate_type':'gp',
+                            'acq_optimizer_type':'true_random',
+                            'initial_runs':initial_runs,
+                            'init_strategy':'random',
+                            'time_limit_per_trial':1000,
+                            'task_id':'moc',
+                            'acq_type':'ei',
+                            'advisor_type':'default'
+                            }
+            if multi_objective:
+                optimizer_kwargs['num_objs'] = 2
+                optimizer_kwargs['acq_type'] = 'ehvi'
+                optimizer_kwargs['objective_function'] = func_mo_single_fidelity_with_inner_search
+            p = Process(target=process_single_fidelity, args=(points_dic, -1e11, queue, design_space, design_points), kwargs=optimizer_kwargs)
 
-            evaluator.choose_model = i
-            
-            p.start()
-            pool.append(p)
+        evaluator.choose_model = choose_model
+        
+        p.start()
+        pool.append(p)
 
     for p in pool:
         p.join()
@@ -345,8 +344,8 @@ def KT_evaluator(size=100, choose_model = 0, multi_process = True, threads = 20)
         evaluation_list = evaluator.get_evaluation_list_multi_process(points_lst, threads=threads)
     else:
         evaluation_list = evaluator.get_evaluation_list(points_lst)
-    kt = evaluator.test_KT(evaluation_list)
-    return kt
+    kt, pairs = evaluator.test_KT(evaluation_list)
+    return kt, points_lst, evaluation_list, pairs
 
 
 if __name__ == "__main__":

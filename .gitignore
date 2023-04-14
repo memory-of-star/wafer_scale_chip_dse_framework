@@ -3,3 +3,4 @@ result/picture/*
 log/*
 logs/*
 try/*
+__pycache__/*
