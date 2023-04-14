@@ -11,7 +11,7 @@ import os
 import sys
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from evaluator import func_single_fidelity1, func_single_fidelity2, func_multi_fidelity_with_inner_search, func_single_fidelity_with_inner_search
+from evaluator import func_single_fidelity1, func_single_fidelity2, func_multi_fidelity_with_inner_search, func_single_fidelity_with_inner_search, func_mo_single_fidelity_with_inner_search, func_mo_multi_fidelity_with_inner_search
 import evaluator
 import plot
 import copy
@@ -197,7 +197,7 @@ def single_fidelity_search(model_num = 1, run_times = 10, max_runs = 20, initial
     plot.plot_hist(np.array([curve_random]), np.array([curve_gp]), path=os.path.join(root_path, 'result/picture', run_name+'_hist.png'))
 
 
-def multi_fidelity_double_circulation_search(model_num = 1, run_times = 20, max_runs = 100, strategy='multi_fidelity', initial_runs = 6, run_name = 'result', **kwargs):
+def multi_fidelity_double_circulation_search(model_num = 1, run_times = 20, max_runs = 100, multi_objective=False, strategy='multi_fidelity', initial_runs = 6, run_name = 'result', **kwargs):
     design_points, design_space = build_search_space()
 
     var_names = ['var{:02}'.format(i) for i in range(len(design_space))]
@@ -248,6 +248,10 @@ def multi_fidelity_double_circulation_search(model_num = 1, run_times = 20, max_
                                 'acq_type':'ei',
                                 'advisor_type':'random'
                                 }
+                if multi_objective:
+                    optimizer_kwargs['num_objs'] = 2
+                    optimizer_kwargs['acq_type'] = 'ehvi'
+                    optimizer_kwargs['objective_function'] = func_mo_single_fidelity_with_inner_search
                 p = Process(target=process_single_fidelity, args=(points_dic, -1e11, queue, design_space, design_points), kwargs=optimizer_kwargs)
             elif strategy == 'single_fidelity':
                 optimizer_kwargs = {
@@ -264,6 +268,10 @@ def multi_fidelity_double_circulation_search(model_num = 1, run_times = 20, max_
                                 'acq_type':'ei',
                                 'advisor_type':'default'
                                 }
+                if multi_objective:
+                    optimizer_kwargs['num_objs'] = 2
+                    optimizer_kwargs['acq_type'] = 'ehvi'
+                    optimizer_kwargs['objective_function'] = func_mo_single_fidelity_with_inner_search
                 p = Process(target=process_single_fidelity, args=(points_dic, -1e11, queue, design_space, design_points), kwargs=optimizer_kwargs)
 
             evaluator.choose_model = i
@@ -294,7 +302,7 @@ def multi_fidelity_double_circulation_search(model_num = 1, run_times = 20, max_
 
         plot.plot_curve(curve_1, curve_2, label1='fidelity1', label2='fidelity2', x_label = 'iteration', path=os.path.join(root_path, 'result/picture', run_name+'_curve.png'))
 
-def generate_legal_points(num = 100):
+def generate_legal_points(num = 100, choose_model=-1):
     design_points, design_space = build_search_space()
 
     var_names = ['var{:02}'.format(i) for i in range(len(design_space))]
@@ -321,12 +329,25 @@ def generate_legal_points(num = 100):
 
     ret = []
     for i in tqdm(range(num)):
-        evaluator.choose_model = random.randint(0, 15)
+        if choose_model == -1:
+            evaluator.choose_model = random.randint(0, 15)
+        else:
+            evaluator.choose_model = choose_model
         config = space.sample_configuration()
         design_point, model_para = evaluator.generate(config)
         ret.append((design_point, model_para))
     
     return ret
+
+def KT_evaluator(size=100, choose_model = 0, multi_process = True, threads = 20):
+    points_lst = generate_legal_points(size, choose_model)
+    if multi_process:
+        evaluation_list = evaluator.get_evaluation_list_multi_process(points_lst, threads=threads)
+    else:
+        evaluation_list = evaluator.get_evaluation_list(points_lst)
+    kt = evaluator.test_KT(evaluation_list)
+    return kt
+
 
 if __name__ == "__main__":
     multi_fidelity_double_circulation_search(run_times=1, max_runs=20, run_name='try')

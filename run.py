@@ -10,7 +10,7 @@ args = parser.parse_args()
 
 # run_name = 'multi_fidelity_v0.2'
 # strategy = 'multi_fidelity'
-dse.multi_fidelity_double_circulation_search(run_times=30, model_num=1, max_runs=100, run_name=args.run_name, strategy=args.strategy)
+dse.multi_fidelity_double_circulation_search(run_times=10, model_num=1, max_runs=20, multi_objective=True, run_name=args.run_name, strategy=args.strategy)
 
 # run_name = 'single_fidelity_v0.2'
 # strategy = 'single_fidelity'
