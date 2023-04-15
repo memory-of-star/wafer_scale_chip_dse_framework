@@ -13,7 +13,7 @@ args = parser.parse_args()
 
 # run_name = 'multi_fidelity_v0.2'
 # strategy = 'multi_fidelity'
-dse.dse(choose_model=args.choose_model, run_times=args.run_times, max_runs=args.max_runs, multi_objective=False, run_name=args.run_name, strategy=args.strategy)
+dse.dse(choose_model_=args.choose_model, run_times=args.run_times, max_runs=args.max_runs, multi_objective=False, run_name=args.run_name, strategy=args.strategy)
 
 # run_name = 'single_fidelity_v0.2'
 # strategy = 'single_fidelity'

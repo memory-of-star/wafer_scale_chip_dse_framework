@@ -69,6 +69,40 @@ def func_single_fidelity2(config: sp.Configuration):
     result['objs'] = [-prediction]
     return result
 
+def func_full_space1(config: sp.Configuration):
+    try:
+        design_point = dict(config)
+        model_parameters = copy.deepcopy(test_model_parameters[choose_model])
+        model_parameters["micro_batch_size"] = design_point.pop("micro_batch_size")
+        model_parameters["data_parallel_size"] = design_point.pop("data_parallel_size")
+        model_parameters["model_parallel_size"] = design_point.pop("model_parallel_size")
+        model_parameters["tensor_parallel_size"] = design_point.pop("tensor_parallel_size")
+        model_parameters["num_reticle_per_pipeline_stage"] = design_point.pop("num_reticle_per_pipeline_stage")
+
+        prediction = api1.evaluate_design_point(design_point=design_point, model_parameters=model_parameters, metric='throughput')
+    except:
+        prediction = -1e10
+    result = dict()
+    result['objs'] = [-prediction]
+    return result
+
+def func_full_space2(config: sp.Configuration):
+    try:
+        design_point = dict(config)
+        model_parameters = copy.deepcopy(test_model_parameters[choose_model])
+        model_parameters["micro_batch_size"] = design_point.pop("micro_batch_size")
+        model_parameters["data_parallel_size"] = design_point.pop("data_parallel_size")
+        model_parameters["model_parallel_size"] = design_point.pop("model_parallel_size")
+        model_parameters["tensor_parallel_size"] = design_point.pop("tensor_parallel_size")
+        model_parameters["num_reticle_per_pipeline_stage"] = design_point.pop("num_reticle_per_pipeline_stage")
+
+        prediction = api2.evaluate_design_point(design_point=design_point, model_parameters=model_parameters, metric='throughput')
+    except:
+        prediction = -1e10
+    result = dict()
+    result['objs'] = [-prediction]
+    return result
+
 
 
 def func_multi_fidelity_with_inner_search(config: sp.Configuration):
