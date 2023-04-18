@@ -8,8 +8,6 @@ import os
 
 sys.path.append(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'dse4wse/test/dse'))
 
-import api2
-import api1
 
 def design_vec2design_dic(vec):
     ret = {
@@ -85,7 +83,8 @@ def parse_histories_full_space(histories, choose_model, strategy='multi_fidelity
                     model_para["data_parallel_size"] = design_point.pop("data_parallel_size")
                     model_para["model_parallel_size"] = design_point.pop("model_parallel_size")
                     model_para["tensor_parallel_size"] = design_point.pop("tensor_parallel_size")
-                    model_para["num_reticle_per_pipeline_stage"] = design_point.pop("num_reticle_per_pipeline_stage")
+                    model_para["num_reticle_per_model_chunk"] = design_point.pop("num_reticle_per_model_chunk")
+                    model_para['weight_streaming'] = design_point.pop("weight_streaming")
 
                     obj = histories[run_num][fidelity].observations[i].objectives[0]
 
@@ -104,7 +103,8 @@ def parse_histories_full_space(histories, choose_model, strategy='multi_fidelity
                 model_para["data_parallel_size"] = design_point.pop("data_parallel_size")
                 model_para["model_parallel_size"] = design_point.pop("model_parallel_size")
                 model_para["tensor_parallel_size"] = design_point.pop("tensor_parallel_size")
-                model_para["num_reticle_per_pipeline_stage"] = design_point.pop("num_reticle_per_pipeline_stage")
+                model_para["num_reticle_per_model_chunk"] = design_point.pop("num_reticle_per_model_chunk")
+                model_para['weight_streaming'] = design_point.pop("weight_streaming")
 
                 obj = histories[run_num].observations[i].objectives[0]
 

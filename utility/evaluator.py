@@ -6,8 +6,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(
 
 from openbox import Optimizer, sp, History
 from ConfigSpace import ConfigurationSpace, Configuration
-import api2
-import api1
+import api
 from multiprocessing import Process, Queue
 import multiprocessing
 from typing import Iterable, List, Union, Tuple, Optional
@@ -77,9 +76,10 @@ def func_full_space1(config: sp.Configuration):
         model_parameters["data_parallel_size"] = design_point.pop("data_parallel_size")
         model_parameters["model_parallel_size"] = design_point.pop("model_parallel_size")
         model_parameters["tensor_parallel_size"] = design_point.pop("tensor_parallel_size")
-        model_parameters["num_reticle_per_pipeline_stage"] = design_point.pop("num_reticle_per_pipeline_stage")
+        model_parameters["num_reticle_per_model_chunk"] = design_point.pop("num_reticle_per_model_chunk")
+        model_parameters['weight_streaming'] = design_point.pop("weight_streaming")
 
-        prediction = api1.evaluate_design_point(design_point=design_point, model_parameters=model_parameters, metric='throughput')
+        prediction = api.evaluate_design_point(design_point=design_point, model_parameters=model_parameters, metric='throughput', use_high_fidelity=True)
     except:
         prediction = -1e10
     result = dict()
@@ -94,9 +94,10 @@ def func_full_space2(config: sp.Configuration):
         model_parameters["data_parallel_size"] = design_point.pop("data_parallel_size")
         model_parameters["model_parallel_size"] = design_point.pop("model_parallel_size")
         model_parameters["tensor_parallel_size"] = design_point.pop("tensor_parallel_size")
-        model_parameters["num_reticle_per_pipeline_stage"] = design_point.pop("num_reticle_per_pipeline_stage")
+        model_parameters["num_reticle_per_model_chunk"] = design_point.pop("num_reticle_per_model_chunk")
+        model_parameters['weight_streaming'] = design_point.pop("weight_streaming")
 
-        prediction = api2.evaluate_design_point(design_point=design_point, model_parameters=model_parameters, metric='throughput')
+        prediction = api.evaluate_design_point(design_point=design_point, model_parameters=model_parameters, metric='throughput', use_high_fidelity=False)
     except:
         prediction = -1e10
     result = dict()

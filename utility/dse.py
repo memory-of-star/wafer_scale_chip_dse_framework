@@ -427,7 +427,9 @@ def legal_model_parallel(design_point):
     model_parallel['tensor_parallel_size'] = random.choice(factors_of_attention_heads)
 
     num_reticle_per_pipeline_stage_upper_bound = wafer_num * design_point['reticle_array_h'] * design_point['reticle_array_w']
-    model_parallel['num_reticle_per_pipeline_stage'] = random.randint(1, max(num_reticle_per_pipeline_stage_upper_bound, 1))
+    model_parallel['num_reticle_per_model_chunk'] = random.randint(1, max(num_reticle_per_pipeline_stage_upper_bound, 1))
+
+    model_parallel['weight_streaming'] = random.randint(0, 1)
 
     return model_parallel
 
@@ -450,14 +452,17 @@ def process_mfes_full_space(points_dict, threshold = 0, queue : Queue = None, de
     v4 = sp.Ordinal("tensor_parallel_size", factors_of_attention_heads, default_value=1)
 
     num_reticle_per_pipeline_stage_upper_bound = wafer_num * 55 * 73
-    v5 = sp.Int("num_reticle_per_pipeline_stage", 1, max(num_reticle_per_pipeline_stage_upper_bound, 2), default_value=1)
+    v5 = sp.Int("num_reticle_per_model_chunk", 1, max(num_reticle_per_pipeline_stage_upper_bound, 2), default_value=1)
     
+    v6 = sp.Int('weight_streaming', 0, 1, default_value=0)
+
     space.add_variables(variable_lst)
     space.add_hyperparameter(v1)
     space.add_hyperparameter(v2)
     space.add_hyperparameter(v3)
     space.add_hyperparameter(v4)
     space.add_hyperparameter(v5)
+    space.add_hyperparameter(v6)
 
     def inner_sample_configuration(size):
         if size == 1:
@@ -468,10 +473,10 @@ def process_mfes_full_space(points_dict, threshold = 0, queue : Queue = None, de
 
             if model_parallel['micro_batch_size'] * model_parallel['data_parallel_size'] > test_model_parameters[choose_model]['mini_batch_size']:
                 model_parallel['micro_batch_size'] = random.randint(1, max(test_model_parameters[choose_model]['mini_batch_size'] // model_parallel['data_parallel_size'], 1))
-            if math.ceil(design_point['reticle_array_h'] * design_point['reticle_array_w'] / (model_parallel['num_reticle_per_pipeline_stage'] * model_parallel['tensor_parallel_size'])) * wafer_num < model_parallel['model_parallel_size']:
-                model_parallel['num_reticle_per_pipeline_stage'] = random.randint(1, max(design_point['reticle_array_h'] * design_point['reticle_array_w'] // (model_parallel['tensor_parallel_size'] * model_parallel['model_parallel_size']), 1))
-            if model_parallel['tensor_parallel_size'] * model_parallel['num_reticle_per_pipeline_stage'] > design_point['reticle_array_h'] * design_point['reticle_array_w']:
-                model_parallel['num_reticle_per_pipeline_stage'] = random.randint(1, max(design_point['reticle_array_h'] * design_point['reticle_array_w'] // model_parallel['tensor_parallel_size'], 1))
+            if math.ceil(design_point['reticle_array_h'] * design_point['reticle_array_w'] / (model_parallel['num_reticle_per_model_chunk'] * model_parallel['tensor_parallel_size'])) * wafer_num < model_parallel['model_parallel_size']:
+                model_parallel['num_reticle_per_model_chunk'] = random.randint(1, max(design_point['reticle_array_h'] * design_point['reticle_array_w'] // (model_parallel['tensor_parallel_size'] * model_parallel['model_parallel_size']), 1))
+            if model_parallel['tensor_parallel_size'] * model_parallel['num_reticle_per_model_chunk'] > design_point['reticle_array_h'] * design_point['reticle_array_w']:
+                model_parallel['num_reticle_per_model_chunk'] = random.randint(1, max(design_point['reticle_array_h'] * design_point['reticle_array_w'] // model_parallel['tensor_parallel_size'], 1))
             
             design_point.update(model_parallel)
 
@@ -486,10 +491,10 @@ def process_mfes_full_space(points_dict, threshold = 0, queue : Queue = None, de
 
                 if model_parallel['micro_batch_size'] * model_parallel['data_parallel_size'] > test_model_parameters[choose_model]['mini_batch_size']:
                     model_parallel['micro_batch_size'] = random.randint(1, max(test_model_parameters[choose_model]['mini_batch_size'] // model_parallel['data_parallel_size'], 1))
-                if math.ceil(design_point['reticle_array_h'] * design_point['reticle_array_w'] / (model_parallel['num_reticle_per_pipeline_stage'] * model_parallel['tensor_parallel_size'])) * wafer_num < model_parallel['model_parallel_size']:
-                    model_parallel['num_reticle_per_pipeline_stage'] = random.randint(1, max(design_point['reticle_array_h'] * design_point['reticle_array_w'] // (model_parallel['tensor_parallel_size'] * model_parallel['model_parallel_size']), 1))
-                if model_parallel['tensor_parallel_size'] * model_parallel['num_reticle_per_pipeline_stage'] > design_point['reticle_array_h'] * design_point['reticle_array_w']:
-                    model_parallel['num_reticle_per_pipeline_stage'] = random.randint(1, max(design_point['reticle_array_h'] * design_point['reticle_array_w'] // model_parallel['tensor_parallel_size'], 1))
+                if math.ceil(design_point['reticle_array_h'] * design_point['reticle_array_w'] / (model_parallel['num_reticle_per_model_chunk'] * model_parallel['tensor_parallel_size'])) * wafer_num < model_parallel['model_parallel_size']:
+                    model_parallel['num_reticle_per_model_chunk'] = random.randint(1, max(design_point['reticle_array_h'] * design_point['reticle_array_w'] // (model_parallel['tensor_parallel_size'] * model_parallel['model_parallel_size']), 1))
+                if model_parallel['tensor_parallel_size'] * model_parallel['num_reticle_per_model_chunk'] > design_point['reticle_array_h'] * design_point['reticle_array_w']:
+                    model_parallel['num_reticle_per_model_chunk'] = random.randint(1, max(design_point['reticle_array_h'] * design_point['reticle_array_w'] // model_parallel['tensor_parallel_size'], 1))
                 
                 design_point.update(model_parallel)
                 ret.append(Configuration(space, design_point))

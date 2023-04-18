@@ -97,7 +97,7 @@ def get_highest_mean_curve(histories, strategy='multi_fidelity'):
             for j in range(2):
                 tmp = np.array([k[-1] for k in histories[i][j]])
                 for t in range(len(tmp)):
-                    tmp[t] = min(tmp[:t+1])
+                    tmp[t] = min(min(tmp[:t+1]), 0)
                 if not isinstance(_sum[j], np.ndarray):
                     _sum[j] = tmp
                 else:
@@ -113,7 +113,7 @@ def get_highest_mean_curve(histories, strategy='multi_fidelity'):
         for i in range(len(histories)):
             tmp = np.array([k[-1] for k in histories[i]])
             for t in range(len(tmp)):
-                tmp[t] = min(tmp[:t+1])
+                tmp[t] = min(min(tmp[:t+1]), 0)
             if not isinstance(_sum, np.ndarray):
                 _sum = tmp
             else:
