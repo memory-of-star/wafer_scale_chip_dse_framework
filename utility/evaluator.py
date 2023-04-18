@@ -735,26 +735,30 @@ def test_KT(data_lst): # data_list : List[(x_i, y_i), ]
                 x2 = data_lst[j][0]
                 y2 = data_lst[j][1]
 
-                if (x1 - x2) * (y1 - y2) <= 0:
+                if (x1 - x2) * (y1 - y2) < 0:
                     num_discordant += 1
                     pairs.append((i, j))
     
-    return 1 - 2 * num_discordant / c_2n, pairs
+    return 1 - 2 * num_discordant / max(c_2n, 1), pairs
 
 def get_evaluation_list(points_list):
     evaluation_lst = []
 
     for point in points_list:
+        if_legal = True
         try:
             x = api.evaluate_design_point(design_point=point[0], model_parameters=point[1], metric='throughput', use_high_fidelity=True)
         except:
+            if_legal = False
             x = 0
         try:
             y = api.evaluate_design_point(design_point=point[0], model_parameters=point[1], metric='throughput', use_high_fidelity=False)
         except:
+            if_legal = False
             y = 0
 
-        evaluation_lst.append((x, y))
+        if if_legal:
+            evaluation_lst.append((x, y))
 
     return evaluation_lst
 
@@ -770,16 +774,21 @@ def get_evaluation_list_multi_process(points_list, threads = 1):
     def get_evaluation_list_single_thread(points_list, queue):
         evaluation_lst = []
         for point in points_list:
+            if_legal = True
             try:
                 x = api.evaluate_design_point(design_point=point[0], model_parameters=point[1], metric='throughput', use_high_fidelity=True)
             except:
+                if_legal = False
                 x = 0
             try:
                 y = api.evaluate_design_point(design_point=point[0], model_parameters=point[1], metric='throughput', use_high_fidelity=False)
             except:
+                if_legal = False
                 y = 0
-            evaluation_lst.append((x, y))
-            queue.put((x, y))
+
+            if if_legal:
+                evaluation_lst.append((x, y))
+                queue.put((x, y))
         return evaluation_lst
 
     for i in range(threads):

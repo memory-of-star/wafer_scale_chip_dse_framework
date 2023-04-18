@@ -10,6 +10,7 @@ import seaborn as sns
 import os
 import sys
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'dse4wse/test/dse'))
 
 from evaluator import func_single_fidelity1, func_single_fidelity2, func_multi_fidelity_with_inner_search, func_single_fidelity_with_inner_search, func_mo_single_fidelity_with_inner_search, func_mo_multi_fidelity_with_inner_search
 import evaluator
@@ -17,6 +18,9 @@ import plot
 import copy
 import random
 from tqdm import tqdm
+import api
+
+# random.seed(1)
 
 # build search space
 def build_search_space():
@@ -364,31 +368,11 @@ def generate_legal_points(num = 100, _choose_model=-1):
 
     def inner_sample_configuration(size):
         if size == 1:
-            design_point = random.choice(points_dict)
-            model_parallel = legal_model_parallel(design_point)
-
-            wafer_num = math.ceil(num_of_gpus[choose_model] * 312 * 1000 / (design_point['core_mac_num'] * design_point['core_array_h'] * design_point['core_array_w'] * design_point['reticle_array_h'] * design_point['reticle_array_w'] * 2))
-
-            if model_parallel['micro_batch_size'] * model_parallel['data_parallel_size'] > test_model_parameters[choose_model]['mini_batch_size']:
-                model_parallel['micro_batch_size'] = random.randint(1, max(test_model_parameters[choose_model]['mini_batch_size'] // model_parallel['data_parallel_size'], 1))
-            if model_parallel['data_parallel_size'] * model_parallel['model_parallel_size'] > wafer_num:
-                for i in range(len(factors_of_number_of_layers)):
-                    if factors_of_number_of_layers[i] > max(wafer_num // model_parallel['data_parallel_size'], 1):
-                        break 
-                model_parallel['model_parallel_size'] = random.choice(factors_of_number_of_layers[:i])
-            if model_parallel['tensor_parallel_size'] * model_parallel['num_reticle_per_model_chunk'] > design_point['reticle_array_h'] * design_point['reticle_array_w']:
-                model_parallel['num_reticle_per_model_chunk'] = random.randint(1, max(design_point['reticle_array_h'] * design_point['reticle_array_w'] // model_parallel['tensor_parallel_size'], 1))
-            
-            design_point.update(model_parallel)
-
-            return Configuration(space, design_point)
-        else:
-            ret = []
-            for i in range(size):
-                design_point = random.choice(points_dict)
+            while True:
+                design_point = copy.deepcopy(random.choice(points_dict))
                 model_parallel = legal_model_parallel(design_point)
-
                 wafer_num = math.ceil(num_of_gpus[choose_model] * 312 * 1000 / (design_point['core_mac_num'] * design_point['core_array_h'] * design_point['core_array_w'] * design_point['reticle_array_h'] * design_point['reticle_array_w'] * 2))
+                model_parallel['num_reticle_per_model_chunk'] = design_point['reticle_array_h'] * design_point['reticle_array_w']
 
                 if model_parallel['micro_batch_size'] * model_parallel['data_parallel_size'] > test_model_parameters[choose_model]['mini_batch_size']:
                     model_parallel['micro_batch_size'] = random.randint(1, max(test_model_parameters[choose_model]['mini_batch_size'] // model_parallel['data_parallel_size'], 1))
@@ -398,7 +382,61 @@ def generate_legal_points(num = 100, _choose_model=-1):
                             break 
                     model_parallel['model_parallel_size'] = random.choice(factors_of_number_of_layers[:i])
                 if model_parallel['tensor_parallel_size'] * model_parallel['num_reticle_per_model_chunk'] > design_point['reticle_array_h'] * design_point['reticle_array_w']:
-                    model_parallel['num_reticle_per_model_chunk'] = random.randint(1, max(design_point['reticle_array_h'] * design_point['reticle_array_w'] // model_parallel['tensor_parallel_size'], 1))
+                    # model_parallel['num_reticle_per_model_chunk'] = random.randint(1, max(design_point['reticle_array_h'] * design_point['reticle_array_w'] // model_parallel['tensor_parallel_size'], 1))
+                    for i in range(len(factors_of_attention_heads)):
+                        if factors_of_attention_heads[i] > max(design_point['reticle_array_h'] * design_point['reticle_array_w'] // model_parallel['num_reticle_per_model_chunk'], 1):
+                            break 
+                    model_parallel['tensor_parallel_size'] = random.choice(factors_of_attention_heads[:i])
+                
+                model = copy.deepcopy(test_model_parameters[choose_model])
+                model.update(model_parallel)
+
+                wafer_scale_engine = api.create_wafer_scale_engine(**design_point)
+                evaluator = api.create_evaluator(True, wafer_scale_engine, **model)
+                try:
+                    evaluator._find_best_intra_model_chunk_exec_params(inference=False)
+                    break
+                except:
+                    pass
+
+
+            design_point.update(model_parallel)
+
+            return Configuration(space, design_point)
+        else:
+            ret = []
+            for i in range(size):
+                
+                while True:
+                    design_point = copy.deepcopy(random.choice(points_dict))
+                    model_parallel = legal_model_parallel(design_point)
+                    wafer_num = math.ceil(num_of_gpus[choose_model] * 312 * 1000 / (design_point['core_mac_num'] * design_point['core_array_h'] * design_point['core_array_w'] * design_point['reticle_array_h'] * design_point['reticle_array_w'] * 2))
+                    model_parallel['num_reticle_per_model_chunk'] = design_point['reticle_array_h'] * design_point['reticle_array_w']
+
+                    if model_parallel['micro_batch_size'] * model_parallel['data_parallel_size'] > test_model_parameters[choose_model]['mini_batch_size']:
+                        model_parallel['micro_batch_size'] = random.randint(1, max(test_model_parameters[choose_model]['mini_batch_size'] // model_parallel['data_parallel_size'], 1))
+                    if model_parallel['data_parallel_size'] * model_parallel['model_parallel_size'] > wafer_num:
+                        for i in range(len(factors_of_number_of_layers)):
+                            if factors_of_number_of_layers[i] > max(wafer_num // model_parallel['data_parallel_size'], 1):
+                                break 
+                        model_parallel['model_parallel_size'] = random.choice(factors_of_number_of_layers[:i])
+                    if model_parallel['tensor_parallel_size'] * model_parallel['num_reticle_per_model_chunk'] > design_point['reticle_array_h'] * design_point['reticle_array_w']:
+                        # model_parallel['num_reticle_per_model_chunk'] = random.randint(1, max(design_point['reticle_array_h'] * design_point['reticle_array_w'] // model_parallel['tensor_parallel_size'], 1))
+                        for i in range(len(factors_of_attention_heads)):
+                            if factors_of_attention_heads[i] > max(design_point['reticle_array_h'] * design_point['reticle_array_w'] // model_parallel['num_reticle_per_model_chunk'], 1):
+                                break 
+                        model_parallel['tensor_parallel_size'] = random.choice(factors_of_attention_heads[:i])
+                    
+                    model = copy.deepcopy(test_model_parameters[choose_model])
+                    model.update(model_parallel)
+
+                    wafer_scale_engine = api.create_wafer_scale_engine(**design_point)
+                    evaluator = api.create_evaluator(True, wafer_scale_engine, **model)
+                    try:
+                        evaluator._find_best_intra_model_chunk_exec_params(inference=False)
+                        break
+                    except:
+                        pass
                 
                 design_point.update(model_parallel)
                 ret.append(Configuration(space, design_point))
@@ -530,35 +568,75 @@ def process_mfes_full_space(points_dict, threshold = 0, queue : Queue = None, de
 
     def inner_sample_configuration(size):
         if size == 1:
-            design_point = random.choice(points_dict)
-            model_parallel = legal_model_parallel(design_point)
+            while True:
+                design_point = copy.deepcopy(random.choice(points_dict))
+                model_parallel = legal_model_parallel(design_point)
+                wafer_num = math.ceil(num_of_gpus[choose_model] * 312 * 1000 / (design_point['core_mac_num'] * design_point['core_array_h'] * design_point['core_array_w'] * design_point['reticle_array_h'] * design_point['reticle_array_w'] * 2))
+                model_parallel['num_reticle_per_model_chunk'] = design_point['reticle_array_h'] * design_point['reticle_array_w']
 
-            wafer_num = math.ceil(num_of_gpus[choose_model] * 312 * 1000 / (design_point['core_mac_num'] * design_point['core_array_h'] * design_point['core_array_w'] * design_point['reticle_array_h'] * design_point['reticle_array_w'] * 2))
+                if model_parallel['micro_batch_size'] * model_parallel['data_parallel_size'] > test_model_parameters[choose_model]['mini_batch_size']:
+                    model_parallel['micro_batch_size'] = random.randint(1, max(test_model_parameters[choose_model]['mini_batch_size'] // model_parallel['data_parallel_size'], 1))
+                if model_parallel['data_parallel_size'] * model_parallel['model_parallel_size'] > wafer_num:
+                    for i in range(len(factors_of_number_of_layers)):
+                        if factors_of_number_of_layers[i] > max(wafer_num // model_parallel['data_parallel_size'], 1):
+                            break 
+                    model_parallel['model_parallel_size'] = random.choice(factors_of_number_of_layers[:i])
+                if model_parallel['tensor_parallel_size'] * model_parallel['num_reticle_per_model_chunk'] > design_point['reticle_array_h'] * design_point['reticle_array_w']:
+                    # model_parallel['num_reticle_per_model_chunk'] = random.randint(1, max(design_point['reticle_array_h'] * design_point['reticle_array_w'] // model_parallel['tensor_parallel_size'], 1))
+                    for i in range(len(factors_of_attention_heads)):
+                        if factors_of_attention_heads[i] > max(design_point['reticle_array_h'] * design_point['reticle_array_w'] // model_parallel['num_reticle_per_model_chunk'], 1):
+                            break 
+                    model_parallel['tensor_parallel_size'] = random.choice(factors_of_attention_heads[:i])
+                
+                model = copy.deepcopy(test_model_parameters[choose_model])
+                model.update(model_parallel)
 
-            if model_parallel['micro_batch_size'] * model_parallel['data_parallel_size'] > test_model_parameters[choose_model]['mini_batch_size']:
-                model_parallel['micro_batch_size'] = random.randint(1, max(test_model_parameters[choose_model]['mini_batch_size'] // model_parallel['data_parallel_size'], 1))
-            if math.ceil(design_point['reticle_array_h'] * design_point['reticle_array_w'] / (model_parallel['num_reticle_per_model_chunk'] * model_parallel['tensor_parallel_size'])) * wafer_num < model_parallel['model_parallel_size']:
-                model_parallel['num_reticle_per_model_chunk'] = random.randint(1, max(design_point['reticle_array_h'] * design_point['reticle_array_w'] // (model_parallel['tensor_parallel_size'] * model_parallel['model_parallel_size']), 1))
-            if model_parallel['tensor_parallel_size'] * model_parallel['num_reticle_per_model_chunk'] > design_point['reticle_array_h'] * design_point['reticle_array_w']:
-                model_parallel['num_reticle_per_model_chunk'] = random.randint(1, max(design_point['reticle_array_h'] * design_point['reticle_array_w'] // model_parallel['tensor_parallel_size'], 1))
-            
+                wafer_scale_engine = api.create_wafer_scale_engine(**design_point)
+                evaluator = api.create_evaluator(True, wafer_scale_engine, **model)
+                try:
+                    evaluator._find_best_intra_model_chunk_exec_params(inference=False)
+                    break
+                except:
+                    pass
+
+
             design_point.update(model_parallel)
 
             return Configuration(space, design_point)
         else:
             ret = []
             for i in range(size):
-                design_point = random.choice(points_dict)
-                model_parallel = legal_model_parallel(design_point)
+                
+                while True:
+                    design_point = copy.deepcopy(random.choice(points_dict))
+                    model_parallel = legal_model_parallel(design_point)
+                    wafer_num = math.ceil(num_of_gpus[choose_model] * 312 * 1000 / (design_point['core_mac_num'] * design_point['core_array_h'] * design_point['core_array_w'] * design_point['reticle_array_h'] * design_point['reticle_array_w'] * 2))
+                    model_parallel['num_reticle_per_model_chunk'] = design_point['reticle_array_h'] * design_point['reticle_array_w']
 
-                wafer_num = math.ceil(num_of_gpus[choose_model] * 312 * 1000 / (design_point['core_mac_num'] * design_point['core_array_h'] * design_point['core_array_w'] * design_point['reticle_array_h'] * design_point['reticle_array_w'] * 2))
+                    if model_parallel['micro_batch_size'] * model_parallel['data_parallel_size'] > test_model_parameters[choose_model]['mini_batch_size']:
+                        model_parallel['micro_batch_size'] = random.randint(1, max(test_model_parameters[choose_model]['mini_batch_size'] // model_parallel['data_parallel_size'], 1))
+                    if model_parallel['data_parallel_size'] * model_parallel['model_parallel_size'] > wafer_num:
+                        for i in range(len(factors_of_number_of_layers)):
+                            if factors_of_number_of_layers[i] > max(wafer_num // model_parallel['data_parallel_size'], 1):
+                                break 
+                        model_parallel['model_parallel_size'] = random.choice(factors_of_number_of_layers[:i])
+                    if model_parallel['tensor_parallel_size'] * model_parallel['num_reticle_per_model_chunk'] > design_point['reticle_array_h'] * design_point['reticle_array_w']:
+                        # model_parallel['num_reticle_per_model_chunk'] = random.randint(1, max(design_point['reticle_array_h'] * design_point['reticle_array_w'] // model_parallel['tensor_parallel_size'], 1))
+                        for i in range(len(factors_of_attention_heads)):
+                            if factors_of_attention_heads[i] > max(design_point['reticle_array_h'] * design_point['reticle_array_w'] // model_parallel['num_reticle_per_model_chunk'], 1):
+                                break 
+                        model_parallel['tensor_parallel_size'] = random.choice(factors_of_attention_heads[:i])
+                    
+                    model = copy.deepcopy(test_model_parameters[choose_model])
+                    model.update(model_parallel)
 
-                if model_parallel['micro_batch_size'] * model_parallel['data_parallel_size'] > test_model_parameters[choose_model]['mini_batch_size']:
-                    model_parallel['micro_batch_size'] = random.randint(1, max(test_model_parameters[choose_model]['mini_batch_size'] // model_parallel['data_parallel_size'], 1))
-                if math.ceil(design_point['reticle_array_h'] * design_point['reticle_array_w'] / (model_parallel['num_reticle_per_model_chunk'] * model_parallel['tensor_parallel_size'])) * wafer_num < model_parallel['model_parallel_size']:
-                    model_parallel['num_reticle_per_model_chunk'] = random.randint(1, max(design_point['reticle_array_h'] * design_point['reticle_array_w'] // (model_parallel['tensor_parallel_size'] * model_parallel['model_parallel_size']), 1))
-                if model_parallel['tensor_parallel_size'] * model_parallel['num_reticle_per_model_chunk'] > design_point['reticle_array_h'] * design_point['reticle_array_w']:
-                    model_parallel['num_reticle_per_model_chunk'] = random.randint(1, max(design_point['reticle_array_h'] * design_point['reticle_array_w'] // model_parallel['tensor_parallel_size'], 1))
+                    wafer_scale_engine = api.create_wafer_scale_engine(**design_point)
+                    evaluator = api.create_evaluator(True, wafer_scale_engine, **model)
+                    try:
+                        evaluator._find_best_intra_model_chunk_exec_params(inference=False)
+                        break
+                    except:
+                        pass
                 
                 design_point.update(model_parallel)
                 ret.append(Configuration(space, design_point))

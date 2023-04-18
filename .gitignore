@@ -1,7 +1,9 @@
 result/pickle/*
 result/picture/*
+data/*
 log/*
 logs/*
 try/*
 __pycache__/*
 *.pickle
+*.list
