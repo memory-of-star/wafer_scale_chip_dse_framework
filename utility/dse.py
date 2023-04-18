@@ -58,7 +58,10 @@ class DSE():
         self.initial_runs = 6
         self.init_strategy = 'random'
         self.fidelity_functions = [self.evaluator_factory(use_high_fidelity=True, metric='throughput'), self.evaluator_factory(use_high_fidelity=False, metric='throughput')] # a list, from high fidelity to low fidelity
+        
+        print('constructing optimization space...')
         self.space = self.build_optimization_space()
+        print('constructing optimization space completed!')
 
         self.optimizer_kwargs = {
             'config_space':self.space,
