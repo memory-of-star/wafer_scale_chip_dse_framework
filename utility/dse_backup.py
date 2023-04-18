@@ -25,15 +25,26 @@ import api
 # build search space
 num_of_gpus = [32, 64, 128, 256, 512, 1024, 1536, 1920, 2520, 3072, 6000, 12000, 30000, 60000, 100000, 200000]
 def build_search_space():
+    design_points = []
     root_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    design_points = np.load(os.path.join(root_path, 'data/design_points.list'), allow_pickle=True)
 
-    with open(os.path.join(root_path, 'data/design_space.pickle'), 'rb') as f:
-        design_space = pickle.load(f)
+    with open(os.path.join(root_path, 'data/design_points.list'), 'r') as f:
+        lines = list(map(lambda x:x.strip()[1:-1].split(','), f.readlines()))
+        for i in range(len(lines)):
+            lines[i] = list(map(lambda x:float(x.strip()), lines[i]))
+            lines[i] = list(map(lambda x:int(x), lines[i]))
+            design_points.append(lines[i])
 
-    for i in range(len(design_space)):
-        design_space[i] = list(design_space[i])
+    design_space = [[] for i in range(12)]
+    for i in design_points:
+        for j in range(12):
+            if i[j] not in design_space[j]:
+                design_space[j].append(i[j])
+
+    for i in range(12):
         design_space[i].sort()
+
+    design_points.sort()
 
     return design_points, design_space
 
@@ -382,3 +393,18 @@ def dse(choose_model_ = 0, run_times = 20, max_runs = 100, multi_objective=False
     with open(os.path.join(root_path, 'result/pickle', run_name+'.pickle'), "wb") as f:
         pickle.dump(histories, f)
 
+if __name__ == '__main__':
+    design_points, design_space = build_search_space()
+    points_dic = [{k:v for k,v in zip(dimension_name, design_points[i])} for i in range(len(design_points))]
+
+    print(design_space)
+    print(points_dic[0])
+    
+    design_points = np.array(design_points)
+    np.save('../data/design_points2.npy', design_points)
+
+    with open('../data/design_space2.pickle', 'wb') as f:
+        pickle.dump(design_space, f)
+
+    with open('../data/points_dic2.pickle', 'wb') as f:
+        pickle.dump(points_dic, f)

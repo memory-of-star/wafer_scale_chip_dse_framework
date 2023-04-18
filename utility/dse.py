@@ -38,13 +38,14 @@ class DSE():
         self.fixed_model_parameters = test_model_parameters.test_model_parameters
 
         print('constructing design space...')
-        self.design_points, self.design_space = self.build_design_space()
+        self.design_points, self.design_space, self.points_dic = self.build_design_space()
         print('constructing design space completed!')
 
         self.dimension_name = ["core_buffer_size", "core_buffer_bw", "core_mac_num", "core_noc_bw", "core_noc_vc",
             "core_noc_buffer_size", "reticle_bw", "core_array_h", "core_array_w", "wafer_mem_bw", "reticle_array_h",
             "reticle_array_w"]
-        self.points_dic = [{k:v for k,v in zip(self.dimension_name, self.design_points[i])} for i in range(len(self.design_points))]
+        # self.points_dic = [{k:v for k,v in zip(self.dimension_name, self.design_points[i])} for i in range(len(self.design_points))]
+
 
         # optimization kwargs
         self.strategy = strategy
@@ -71,7 +72,7 @@ class DSE():
             'surrogate_type':'gp',
             'acq_optimizer_type':'true_random',
             'initial_runs':self.initial_runs,
-            'init_strategy':self.init_strateg,
+            'init_strategy':self.init_strategy,
             'time_limit_per_trial':1000,
             'task_id':'moc',
             'acq_type':'ei',
@@ -120,16 +121,19 @@ class DSE():
 
 
     def build_design_space(self):
-        design_points = np.load(os.path.join(self.root_path, 'data/design_points.npy'), allow_pickle=True)
+        design_points = np.load(os.path.join(self.root_path, 'data/design_points2.npy'), allow_pickle=True)
 
-        with open(os.path.join(self.root_path, 'data/design_space.pickle'), 'rb') as f:
+        with open(os.path.join(self.root_path, 'data/design_space2.pickle'), 'rb') as f:
             design_space = pickle.load(f)
+
+        with open(os.path.join(self.root_path, 'data/points_dic2.pickle'), 'rb') as f:
+            points_dic = pickle.load(f)
 
         for i in range(len(design_space)):
             design_space[i] = list(design_space[i])
             design_space[i].sort()
 
-        return design_points, design_space
+        return design_points, design_space, points_dic
 
     def build_optimization_space(self):
         space = sp.SelfDefinedConditionedSpace()
