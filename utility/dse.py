@@ -322,44 +322,108 @@ def dse_(choose_model = 0, run_times = 20, max_runs = 100, multi_objective=False
 
         plot.plot_curve(curve_1, curve_2, label1='fidelity1', label2='fidelity2', x_label = 'iteration', path=os.path.join(root_path, 'result/picture', run_name+'_curve.png'))
 
-def generate_legal_points(num = 100, choose_model=-1):
+def generate_legal_points(num = 100, _choose_model=-1):
     design_points, design_space = build_search_space()
+    points_dict = [{k:v for k,v in zip(dimension_name, design_points[i])} for i in range(len(design_points))]
+    space = sp.SelfDefinedConditionedSpace()
 
-    var_names = ['var{:02}'.format(i) for i in range(len(design_space))]
-    points_dic = [{k:v for k,v in zip(var_names, design_points[i])} for i in range(len(design_points))]
-    points_dic2 = []
-    for i in range(len(points_dic)):
-        dic = copy.deepcopy(points_dic[i])
-        dic['fidelity'] = 1
-        points_dic[i]['fidelity'] = 2
-        points_dic2.append(dic)
-        points_dic2.append(points_dic[i])
+    global choose_model
 
+    if _choose_model == -1:
+        choose_model = random.randint(0, 15)
+    else:
+        choose_model = _choose_model
+    
     variable_lst = []
     for i in range(len(design_space)):
-        variable_lst.append(sp.Int('var{:02}'.format(i), design_space[i][0], max(design_space[i][-1], design_space[i][0] + 1), default_value=design_points[0][i]))
-    
-    variable_lst.append(sp.Int('fidelity', 1, 2, default_value=1))
-    
-    space = sp.MultiFidelityComplexConditionedSpace()
-    space.set_fidelity_dimension()
-    space.add_variables(variable_lst)
-    internal_points = list(map(lambda x:Configuration(space, x), points_dic2))
-    space.internal_points = internal_points
+        variable_lst.append(sp.Int(dimension_name[i], design_space[i][0], max(design_space[i][-1], design_space[i][0] + 1), default_value=design_points[0][i]))
 
+    v1 = sp.Int("micro_batch_size", 1, max(test_model_parameters[choose_model]['mini_batch_size'], 2), default_value=1)
+    num_of_gpus = [32, 64, 128, 256, 512, 1024, 1536, 1920, 2520, 3072, 6000, 12000, 30000, 60000, 100000, 200000]
+    wafer_num = math.ceil(num_of_gpus[choose_model] * 312 * 1000 / (4 * 8 * 8 * 6 * 8 * 2))
+    v2 = sp.Int("data_parallel_size", 1, max(wafer_num, 2), default_value=1)
+
+    factors_of_number_of_layers = factors(test_model_parameters[choose_model]['number_of_layers'])
+    v3 = sp.Ordinal("model_parallel_size", factors_of_number_of_layers, default_value=1)
+
+    factors_of_attention_heads = factors(test_model_parameters[choose_model]['attention_heads'])
+    v4 = sp.Ordinal("tensor_parallel_size", factors_of_attention_heads, default_value=1)
+
+    num_reticle_per_pipeline_stage_upper_bound = 55 * 73
+    v5 = sp.Int("num_reticle_per_model_chunk", 1, max(num_reticle_per_pipeline_stage_upper_bound, 2), default_value=1)
+    
+    v6 = sp.Int('weight_streaming', 0, 1, default_value=0)
+
+    space.add_variables(variable_lst)
+    space.add_hyperparameter(v1)
+    space.add_hyperparameter(v2)
+    space.add_hyperparameter(v3)
+    space.add_hyperparameter(v4)
+    space.add_hyperparameter(v5)
+    space.add_hyperparameter(v6)
+
+    def inner_sample_configuration(size):
+        if size == 1:
+            design_point = random.choice(points_dict)
+            model_parallel = legal_model_parallel(design_point)
+
+            wafer_num = math.ceil(num_of_gpus[choose_model] * 312 * 1000 / (design_point['core_mac_num'] * design_point['core_array_h'] * design_point['core_array_w'] * design_point['reticle_array_h'] * design_point['reticle_array_w'] * 2))
+
+            if model_parallel['micro_batch_size'] * model_parallel['data_parallel_size'] > test_model_parameters[choose_model]['mini_batch_size']:
+                model_parallel['micro_batch_size'] = random.randint(1, max(test_model_parameters[choose_model]['mini_batch_size'] // model_parallel['data_parallel_size'], 1))
+            if model_parallel['data_parallel_size'] * model_parallel['model_parallel_size'] > wafer_num:
+                for i in range(len(factors_of_number_of_layers)):
+                    if factors_of_number_of_layers[i] > max(wafer_num // model_parallel['data_parallel_size'], 1):
+                        break 
+                model_parallel['model_parallel_size'] = random.choice(factors_of_number_of_layers[:i])
+            if model_parallel['tensor_parallel_size'] * model_parallel['num_reticle_per_model_chunk'] > design_point['reticle_array_h'] * design_point['reticle_array_w']:
+                model_parallel['num_reticle_per_model_chunk'] = random.randint(1, max(design_point['reticle_array_h'] * design_point['reticle_array_w'] // model_parallel['tensor_parallel_size'], 1))
+            
+            design_point.update(model_parallel)
+
+            return Configuration(space, design_point)
+        else:
+            ret = []
+            for i in range(size):
+                design_point = random.choice(points_dict)
+                model_parallel = legal_model_parallel(design_point)
+
+                wafer_num = math.ceil(num_of_gpus[choose_model] * 312 * 1000 / (design_point['core_mac_num'] * design_point['core_array_h'] * design_point['core_array_w'] * design_point['reticle_array_h'] * design_point['reticle_array_w'] * 2))
+
+                if model_parallel['micro_batch_size'] * model_parallel['data_parallel_size'] > test_model_parameters[choose_model]['mini_batch_size']:
+                    model_parallel['micro_batch_size'] = random.randint(1, max(test_model_parameters[choose_model]['mini_batch_size'] // model_parallel['data_parallel_size'], 1))
+                if model_parallel['data_parallel_size'] * model_parallel['model_parallel_size'] > wafer_num:
+                    for i in range(len(factors_of_number_of_layers)):
+                        if factors_of_number_of_layers[i] > max(wafer_num // model_parallel['data_parallel_size'], 1):
+                            break 
+                    model_parallel['model_parallel_size'] = random.choice(factors_of_number_of_layers[:i])
+                if model_parallel['tensor_parallel_size'] * model_parallel['num_reticle_per_model_chunk'] > design_point['reticle_array_h'] * design_point['reticle_array_w']:
+                    model_parallel['num_reticle_per_model_chunk'] = random.randint(1, max(design_point['reticle_array_h'] * design_point['reticle_array_w'] // model_parallel['tensor_parallel_size'], 1))
+                
+                design_point.update(model_parallel)
+                ret.append(Configuration(space, design_point))
+
+            return ret
+        
+    space.set_sample_func(inner_sample_configuration)
+    
     ret = []
     for i in tqdm(range(num)):
-        if choose_model == -1:
-            evaluator.choose_model = random.randint(0, 15)
-        else:
-            evaluator.choose_model = choose_model
-        config = space.sample_configuration()
-        design_point, model_para = evaluator.generate(config)
-        ret.append((design_point, model_para))
-    
+        design_point = dict(space.sample_configuration())
+        model_parameters = copy.deepcopy(test_model_parameters[choose_model])
+        model_parameters["micro_batch_size"] = design_point.pop("micro_batch_size")
+        model_parameters["data_parallel_size"] = design_point.pop("data_parallel_size")
+        model_parameters["model_parallel_size"] = design_point.pop("model_parallel_size")
+        model_parameters["tensor_parallel_size"] = design_point.pop("tensor_parallel_size")
+        model_parameters["num_reticle_per_model_chunk"] = design_point.pop("num_reticle_per_model_chunk")
+        model_parameters['weight_streaming'] = design_point.pop("weight_streaming")
+        ret.append((design_point, model_parameters))
+
     return ret
 
+
 def KT_evaluator(size=100, choose_model = 0, multi_process = True, threads = 20):
+    evaluator.choose_model = choose_model
     points_lst = generate_legal_points(size, choose_model)
     if multi_process:
         evaluation_list = evaluator.get_evaluation_list_multi_process(points_lst, threads=threads)

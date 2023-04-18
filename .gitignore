@@ -4,3 +4,4 @@ log/*
 logs/*
 try/*
 __pycache__/*
+*.pickle

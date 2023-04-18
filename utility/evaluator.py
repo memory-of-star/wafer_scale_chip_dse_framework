@@ -729,18 +729,13 @@ def test_KT(data_lst): # data_list : List[(x_i, y_i), ]
     for i in tqdm(range(length)):
         for j in range(length):
             if i != j:
-                # x1 = api1.evaluate_design_point(design_point=data_lst[i][0], model_parameters=data_lst[i][1], metric='throughput')
-                # y1 = api2.evaluate_design_point(design_point=data_lst[i][0], model_parameters=data_lst[i][1], metric='throughput')
-
-                # x2 = api1.evaluate_design_point(design_point=data_lst[j][0], model_parameters=data_lst[j][1], metric='throughput')
-                # y2 = api2.evaluate_design_point(design_point=data_lst[j][0], model_parameters=data_lst[j][1], metric='throughput')
                 x1 = data_lst[i][0]
                 y1 = data_lst[i][1]
 
                 x2 = data_lst[j][0]
                 y2 = data_lst[j][1]
 
-                if (x1 - x2) * (y1 - y2) < 0:
+                if (x1 - x2) * (y1 - y2) <= 0:
                     num_discordant += 1
                     pairs.append((i, j))
     
@@ -750,8 +745,14 @@ def get_evaluation_list(points_list):
     evaluation_lst = []
 
     for point in points_list:
-        x = api1.evaluate_design_point(design_point=point[0], model_parameters=point[1], metric='throughput')
-        y = api2.evaluate_design_point(design_point=point[0], model_parameters=point[1], metric='throughput')
+        try:
+            x = api.evaluate_design_point(design_point=point[0], model_parameters=point[1], metric='throughput', use_high_fidelity=True)
+        except:
+            x = 0
+        try:
+            y = api.evaluate_design_point(design_point=point[0], model_parameters=point[1], metric='throughput', use_high_fidelity=False)
+        except:
+            y = 0
 
         evaluation_lst.append((x, y))
 
@@ -769,8 +770,14 @@ def get_evaluation_list_multi_process(points_list, threads = 1):
     def get_evaluation_list_single_thread(points_list, queue):
         evaluation_lst = []
         for point in points_list:
-            x = api1.evaluate_design_point(design_point=point[0], model_parameters=point[1], metric='throughput')
-            y = api2.evaluate_design_point(design_point=point[0], model_parameters=point[1], metric='throughput')
+            try:
+                x = api.evaluate_design_point(design_point=point[0], model_parameters=point[1], metric='throughput', use_high_fidelity=True)
+            except:
+                x = 0
+            try:
+                y = api.evaluate_design_point(design_point=point[0], model_parameters=point[1], metric='throughput', use_high_fidelity=False)
+            except:
+                y = 0
             evaluation_lst.append((x, y))
             queue.put((x, y))
         return evaluation_lst
