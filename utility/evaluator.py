@@ -766,7 +766,7 @@ def get_evaluation_list(points_list):
 def get_evaluation_list_multi_process(points_list, threads = 1):
     evaluation_lst = []
     manager = multiprocessing.Manager()
-    queue = manager.Queue()
+    queue = [manager.Queue() for _ in range(threads)]
     pool = []
 
     points_per_thread = len(points_list) // threads
@@ -797,16 +797,17 @@ def get_evaluation_list_multi_process(points_list, threads = 1):
         else:
             _points_list = points_list[i * points_per_thread:(i + 1) * points_per_thread]
         
-        p = Process(target=get_evaluation_list_single_thread, args=(_points_list, queue))
+        p = Process(target=get_evaluation_list_single_thread, args=(_points_list, queue[i]))
         pool.append(p)
         p.start()
     
     for p in pool:
         p.join()
 
-    while not queue.empty():
-        evaluation = queue.get()
-        evaluation_lst.append(evaluation)
+    for i in range(threads):
+        while not queue[i].empty():
+            evaluation = queue[i].get()
+            evaluation_lst.append(evaluation)
 
     return evaluation_lst
 
