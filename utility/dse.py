@@ -121,12 +121,12 @@ class DSE():
 
 
     def build_design_space(self):
-        design_points = np.load(os.path.join(self.root_path, 'data/design_points2.npy'), allow_pickle=True)
+        design_points = np.load(os.path.join(self.root_path, 'data/design_points.npy'), allow_pickle=True)
 
-        with open(os.path.join(self.root_path, 'data/design_space2.pickle'), 'rb') as f:
+        with open(os.path.join(self.root_path, 'data/design_space.pickle'), 'rb') as f:
             design_space = pickle.load(f)
 
-        with open(os.path.join(self.root_path, 'data/points_dic2.pickle'), 'rb') as f:
+        with open(os.path.join(self.root_path, 'data/points_dic.pickle'), 'rb') as f:
             points_dic = pickle.load(f)
 
         for i in range(len(design_space)):
