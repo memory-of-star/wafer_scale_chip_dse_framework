@@ -23,6 +23,8 @@ import utility
 
 class DSE():
     def __init__(self, choose_model=0, strategy='multi_fidelity', run_name='default', run_times=10, max_runs=100):
+
+        random.seed(1)
         
         # file kwargs
         self.root_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -74,8 +76,10 @@ class DSE():
             'initial_runs':self.initial_runs,
             'init_strategy':self.init_strategy,
             'time_limit_per_trial':1000,
+            'random_state':1,
             'task_id':'moc',
             'acq_type':'ei',
+            'num_acq_optimizer_points':20
         }
 
         if strategy == 'multi_fidelity':
@@ -121,12 +125,12 @@ class DSE():
 
 
     def build_design_space(self):
-        design_points = np.load(os.path.join(self.root_path, 'data/design_points.npy'), allow_pickle=True)
+        design_points = np.load(os.path.join(self.root_path, 'data/design_points2.npy'), allow_pickle=True)
 
-        with open(os.path.join(self.root_path, 'data/design_space.pickle'), 'rb') as f:
+        with open(os.path.join(self.root_path, 'data/design_space2.pickle'), 'rb') as f:
             design_space = pickle.load(f)
 
-        with open(os.path.join(self.root_path, 'data/points_dic.pickle'), 'rb') as f:
+        with open(os.path.join(self.root_path, 'data/points_dic2.pickle'), 'rb') as f:
             points_dic = pickle.load(f)
 
         for i in range(len(design_space)):
