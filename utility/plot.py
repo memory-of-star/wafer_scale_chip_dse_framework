@@ -90,7 +90,7 @@ def get_curve(histories, strategy='multi_fidelity'):
         _sum /= len(histories)
     return _sum
 
-def get_highest_mean_curve(histories, strategy='multi_fidelity'):
+def get_highest_mean_curve_backup(histories, strategy='multi_fidelity'):
     if strategy == 'multi_fidelity':
         _sum = [None, None]
         for i in range(len(histories)):
@@ -124,3 +124,61 @@ def get_highest_mean_curve(histories, strategy='multi_fidelity'):
                 _sum += tmp
         _sum /= len(histories)
     return _sum
+
+def get_highest_mean_curve(histories, strategy='multi_fidelity', iterations=50):
+    
+    _sum = [] # (run_times, fidelity, max_runs, (design, model, objectives)) -> (fidelity, max_runs, objectives), average on run_times
+    _sum2 = []
+    if strategy == 'multi_fidelity':
+        for run_time in range(len(histories)):
+            for point in range(min(len(histories[0][0]), iterations)):
+                for i in range(len(histories[run_time][0][point][-1])):
+                    histories[run_time][0][point][-1][i] = min(300, histories[run_time][0][point][-1][i])
+                _sum.append(histories[run_time][0][point][-1])
+
+        for run_time in range(len(histories)):
+            for point in range(min(len(histories[0][1]), iterations)):
+                for i in range(len(histories[run_time][1][point][-1])):
+                    histories[run_time][1][point][-1][i] = min(300, histories[run_time][1][point][-1][i])
+                _sum2.append(histories[run_time][1][point][-1])
+
+        _sum = np.array(_sum)
+        _sum = _sum.reshape((len(histories), min(len(histories[0][0]), iterations), len(histories[0][0][0][-1])))
+
+        _sum2 = np.array(_sum2)
+        _sum2 = _sum2.reshape((len(histories), min(len(histories[0][1]), iterations), len(histories[0][1][0][-1])))
+        
+    else:
+        for run_time in range(len(histories)):
+            for point in range(min(len(histories[0]), iterations)):
+                for i in range(len(histories[run_time][point][-1])):
+                    histories[run_time][point][-1][i] = min(300, histories[run_time][point][-1][i])
+                _sum.append(histories[run_time][point][-1])
+        _sum = np.array(_sum)
+        _sum = _sum.reshape((len(histories), min(len(histories[0]), iterations), len(histories[0][0][-1])))
+    
+    # here, the shape of _sum is (run_times, max_runs, objectives)
+    print(_sum.shape[2])
+    if _sum.shape[2] > 1:
+        from openbox.utils.multi_objective import NondominatedPartitioning
+        hv_mean = []
+        pareto_fronts = []
+        for i in range(_sum.shape[0]):
+            hv = []
+            for j in range(_sum.shape[1]):
+                partition = NondominatedPartitioning(_sum.shape[2], _sum[i, :j+1, :])
+                hv.append(partition.compute_hypervolume([0, 400]))
+            hv_mean.append(hv)
+            partition = NondominatedPartitioning(_sum.shape[2], _sum[i, :, :])
+            pareto_fronts.append(partition.pareto_Y)
+
+        hv_mean = np.array(hv_mean)
+        hv_mean = hv_mean.mean(axis=0)
+
+        return _sum, hv_mean, pareto_fronts
+    else:
+        _sum = _sum.reshape((_sum.shape[0], _sum.shape[1]))
+        for j in range(_sum.shape[1]):
+            _sum[:, j] = np.amin(_sum[:, :j+1], axis=1)
+        _sum = _sum.mean(axis=0)
+        return _sum

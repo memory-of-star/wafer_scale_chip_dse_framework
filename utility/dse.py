@@ -22,9 +22,9 @@ import math
 import utility
 
 class DSE():
-    def __init__(self, choose_model=0, strategy='multi_fidelity', run_name='default', run_times=10, max_runs=100):
+    def __init__(self, choose_model=0, strategy='multi_fidelity', run_name='default', run_times=10, max_runs=100, metrics=['throughput'], ref_point=[0, 400]):
 
-        random.seed(1)
+        # random.seed(1)
         
         # file kwargs
         self.root_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -54,13 +54,15 @@ class DSE():
         self.run_name = run_name
         self.run_times = run_times
         self.max_runs = max_runs
+        self.ref_point = ref_point
 
-        self.metric = 'throughput'
-
-        self.num_objs = 1
+        self.num_objs = len(metrics)
+        self.metrics = metrics
+        self.fidelity_functions = [self.evaluator_factory(use_high_fidelity=True, metrics=self.metrics), self.evaluator_factory(use_high_fidelity=False, metrics=self.metrics)] # a list, from high fidelity to low fidelity
+        
         self.initial_runs = 6
         self.init_strategy = 'random'
-        self.fidelity_functions = [self.evaluator_factory(use_high_fidelity=True, metric='throughput'), self.evaluator_factory(use_high_fidelity=False, metric='throughput')] # a list, from high fidelity to low fidelity
+        
         
         print('constructing optimization space...')
         self.space = self.build_optimization_space()
@@ -76,11 +78,14 @@ class DSE():
             'initial_runs':self.initial_runs,
             'init_strategy':self.init_strategy,
             'time_limit_per_trial':1000,
-            'random_state':1,
+            'random_state':None,
             'task_id':'moc',
             'acq_type':'ei',
-            'num_acq_optimizer_points':20
+            'num_acq_optimizer_points':20000,
         }
+        if self.num_objs > 1:
+            self.optimizer_kwargs.update({'ref_point':self.ref_point,
+                                          'acq_type':'ehvi',})
 
         if strategy == 'multi_fidelity':
             self.optimizer_kwargs.update({
@@ -125,12 +130,12 @@ class DSE():
 
 
     def build_design_space(self):
-        design_points = np.load(os.path.join(self.root_path, 'data/design_points2.npy'), allow_pickle=True)
+        design_points = np.load(os.path.join(self.root_path, 'data/design_points3.npy'), allow_pickle=True)
 
-        with open(os.path.join(self.root_path, 'data/design_space2.pickle'), 'rb') as f:
+        with open(os.path.join(self.root_path, 'data/design_space3.pickle'), 'rb') as f:
             design_space = pickle.load(f)
 
-        with open(os.path.join(self.root_path, 'data/points_dic2.pickle'), 'rb') as f:
+        with open(os.path.join(self.root_path, 'data/points_dic3.pickle'), 'rb') as f:
             points_dic = pickle.load(f)
 
         for i in range(len(design_space)):
@@ -206,7 +211,7 @@ class DSE():
                     single_fidelity = []  # length of fidelity 1 history (or 2)
                     for i in range(len(histories[run_num][fidelity].observations)):
                         design_point, model_para = self.config_2_design_model(histories[run_num][fidelity].observations[i].config)
-                        obj = histories[run_num][fidelity].observations[i].objectives[0]
+                        obj = histories[run_num][fidelity].observations[i].objectives
 
                         single_fidelity.append((design_point, model_para, obj))
                     single_run.append(single_fidelity)
@@ -218,7 +223,7 @@ class DSE():
 
                 for i in range(len(histories[run_num].observations)):
                     design_point, model_para = self.config_2_design_model(histories[run_num].observations[i].config)
-                    obj = histories[run_num].observations[i].objectives[0]
+                    obj = histories[run_num].observations[i].objectives # a list of objectives, length equal to self.num_objs
 
                     single_run.append((design_point, model_para, obj))
                 ret.append(single_run)
@@ -234,19 +239,21 @@ class DSE():
             model = copy.deepcopy(self.fixed_model_parameters[self.choose_model])
             model.update(model_parallel)
 
-            wafer_scale_engine = api.create_wafer_scale_engine(**design_point)
-            evaluator = api.create_evaluator(True, wafer_scale_engine, **model)
+            break
 
-            cnt += 1
+            # wafer_scale_engine = api.create_wafer_scale_engine(**design_point)
+            # evaluator = api.create_evaluator(True, wafer_scale_engine, **model)
 
-            try:
-                evaluator._find_best_intra_model_chunk_exec_params(inference=False)
-                break
-            except:
-                pass
+            # cnt += 1
 
-            if cnt > 10000:
-                raise ValueError('Can\'t get invalid configuration!')
+            # try:
+            #     evaluator._find_best_intra_model_chunk_exec_params(inference=False)
+            #     break
+            # except:
+            #     pass
+
+            # if cnt > 10000:
+            #     raise ValueError('Can\'t get invalid configuration!')
 
         design_point.update(model_parallel)
         return Configuration(self.space, design_point)
@@ -324,19 +331,31 @@ class DSE():
         return kt, points_lst, evaluation_list, pairs
         
 
-    def evaluator_factory(self, use_high_fidelity=True, metric='throughput'):
+    def evaluator_factory(self, use_high_fidelity=True, metrics=['throughput']):
         _use_high_fidelity = use_high_fidelity
-        _metric = metric
+        _metrics = metrics
         def evaluation_func(config: sp.Configuration):
             nonlocal _use_high_fidelity
-            nonlocal _metric
+            nonlocal _metrics
             try:
                 design_point, model_parameters = self.config_2_design_model(config)
-                prediction = api.evaluate_design_point(design_point=design_point, model_parameters=model_parameters, metric=_metric, use_high_fidelity=_use_high_fidelity)
+                objs = []
+                for i in range(len(metrics)):
+                    if _metrics[i] == 'throughput':
+                        objs.append(-api.evaluate_design_point(design_point=design_point, model_parameters=model_parameters, metric=_metrics[i], use_high_fidelity=_use_high_fidelity))
+                    elif _metrics[i] == 'power':
+                        power = api.evaluate_design_point(design_point=design_point, model_parameters=model_parameters, metric=_metrics[i], use_high_fidelity=True) / 100
+                        if power > 300:
+                            raise ValueError('Power > 30000!')
+                        objs.append(power)
+                    elif _metrics[i] == 'latency':
+                        objs.append(api.evaluate_design_point(design_point=design_point, model_parameters=model_parameters, metric=_metrics[i], use_high_fidelity=_use_high_fidelity))
             except:
-                prediction = -1e10
+                objs = []
+                for i in range(len(metrics)):
+                    objs.append(1e10)
             result = dict()
-            result['objs'] = [-prediction]
+            result['objs'] = objs
             return result
 
         return evaluation_func

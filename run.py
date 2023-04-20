@@ -10,15 +10,17 @@ parser.add_argument("-rt", "--run_times", type=int, default=10, help="times of r
 parser.add_argument("-mr", "--max_runs", type=int, default=50, help="times of repeated experiments")
 parser.add_argument("-ps", "--pre_set", type=int, default=-1, help="-1 means don't use pre-set values, otherwise we use a set of values which are pre set, we use it for quick test")
 
+metrics = ['throughput', 'power']
+
 args = parser.parse_args()
 if args.pre_set == -1:
-    dse_runner = dse.DSE(choose_model=args.choose_model, strategy=args.strategy, run_name=args.run_name, run_times=args.run_times, max_runs=args.max_runs)
+    dse_runner = dse.DSE(choose_model=args.choose_model, strategy=args.strategy, run_name=args.run_name, run_times=args.run_times, max_runs=args.max_runs, metrics=metrics)
 elif args.pre_set == 0:  # random
-    dse_runner = dse.DSE(choose_model=args.choose_model, strategy='random', run_name='random_test_cm{}_rt{}_mr{}'.format(args.choose_model, args.run_times, args.max_runs), run_times=args.run_times, max_runs=args.max_runs)
+    dse_runner = dse.DSE(choose_model=args.choose_model, strategy='random', run_name='random_test_cm{}_rt{}_mr{}'.format(args.choose_model, args.run_times, args.max_runs), run_times=args.run_times, max_runs=args.max_runs, metrics=metrics)
 elif args.pre_set == 1:  # single fidelity
-    dse_runner = dse.DSE(choose_model=args.choose_model, strategy='single_fidelity', run_name='single_fidelity_test_cm{}_rt{}_mr{}'.format(args.choose_model, args.run_times, args.max_runs), run_times=args.run_times, max_runs=args.max_runs)
+    dse_runner = dse.DSE(choose_model=args.choose_model, strategy='single_fidelity', run_name='single_fidelity_test_cm{}_rt{}_mr{}'.format(args.choose_model, args.run_times, args.max_runs), run_times=args.run_times, max_runs=args.max_runs, metrics=metrics)
 elif args.pre_set == 2:  # multi-fidelity
-    dse_runner = dse.DSE(choose_model=args.choose_model, strategy='multi_fidelity', run_name='multi_fidelity_test_cm{}_rt{}_mr{}'.format(args.choose_model, args.run_times, args.max_runs), run_times=args.run_times, max_runs=args.max_runs)
+    dse_runner = dse.DSE(choose_model=args.choose_model, strategy='multi_fidelity', run_name='multi_fidelity_test_cm{}_rt{}_mr{}'.format(args.choose_model, args.run_times, args.max_runs), run_times=args.run_times, max_runs=args.max_runs, metrics=metrics)
 dse_runner.run()
 
 # run_name = 'multi_fidelity_v0.2'
