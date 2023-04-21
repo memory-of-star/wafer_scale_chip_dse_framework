@@ -108,6 +108,7 @@ class DSE():
         # model parameter
         self.factors_of_number_of_layers = self.factors(self.fixed_model_parameters[self.choose_model]['number_of_layers'])
         self.factors_of_attention_heads = self.factors(self.fixed_model_parameters[self.choose_model]['attention_heads'])
+        self.factors_of_batch_size = self.factors(self.fixed_model_parameters[self.choose_model]['mini_batch_size'])
 
         print('initialization completed!')
 
@@ -159,14 +160,14 @@ class DSE():
         #     "reticle_array_w"]
 
         max_wafer_num = math.ceil(self.num_of_gpus[self.choose_model] * 312 * 1000 / (4 * 8 * 8 * 1 * 1 * 2)) # here we need to update the numbers when we change the dataset
-        factors_of_number_of_layers = self.factors(self.fixed_model_parameters[self.choose_model]['number_of_layers'])
-        factors_of_attention_heads = self.factors(self.fixed_model_parameters[self.choose_model]['attention_heads'])
+        # factors_of_number_of_layers = self.factors(self.fixed_model_parameters[self.choose_model]['number_of_layers'])
+        # factors_of_attention_heads = self.factors(self.fixed_model_parameters[self.choose_model]['attention_heads'])
         num_reticle_per_model_chunk_upper_bound = max_wafer_num * 55 * 73
 
         v_micro_batch_size = sp.Int("micro_batch_size", 1, max(self.fixed_model_parameters[self.choose_model]['mini_batch_size'], 2), default_value=1)
         v_data_parallel_size = sp.Int("data_parallel_size", 1, max(max_wafer_num, 2), default_value=1)
-        v_model_parallel_size = sp.Ordinal("model_parallel_size", factors_of_number_of_layers, default_value=1)
-        v_tensor_parallel_size = sp.Ordinal("tensor_parallel_size", factors_of_attention_heads, default_value=1)
+        v_model_parallel_size = sp.Int("model_parallel_size", 1, max(self.fixed_model_parameters[self.choose_model]['number_of_layers'], 2), default_value=1)
+        v_tensor_parallel_size = sp.Int("tensor_parallel_size", 1, max(self.fixed_model_parameters[self.choose_model]['attention_heads'], 2), default_value=1)
         v_num_reticle_per_model_chunk = sp.Int("num_reticle_per_model_chunk", 1, max(num_reticle_per_model_chunk_upper_bound, 2), default_value=1)
         v_weight_streaming = sp.Int('weight_streaming', 0, 1, default_value=0)
 
@@ -271,16 +272,17 @@ class DSE():
 
     def get_legal_model_parallel(self, design_point):
         model_parallel = {}
-        model_parallel['micro_batch_size'] = random.randint(1, max(self.fixed_model_parameters[self.choose_model]['mini_batch_size'], 1))
+
+        # factors_of_batch_size = self.factors(self.fixed_model_parameters[self.choose_model]['mini_batch_size'])
+        model_parallel['micro_batch_size'] = random.choice(self.factors_of_batch_size)
 
         wafer_num = math.ceil(self.num_of_gpus[self.choose_model] * 312 * 1000 / (design_point['core_mac_num'] * design_point['core_array_h'] * design_point['core_array_w'] * design_point['reticle_array_h'] * design_point['reticle_array_w'] * 2))
         model_parallel['data_parallel_size'] = random.randint(1, max(wafer_num, 1))
 
-        factors_of_number_of_layers = self.factors(self.fixed_model_parameters[self.choose_model]['number_of_layers'])
-        model_parallel['model_parallel_size'] = random.choice(factors_of_number_of_layers)
+        model_parallel['model_parallel_size'] = random.randint(1, max(self.fixed_model_parameters[self.choose_model]['number_of_layers'], 1))
 
-        factors_of_attention_heads = self.factors(self.fixed_model_parameters[self.choose_model]['attention_heads'])
-        model_parallel['tensor_parallel_size'] = random.choice(factors_of_attention_heads)
+        # factors_of_attention_heads = self.factors(self.fixed_model_parameters[self.choose_model]['attention_heads'])
+        model_parallel['tensor_parallel_size'] = random.choice(self.factors_of_attention_heads)
 
         num_reticle_per_pipeline_stage_upper_bound = wafer_num * design_point['reticle_array_h'] * design_point['reticle_array_w']
         model_parallel['num_reticle_per_model_chunk'] = random.randint(1, max(num_reticle_per_pipeline_stage_upper_bound, 1))
@@ -295,20 +297,23 @@ class DSE():
         model_parallel['num_reticle_per_model_chunk'] = design_point['reticle_array_h'] * design_point['reticle_array_w']
 
         if model_parallel['micro_batch_size'] * model_parallel['data_parallel_size'] > self.fixed_model_parameters[self.choose_model]['mini_batch_size']:
-            model_parallel['micro_batch_size'] = random.randint(1, max(self.fixed_model_parameters[self.choose_model]['mini_batch_size'] // model_parallel['data_parallel_size'], 1))
+            # model_parallel['micro_batch_size'] = random.randint(1, max(self.fixed_model_parameters[self.choose_model]['mini_batch_size'] // model_parallel['data_parallel_size'], 1))
+            t = random.randint(0, 1)
+            if t == 0:
+                for i in range(len(self.factors_of_batch_size)):
+                    if self.factors_of_batch_size[i] > max(self.fixed_model_parameters[self.choose_model]['mini_batch_size'] // model_parallel['data_parallel_size'], 1):
+                        break 
+                model_parallel['micro_batch_size'] = random.choice(self.factors_of_batch_size[:i])
+            else:
+                model_parallel['data_parallel_size'] = random.randint(1, max(self.fixed_model_parameters[self.choose_model]['mini_batch_size'] // model_parallel['micro_batch_size'], 1))
 
         if model_parallel['data_parallel_size'] * model_parallel['model_parallel_size'] > wafer_num:
-            for i in range(len(self.factors_of_number_of_layers)):
-                if self.factors_of_number_of_layers[i] > max(wafer_num // model_parallel['data_parallel_size'], 1):
-                    break 
-            model_parallel['model_parallel_size'] = random.choice(self.factors_of_number_of_layers[:i])
+            t = random.randint(0, 1)
+            if t == 0:
+                model_parallel['data_parallel_size'] = random.randint(1, max(wafer_num//model_parallel['model_parallel_size'], 1))
+            else:
+                model_parallel['model_parallel_size'] = random.randint(1, max(wafer_num//model_parallel['data_parallel_size'], 1))
 
-        # if model_parallel['tensor_parallel_size'] * model_parallel['num_reticle_per_model_chunk'] > design_point['reticle_array_h'] * design_point['reticle_array_w']:
-        #     for i in range(len(self.factors_of_attention_heads)):
-        #         if self.factors_of_attention_heads[i] > max(design_point['reticle_array_h'] * design_point['reticle_array_w'] // model_parallel['num_reticle_per_model_chunk'], 1):
-        #             break 
-        #     model_parallel['tensor_parallel_size'] = random.choice(self.factors_of_attention_heads[:i])
-        model_parallel['tensor_parallel_size'] = 1
 
         return design_point, model_parallel
 

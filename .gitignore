@@ -7,3 +7,4 @@ try/*
 __pycache__/*
 *.pickle
 *.list
+*.out

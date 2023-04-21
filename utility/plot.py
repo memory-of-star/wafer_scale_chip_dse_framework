@@ -133,13 +133,20 @@ def get_highest_mean_curve(histories, strategy='multi_fidelity', iterations=50):
         for run_time in range(len(histories)):
             for point in range(min(len(histories[0][0]), iterations)):
                 for i in range(len(histories[run_time][0][point][-1])):
-                    histories[run_time][0][point][-1][i] = min(300, histories[run_time][0][point][-1][i])
+                    if i == 1:
+                        histories[run_time][0][point][-1][i] = min(300, histories[run_time][0][point][-1][i])
+                    elif i == 0:
+                        histories[run_time][0][point][-1][i] = min(0, histories[run_time][0][point][-1][i])
                 _sum.append(histories[run_time][0][point][-1])
 
         for run_time in range(len(histories)):
             for point in range(min(len(histories[0][1]), iterations)):
                 for i in range(len(histories[run_time][1][point][-1])):
-                    histories[run_time][1][point][-1][i] = min(300, histories[run_time][1][point][-1][i])
+                    # histories[run_time][1][point][-1][i] = min(300, histories[run_time][1][point][-1][i])
+                    if i == 1:
+                        histories[run_time][1][point][-1][i] = min(300, histories[run_time][1][point][-1][i])
+                    elif i == 0:
+                        histories[run_time][1][point][-1][i] = min(0, histories[run_time][1][point][-1][i])
                 _sum2.append(histories[run_time][1][point][-1])
 
         _sum = np.array(_sum)
@@ -152,7 +159,11 @@ def get_highest_mean_curve(histories, strategy='multi_fidelity', iterations=50):
         for run_time in range(len(histories)):
             for point in range(min(len(histories[0]), iterations)):
                 for i in range(len(histories[run_time][point][-1])):
-                    histories[run_time][point][-1][i] = min(300, histories[run_time][point][-1][i])
+                    # histories[run_time][point][-1][i] = min(300, histories[run_time][point][-1][i])
+                    if i == 1:
+                        histories[run_time][point][-1][i] = min(300, histories[run_time][point][-1][i])
+                    elif i == 0:
+                        histories[run_time][point][-1][i] = min(0, histories[run_time][point][-1][i])
                 _sum.append(histories[run_time][point][-1])
         _sum = np.array(_sum)
         _sum = _sum.reshape((len(histories), min(len(histories[0]), iterations), len(histories[0][0][-1])))
