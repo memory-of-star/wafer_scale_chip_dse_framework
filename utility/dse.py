@@ -338,6 +338,13 @@ class DSE():
                 i = max(i, 1)
                 model_parallel['model_parallel_size'] = random.choice(self.factors_of_number_of_layers[:i])
 
+        if model_parallel['tensor_parallel_size'] > design_point['reticle_array_h'] * design_point['reticle_array_w']:
+            for i in range(len(self.factors_of_attention_heads)):
+                if self.factors_of_attention_heads[i] > max(design_point['reticle_array_h'] * design_point['reticle_array_w'], 1):
+                    break 
+            i = max(i, 1)
+            model_parallel['tensor_parallel_size'] = random.choice(self.factors_of_attention_heads[:i])
+
 
         return design_point, model_parallel
 

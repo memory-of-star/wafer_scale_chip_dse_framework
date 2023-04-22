@@ -33,9 +33,11 @@ for cm in range(15):
 
 # dse_runner = dse.DSE(choose_model=cm, strategy='single_fidelity', run_name='single_fidelity_final_cm{}_rt{}_mr{}'.format(cm, rt, mr), run_times=rt, max_runs=mr, metrics=metrics)
 # dse_runner.run()
+# del dse_runner
 
 # dse_runner = dse.DSE(choose_model=cm, strategy='multi_fidelity', run_name='multi_fidelity_test_cm{}_rt{}_mr{}'.format(cm, rt, mr*2), run_times=rt, max_runs=mr*2, metrics=metrics)
 # dse_runner.run()
+# del dse_runner
 
 ###############################################
 
