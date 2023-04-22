@@ -178,7 +178,7 @@ def get_highest_mean_curve(histories, strategy='multi_fidelity', iterations=50):
             hv = []
             for j in range(_sum.shape[1]):
                 partition = NondominatedPartitioning(_sum.shape[2], _sum[i, :j+1, :])
-                hv.append(partition.compute_hypervolume([0, 400]))
+                hv.append(partition.compute_hypervolume([0, 300]))
             hv_mean.append(hv)
             partition = NondominatedPartitioning(_sum.shape[2], _sum[i, :, :])
             pareto_fronts.append(partition.pareto_Y)
