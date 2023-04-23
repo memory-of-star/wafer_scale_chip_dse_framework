@@ -25,6 +25,7 @@ class DSE():
     def __init__(self, choose_model=0, strategy='multi_fidelity', run_name='default', run_times=10, max_runs=100, metrics=['throughput'], ref_point=[0, 300]):
 
         # random.seed(1)
+        self.factors_ = {}
         
         # file kwargs
         self.root_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -398,9 +399,15 @@ class DSE():
         return evaluation_func
 
     def factors(self, n):
-        factors = [] 
-        factors.append(1)
-        for i in range(2, n + 1):
+        if n in self.factors_.keys():
+            return self.factors_[n]
+        factors = []
+        # factors.append(1)
+        for i in range(1, int(math.sqrt(n)) + 1):
             if n % i == 0:
                 factors.append(i)
-        return factors 
+                if i != n // i:
+                    factors.append(n // i)
+        factors = sorted(factors)
+        self.factors_[n] = copy.deepcopy(factors)
+        return factors
