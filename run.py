@@ -24,20 +24,20 @@ metrics = ['throughput', 'power']
 # dse_runner.run()
 
 rt = 10
-mr = 50
+mr = 10
 
 for cm in range(1):
-    # dse_runner = dse.DSE(choose_model=cm, strategy='random', run_name='random_mean_cm{}_rt{}_mr{}'.format(cm, rt, mr), run_times=rt, max_runs=mr, metrics=metrics, ref_point=[0, 300], mean_of_all=True)
-    # dse_runner.run()
-    # del dse_runner
-
-    # dse_runner = dse.DSE(choose_model=cm, strategy='single_fidelity', run_name='single_fidelity_mean_final_cm{}_rt{}_mr{}'.format(cm, rt, mr), run_times=rt, max_runs=mr, metrics=metrics, ref_point=[0, 300], mean_of_all=True)
-    # dse_runner.run()
-    # del dse_runner
-
-    dse_runner = dse.DSE(choose_model=cm, strategy='multi_fidelity', run_name='multi_fidelity_mean_final_cm{}_rt{}_mr{}'.format(cm, rt, mr+50), run_times=rt, max_runs=mr+50, metrics=metrics, ref_point=[0, 300], mean_of_all=True)
+    dse_runner = dse.DSE(choose_model=cm, strategy='random', run_name='random_mean_GPU_cm{}_rt{}_mr{}'.format(cm, rt, mr), run_times=rt, max_runs=mr, metrics=metrics, ref_point=[0, 300], mean_of_all=True, use_low_fidelity=False)
     dse_runner.run()
     del dse_runner
+
+    # dse_runner = dse.DSE(choose_model=cm, strategy='single_fidelity', run_name='single_fidelity_noise_mean_final_cm{}_rt{}_mr{}'.format(cm, rt, mr), run_times=rt, max_runs=mr, metrics=metrics, ref_point=[0, 300], mean_of_all=True, add_noise=True)
+    # dse_runner.run()
+    # del dse_runner
+
+    # dse_runner = dse.DSE(choose_model=cm, strategy='multi_fidelity', run_name='multi_fidelity_noise_mean_final_cm{}_rt{}_mr{}'.format(cm, rt, mr+50), run_times=rt, max_runs=mr+50, metrics=metrics, ref_point=[0, 300], mean_of_all=True, add_noise=True)
+    # dse_runner.run()
+    # del dse_runner
 
 ###############################################
 

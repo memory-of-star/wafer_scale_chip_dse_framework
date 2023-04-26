@@ -3,6 +3,12 @@ import seaborn as sns
 import numpy as np
 from typing import List
 import copy
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'dse4wse/test/dse'))
+
+import api
 
 def plot_curve(data_1:np.ndarray, data_2:np.ndarray, label1 = 'Baseline', label2 = 'Single Fidelity', y_log = True, x_label = 'Model Parameter Combination', y_label = 'Throughput', title = 'Wafer Scale Chip DSE Curve', path='result.png'):
     sns.set_style('darkgrid') # darkgrid, white grid, dark, white and ticks
@@ -168,6 +174,77 @@ def get_highest_mean_curve(histories, strategy='multi_fidelity', iterations=50):
                 _sum.append(histories[run_time][point][-1])
         _sum = np.array(_sum)
         _sum = _sum.reshape((len(histories), min(len(histories[0]), iterations), len(histories[0][0][-1])))
+    
+    # here, the shape of _sum is (run_times, max_runs, objectives)
+    print(_sum.shape[2])
+    if _sum.shape[2] > 1:
+        from openbox.utils.multi_objective import NondominatedPartitioning
+        hv_mean = []
+        pareto_fronts = []
+        for i in range(_sum.shape[0]):
+            hv = []
+            for j in range(_sum.shape[1]):
+                partition = NondominatedPartitioning(_sum.shape[2], _sum[i, :j+1, :])
+                hv.append(partition.compute_hypervolume([0, 300]))
+            hv_mean.append(hv)
+            partition = NondominatedPartitioning(_sum.shape[2], _sum[i, :, :])
+            pareto_fronts.append(partition.pareto_Y)
+
+        hv_mean = np.array(hv_mean)
+        hv = copy.deepcopy(hv_mean)
+        hv_max = np.max(hv, axis=0)
+        hv_min = np.min(hv, axis=0)
+        hv_mean = hv_mean.mean(axis=0)
+
+        return _sum, hv_mean, pareto_fronts, hv_max, hv_min
+    else:
+        _sum = _sum.reshape((_sum.shape[0], _sum.shape[1]))
+        for j in range(_sum.shape[1]):
+            _sum[:, j] = np.amin(_sum[:, :j+1], axis=1)
+        _sum = _sum.mean(axis=0)
+        return _sum
+    
+# input a design point, return the mean evaluation of the high_fidelity
+def get_high_evaluation_from_low_design_point(design_point):
+    mean_objs = []
+    for cm in range(14):
+        design_point, model_parameters = self.config_2_design_fixed_model_parallel(config, cm)
+        objs = []
+        
+        for i in range(len(metrics)):
+            if _metrics[i] == 'throughput':
+                objs.append(-api.evaluate_design_point(design_point=design_point, model_parameters=model_parameters, metric=_metrics[i], use_high_fidelity=_use_high_fidelity)*self.throughput_weight[cm])
+            elif _metrics[i] == 'power':
+                power = api.evaluate_design_point(design_point=design_point, model_parameters=model_parameters, metric=_metrics[i], use_high_fidelity=True) / 100
+                objs.append(power)
+            elif _metrics[i] == 'latency':
+                objs.append(api.evaluate_design_point(design_point=design_point, model_parameters=model_parameters, metric=_metrics[i], use_high_fidelity=_use_high_fidelity))
+        
+        if len(mean_objs) == 0:
+            mean_objs = objs
+        else:
+            for i in range(len(objs)):
+                mean_objs[i] += objs[i]
+    for i in range(len(mean_objs)):
+        mean_objs[i] = mean_objs[i] / 16
+    
+
+def low_fidelity_mapping_2_high_fidelity(histories, strategy='multi_fidelity', iterations=50):
+    _sum = [] # (run_times, fidelity, max_runs, (design, model, objectives)) -> (fidelity, max_runs, objectives), average on run_times
+
+    _sum_high = [] # we save the corresponding evaluation points in high fidelity objective function in _sum_high
+
+    for run_time in range(len(histories)):
+        for point in range(min(len(histories[0]), iterations)):
+            for i in range(len(histories[run_time][point][-1])):
+                # here we need to get the evaluation in high fidelity function
+                if i == 1:
+                    histories[run_time][point][-1][i] = min(300, histories[run_time][point][-1][i])
+                elif i == 0:
+                    histories[run_time][point][-1][i] = min(0, histories[run_time][point][-1][i])
+            _sum.append(histories[run_time][point][-1])
+    _sum = np.array(_sum)
+    _sum = _sum.reshape((len(histories), min(len(histories[0]), iterations), len(histories[0][0][-1])))
     
     # here, the shape of _sum is (run_times, max_runs, objectives)
     print(_sum.shape[2])

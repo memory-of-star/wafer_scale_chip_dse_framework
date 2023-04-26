@@ -22,11 +22,12 @@ import math
 import utility
 
 class DSE():
-    def __init__(self, choose_model=0, strategy='multi_fidelity', run_name='default', run_times=10, max_runs=100, metrics=['throughput'], ref_point=[0, 300], mean_of_all = False):
+    def __init__(self, choose_model=0, strategy='multi_fidelity', run_name='default', run_times=10, max_runs=100, metrics=['throughput'], ref_point=[0, 300], mean_of_all = False, use_low_fidelity = False, add_noise=False):
 
         self.throughput_weight = []
 
         self.mean_of_all = mean_of_all
+        self.add_noise = add_noise
 
         # random.seed(1)
         self.factors_ = {}
@@ -61,13 +62,17 @@ class DSE():
         self.max_runs = max_runs
         self.ref_point = ref_point
 
+        self.use_low_fidelity = use_low_fidelity
+
         self.num_objs = len(metrics)
         self.metrics = metrics
 
-        if not mean_of_all:
+        if self.use_low_fidelity:
+            self.fidelity_functions = [self.evaluator_factory(use_high_fidelity=False, metrics=self.metrics, use_mean=True)]
+        elif not mean_of_all:
             self.fidelity_functions = [self.evaluator_factory(use_high_fidelity=True, metrics=self.metrics), self.evaluator_factory(use_high_fidelity=False, metrics=self.metrics)] # a list, from high fidelity to low fidelity
         else:
-            self.fidelity_functions = [self.evaluator_factory(use_high_fidelity=True, metrics=self.metrics, use_mean=True), self.evaluator_factory(use_high_fidelity=False, metrics=self.metrics, use_mean=True)]
+            self.fidelity_functions = [self.evaluator_factory(use_high_fidelity=True, metrics=self.metrics, use_mean=True, add_noise=self.add_noise), self.evaluator_factory(use_high_fidelity=False, metrics=self.metrics, use_mean=True)]
 
         self.initial_runs = 6
         self.init_strategy = 'random'
@@ -152,12 +157,20 @@ class DSE():
 
 
     def build_design_space(self):
-        design_points = np.load(os.path.join(self.root_path, 'data/design_points3.npy'), allow_pickle=True)
+        # design_points = np.load(os.path.join(self.root_path, 'data/design_points3.npy'), allow_pickle=True)
 
-        with open(os.path.join(self.root_path, 'data/design_space3.pickle'), 'rb') as f:
+        # with open(os.path.join(self.root_path, 'data/design_space3.pickle'), 'rb') as f:
+        #     design_space = pickle.load(f)
+
+        # with open(os.path.join(self.root_path, 'data/points_dic3.pickle'), 'rb') as f:
+        #     points_dic = pickle.load(f)
+
+        design_points = np.load(os.path.join(self.root_path, 'data/GPU_design_points.npy'), allow_pickle=True)
+
+        with open(os.path.join(self.root_path, 'data/GPU_design_space.pickle'), 'rb') as f:
             design_space = pickle.load(f)
 
-        with open(os.path.join(self.root_path, 'data/points_dic3.pickle'), 'rb') as f:
+        with open(os.path.join(self.root_path, 'data/GPU_points_dic.pickle'), 'rb') as f:
             points_dic = pickle.load(f)
 
         for i in range(len(design_space)):
@@ -481,7 +494,7 @@ class DSE():
         return design_point, model_para
 
 
-    def evaluator_factory(self, use_high_fidelity=True, metrics=['throughput'], use_mean=False):
+    def evaluator_factory(self, use_high_fidelity=True, metrics=['throughput'], use_mean=False, add_noise=False):
         _use_high_fidelity = use_high_fidelity
         _metrics = metrics
         def evaluation_func(config: sp.Configuration):
@@ -519,7 +532,10 @@ class DSE():
                     objs = []
                     for i in range(len(metrics)):
                         if _metrics[i] == 'throughput':
-                            objs.append(-api.evaluate_design_point(design_point=design_point, model_parameters=model_parameters, metric=_metrics[i], use_high_fidelity=_use_high_fidelity)*self.throughput_weight[cm])
+                            throughput = -api.evaluate_design_point(design_point=design_point, model_parameters=model_parameters, metric=_metrics[i], use_high_fidelity=_use_high_fidelity)*self.throughput_weight[cm]
+                            if add_noise:
+                                throughput *= random.normalvariate(1, 0.05)
+                            objs.append(throughput)
                         elif _metrics[i] == 'power':
                             power = api.evaluate_design_point(design_point=design_point, model_parameters=model_parameters, metric=_metrics[i], use_high_fidelity=True) / 100
                             objs.append(power)
@@ -593,6 +609,58 @@ class DSE():
             total_flops_per_step -= position_embeddings
 
             self.throughput_weight.append((total_flops_per_step * 400) / (self.num_of_gpus[cm] * 312 * 1e12))
+
+
+    def low_fidelity_mapping_2_high_fidelity(self, histories, strategy='multi_fidelity', iterations=50):
+        _sum = [] # (run_times, fidelity, max_runs, (design, model, objectives)) -> (fidelity, max_runs, objectives), average on run_times
+
+        _sum_high = [] # we save the corresponding evaluation points in high fidelity objective function in _sum_high
+
+        high_func = self.evaluator_factory(use_high_fidelity=True, metrics=self.metrics, use_mean=True)
+
+        for run_time in range(len(histories)):
+            for point in range(min(len(histories[0]), iterations)):
+                # here we need to get the evaluation in high fidelity function
+                config = Configuration(self.space, histories[run_time][point][0])
+                obj_high = high_func(config)
+                for i in range(len(histories[run_time][point][-1])):
+                    if i == 1:
+                        obj_high[i] = min(300, obj_high[i])
+                        histories[run_time][point][-1][i] = min(300, histories[run_time][point][-1][i])
+                    elif i == 0:
+                        obj_high[i] = min(0, obj_high[i])
+                        histories[run_time][point][-1][i] = min(0, histories[run_time][point][-1][i])
+                _sum.append(histories[run_time][point][-1])
+                _sum_high.append(obj_high)
+        _sum = np.array(_sum)
+        _sum = _sum.reshape((len(histories), min(len(histories[0]), iterations), len(histories[0][0][-1])))
+
+        _sum_high = np.array(_sum_high)
+        _sum_high = _sum_high.reshape((len(histories), min(len(histories[0]), iterations), len(histories[0][0][-1])))
+        
+        # here, the shape of _sum and _sum_high is (run_times, max_runs, objectives)
+        # we need to find the pareto points in _sum, and then get the corresponding points in _sum_high
+        
+        from openbox.utils.multi_objective import NondominatedPartitioning
+        # hv_mean = []
+        # pareto_fronts = []
+        # for i in range(_sum.shape[0]):
+        #     hv = []
+        #     for j in range(_sum.shape[1]):
+        #         partition = NondominatedPartitioning(_sum.shape[2], _sum[i, :j+1, :])
+        #         hv.append(partition.compute_hypervolume([0, 300]))
+        #     hv_mean.append(hv)
+        #     partition = NondominatedPartitioning(_sum.shape[2], _sum[i, :, :])
+        #     pareto_fronts.append(partition.pareto_Y)
+
+        # hv_mean = np.array(hv_mean)
+        # hv = copy.deepcopy(hv_mean)
+        # hv_max = np.max(hv, axis=0)
+        # hv_min = np.min(hv, axis=0)
+        # hv_mean = hv_mean.mean(axis=0)
+
+        # return _sum, hv_mean, pareto_fronts, hv_max, hv_min
+        
 
 
 
