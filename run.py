@@ -24,18 +24,18 @@ metrics = ['throughput', 'power']
 # dse_runner.run()
 
 rt = 10
-mr = 200
+mr = 50
 
-for cm in range(7,9):
-    # dse_runner = dse.DSE(choose_model=cm, strategy='random', run_name='random_final_cm{}_rt{}_mr{}'.format(cm, rt, mr), run_times=rt, max_runs=mr, metrics=metrics)
+for cm in range(1):
+    # dse_runner = dse.DSE(choose_model=cm, strategy='random', run_name='random_mean_cm{}_rt{}_mr{}'.format(cm, rt, mr), run_times=rt, max_runs=mr, metrics=metrics, ref_point=[0, 300], mean_of_all=True)
     # dse_runner.run()
     # del dse_runner
 
-    # dse_runner = dse.DSE(choose_model=cm, strategy='single_fidelity', run_name='single_fidelity_final_cm{}_rt{}_mr{}'.format(cm, rt, mr), run_times=rt, max_runs=mr, metrics=metrics)
+    # dse_runner = dse.DSE(choose_model=cm, strategy='single_fidelity', run_name='single_fidelity_mean_final_cm{}_rt{}_mr{}'.format(cm, rt, mr), run_times=rt, max_runs=mr, metrics=metrics, ref_point=[0, 300], mean_of_all=True)
     # dse_runner.run()
     # del dse_runner
 
-    dse_runner = dse.DSE(choose_model=cm, strategy='multi_fidelity', run_name='multi_fidelity_final_cm{}_rt{}_mr{}'.format(cm, rt, mr+100), run_times=rt, max_runs=mr+100, metrics=metrics)
+    dse_runner = dse.DSE(choose_model=cm, strategy='multi_fidelity', run_name='multi_fidelity_mean_final_cm{}_rt{}_mr{}'.format(cm, rt, mr+50), run_times=rt, max_runs=mr+50, metrics=metrics, ref_point=[0, 300], mean_of_all=True)
     dse_runner.run()
     del dse_runner
 

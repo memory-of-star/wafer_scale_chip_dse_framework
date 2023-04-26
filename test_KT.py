@@ -5,13 +5,16 @@ import argparse
 models_num = 1
 kt = []
 
-dse_runner = dse.DSE()
+
 
 for i in range(models_num):
-    _kt, _points_lst, _evaluation_list, _pairs = dse_runner.KT_evaluator(size=100, multi_process=True, threads=20)
+    dse_runner = dse.DSE(choose_model=i, mean_of_all=True)
+    # _kt, _points_lst, _evaluation_list, _pairs = dse_runner.KT_evaluator(size=100, multi_process=True, threads=20)
+    _kt, _points_lst, _evaluation_list, _pairs = dse_runner.KT_evaluator_16_models_mean(size=1000, threads=20)
     kt.append(_kt)
     with open('discordant_pairs{}.pickle'.format(i), 'wb') as f:
         pickle.dump((_kt, _points_lst, _evaluation_list, _pairs), f)
+    del dse_runner
 
 print(kt)
 

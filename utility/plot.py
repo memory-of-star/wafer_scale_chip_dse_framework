@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
 from typing import List
+import copy
 
 def plot_curve(data_1:np.ndarray, data_2:np.ndarray, label1 = 'Baseline', label2 = 'Single Fidelity', y_log = True, x_label = 'Model Parameter Combination', y_label = 'Throughput', title = 'Wafer Scale Chip DSE Curve', path='result.png'):
     sns.set_style('darkgrid') # darkgrid, white grid, dark, white and ticks
@@ -184,9 +185,12 @@ def get_highest_mean_curve(histories, strategy='multi_fidelity', iterations=50):
             pareto_fronts.append(partition.pareto_Y)
 
         hv_mean = np.array(hv_mean)
+        hv = copy.deepcopy(hv_mean)
+        hv_max = np.max(hv, axis=0)
+        hv_min = np.min(hv, axis=0)
         hv_mean = hv_mean.mean(axis=0)
 
-        return _sum, hv_mean, pareto_fronts
+        return _sum, hv_mean, pareto_fronts, hv_max, hv_min
     else:
         _sum = _sum.reshape((_sum.shape[0], _sum.shape[1]))
         for j in range(_sum.shape[1]):
